@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Fan Mo"
+title: "Dr. Fan Mo"
 author_profile: true
 redirect_from: 
   - /about/
