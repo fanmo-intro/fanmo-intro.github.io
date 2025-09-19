@@ -1,152 +1,185 @@
 {
   "basics": {
-    "name": "Your Sidebar Name",
-    "email": "none@example.org",
-    "phone": "",
-    "website": "https://academicpages.github.io",
-    "summary": "Currently employed at Red Brick University. Short biography for the left-hand sidebar",
+    "name": "Fan Mo",
+    "email": "kell6420@ox.ac.uk",
+    "phone": "+44 7759214253",
+    "website": "https://fanmo-intro.github.io",
+    "summary": "Researcher in AI, robotics, knowledge graphs, and multimodal perception; postdoctoral researcher with experience across Oxford, Cambridge, Nottingham, and KTH. Focus on GNNs, LLMs, digital twins, and intelligent manufacturing.",
     "location": {
-      "address": "",
-      "postalCode": "",
-      "city": "Earth",
-      "countryCode": "US",
-      "region": ""
+      "address": "Wolfson Building, Parks Rd",
+      "postalCode": "OX1 3QG",
+      "city": "Oxford",
+      "countryCode": "UK",
+      "region": "Oxfordshire"
     },
     "profiles": [
       {
         "network": "Google Scholar",
-        "username": "",
-        "url": "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+        "username": "oXhA0KkAAAAJ",
+        "url": "https://scholar.google.com/citations?hl=en&user=oXhA0KkAAAAJ"
       },
       {
-        "network": "ORCID",
-        "username": "",
-        "url": "http://orcid.org/yourorcidurl"
+        "network": "LinkedIn",
+        "username": "fan-mo-phd-032170276",
+        "url": "https://www.linkedin.com/in/fan-mo-phd-032170276/"
       },
       {
         "network": "GitHub",
-        "username": "academicpages",
-        "url": "https://github.com/academicpages"
+        "username": "fanmo-intro",
+        "url": "https://github.com/fanmo-intro"
       }
     ]
   },
-  "work": [],
+  "work": [
+    {
+      "company": "University of Oxford",
+      "position": "Team Lead (AI Group) & Postdoctoral Researcher",
+      "website": "https://www.ox.ac.uk/",
+      "startDate": "2025-06-01",
+      "endDate": "",
+      "summary": "Applied AI and graph-based models for robotic systems; research on 3D human pose estimation with multimodal fusion; GNN/knowledge-graph methods for RNA–drug discovery."
+    },
+    {
+      "company": "University of Cambridge",
+      "position": "Research Associate & Visiting Fellow",
+      "website": "https://www.cam.ac.uk/",
+      "startDate": "2024-06-01",
+      "endDate": "",
+      "summary": "GNNs, LLMs, and RL for LCA transparency; biomedical data analytics; AI-driven systems for adaptive computing."
+    },
+    {
+      "company": "Volkswagen Group",
+      "position": "Software Engineer",
+      "website": "https://www.volkswagen-group.com/",
+      "startDate": "2017-05-01",
+      "endDate": "2020-04-30",
+      "summary": "Predictive maintenance & anomaly detection; projects on e-traction modules and IoV; autonomy & ML for vehicle intelligence."
+    }
+  ],
   "education": [
     {
-      "institution": "GitHub University",
-      "area": "Ph.D in Version Control Theory",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2018",
+      "institution": "University of Nottingham · University of Oxford · KTH Royal Institute of Technology",
+      "area": "PhD in AI, Knowledge Graphs, and Robotics (MSCA)",
+      "studyType": "PhD",
+      "startDate": "2020-12-01",
+      "endDate": "2023-12-31",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "M.S. in Jekyll",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2014",
+      "institution": "University of Oxford",
+      "area": "MSc in Software Engineering",
+      "studyType": "Master",
+      "startDate": "2022-09-01",
+      "endDate": "2024-09-30",
       "gpa": null,
       "courses": []
     },
     {
-      "institution": "GitHub University",
-      "area": "B.S. in GitHub",
-      "studyType": "",
-      "startDate": "",
-      "endDate": "2012",
+      "institution": "University of Stuttgart",
+      "area": "MSc in Engineering",
+      "studyType": "Master",
+      "startDate": "2015-01-01",
+      "endDate": "2017-04-30",
+      "gpa": null,
+      "courses": []
+    },
+    {
+      "institution": "Tongji University · Technical University of Munich",
+      "area": "Bachelor of Engineering",
+      "studyType": "Bachelor",
+      "startDate": "2009-09-01",
+      "endDate": "2013-07-31",
       "gpa": null,
       "courses": []
     }
   ],
-  "skills": [],
-  "languages": [],
-  "interests": [],
+  "skills": [
+    { "name": "Graph Neural Networks", "level": "advanced", "keywords": ["heterogeneous graphs", "GNN architectures"] },
+    { "name": "Knowledge Graphs", "level": "advanced", "keywords": ["Neo4j", "reasoning", "integration"] },
+    { "name": "Reinforcement Learning", "level": "advanced", "keywords": ["DQN", "DDQN", "DDPG", "PyTorch", "Tianshou", "RLlib"] },
+    { "name": "Multimodal Perception", "level": "advanced", "keywords": ["RGB/Depth/Thermal/mmWave/LiDAR fusion"] },
+    { "name": "Robotics", "level": "advanced", "keywords": ["whole-body control", "industrial robotics", "KUKA/ABB/FANUC"] }
+  ],
+  "languages": [
+    { "language": "English", "fluency": "Advanced" },
+    { "language": "German", "fluency": "Advanced" },
+    { "language": "Chinese", "fluency": "Native" }
+  ],
+  "interests": [
+    { "name": "Intelligent manufacturing" },
+    { "name": "Embodied AI & multi-robot systems" },
+    { "name": "Computational biology" }
+  ],
   "references": [],
   "publications": [
     {
-      "name": "Paper Title Number 1",
-      "publisher": "Journal 1",
-      "releaseDate": "2009-10-01",
-      "website": "http://academicpages.github.io/files/paper1.pdf",
-      "summary": "This paper is about the number 1. The number 2 is left for future work."
+      "name": "Semantic Models and Knowledge Graphs as Manufacturing System Reconfiguration Enablers",
+      "publisher": "Robotics and Computer-Integrated Manufacturing",
+      "releaseDate": "2024-04-01",
+      "website": "",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 2",
-      "publisher": "Journal 1",
-      "releaseDate": "2010-10-01",
-      "website": "http://academicpages.github.io/files/paper2.pdf",
-      "summary": "This paper is about the number 2. The number 3 is left for future work."
+      "name": "A Framework for Manufacturing System Reconfiguration and Optimisation Using Digital Twins and Modular AI",
+      "publisher": "Robotics and Computer-Integrated Manufacturing",
+      "releaseDate": "2023-08-01",
+      "website": "",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 3",
-      "publisher": "Journal 1",
-      "releaseDate": "2015-10-01",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about the number 3. The number 4 is left for future work."
+      "name": "PLC Orchestration Automation to Enhance Human–Machine Integration in Adaptive Manufacturing Systems",
+      "publisher": "Journal of Manufacturing Systems",
+      "releaseDate": "2023-12-01",
+      "website": "",
+      "summary": ""
     },
     {
-      "name": "Paper Title Number 4",
-      "publisher": "GitHub Journal of Bugs",
-      "releaseDate": "2024-02-17",
-      "website": "http://academicpages.github.io/files/paper3.pdf",
-      "summary": "This paper is about fixing template issue #693."
+      "name": "A Maturity Model for the Autonomy of Manufacturing Systems",
+      "publisher": "The International Journal of Advanced Manufacturing Technology",
+      "releaseDate": "2023-01-01",
+      "website": "",
+      "summary": ""
     }
   ],
   "presentations": [
     {
-      "name": "Talk 1 on Relevant Topic in Your Field",
-      "event": "UC San Francisco, Department of Testing",
-      "date": "2012-03-01",
-      "location": "San Francisco, CA, USA",
+      "name": "Asset Selection and Optimization for Robotic Assembly Systems using Graph Neural Networks",
+      "event": "MCAA Asia Connect – Innovations in Computer Science and AI",
+      "date": "2024-11-29",
+      "location": "",
       "description": ""
     },
     {
-      "name": "Tutorial 1 on Relevant Topic in Your Field",
-      "event": "UC-Berkeley Institute for Testing Science",
-      "date": "2013-03-01",
-      "location": "Berkeley, CA, USA",
+      "name": "Advancing Capability Matching in Manufacturing Reconfiguration with Large Language Models",
+      "event": "FAIM 2024",
+      "date": "2024-06-28",
+      "location": "",
       "description": ""
     },
     {
-      "name": "Talk 2 on Relevant Topic in Your Field",
-      "event": "London School of Testing",
-      "date": "2014-02-01",
-      "location": "London, UK",
-      "description": ""
-    },
-    {
-      "name": "Conference Proceeding talk 3 on Relevant Topic in Your Field",
-      "event": "Testing Institute of America 2014 Annual Conference",
-      "date": "2014-03-01",
-      "location": "Los Angeles, CA, USA",
+      "name": "Guidelines and Experience for Marie Curie Proposals",
+      "event": "EURAXESS China & MCAA Workshop",
+      "date": "2023-08-28",
+      "location": "",
       "description": ""
     }
   ],
   "teaching": [
     {
-      "course": "Teaching experience 1",
-      "institution": "University 1, Department",
-      "date": "2014-01-01",
-      "role": "Undergraduate course",
-      "description": ""
+      "course": "MG2040: Assembly Technology",
+      "institution": "KTH Royal Institute of Technology",
+      "date": "2023-09-01",
+      "role": "Guest Lecturer",
+      "description": "Lectures and case discussion linking robotics/automation to assembly systems."
     },
     {
-      "course": "Teaching experience 2",
-      "institution": "University 1, Department",
-      "date": "2015-01-01",
-      "role": "Workshop",
-      "description": ""
+      "course": "MSc/MPhil Thesis Supervision",
+      "institution": "University of Cambridge; University of Nottingham",
+      "date": "2021-01-01",
+      "role": "Supervisor",
+      "description": "Supervised multiple MSc/MPhil theses in CS/Aerospace."
     }
   ],
-  "portfolio": [
-    {
-      "name": "Portfolio item number 1",
-      "category": "portfolio",
-      "date": "",
-      "url": "",
-      "description": "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-    }
-  ]
+  "portfolio": []
 }
