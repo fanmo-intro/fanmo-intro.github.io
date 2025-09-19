@@ -130,3 +130,24 @@
 .author__urls { display: flex; flex-wrap: wrap; gap: 10px; }
 .author__urls li { margin: 0; }
 */
+/* ===== 正文排版优化 ===== */
+
+/* 让正文区域占更宽的比例，减少右边留白 */
+.page__content {
+  max-width: 960px;     /* 默认可能是 720px，可以拉宽 */
+  margin: 0 auto;       /* 左右居中 */
+  text-align: justify;  /* 两端对齐（中英文都对齐） */
+  line-height: 1.75;    /* 行距更舒服 */
+  font-size: 1.05rem;   /* 字体略大一点 */
+  color: #2b2b2b;       /* 稍微深灰，护眼 */
+}
+
+/* 小屏幕手机保持原状（避免太挤） */
+@media screen and (max-width: 768px) {
+  .page__content {
+    max-width: 100%;
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+}
+
