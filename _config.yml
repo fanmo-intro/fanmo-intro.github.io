@@ -31,8 +31,8 @@ author:
     - University of Oxford
 
   # === 下面这些会以“图标”显示在一排 ===
-  email         : "kell6420@ox.ac.uk"  # 会渲染为 mailto: 链接（圆形信封图标）
   googlescholar : "https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en"
+  email         : "kell6420@ox.ac.uk"  # 会渲染为 mailto: 链接（圆形信封图标）
   github        : "fanmo-intro"        # 只写用户名，模板会生成 https://github.com/fanmo-intro
   linkedin      : "fan-mo-phd-ceng-032170276"  # 只写 slug，模板会生成 https://www.linkedin.com/in/...
 
