@@ -37,7 +37,7 @@ Beyond research, I serve as **Chair of the China Chapter of the Marie Curie Alum
 - **Mar. 2024** – Invited talk *“Advancing Capability Matching in Manufacturing Reconfiguration with LLMs”* at FAIM 2024  
 - **Nov. 2023** – Paper *“PLC Orchestration Automation for Adaptive Manufacturing Systems”* published in *Journal of Manufacturing Systems*  
 - **Sept. 2023** – Session Chair, 34th FAIM Conference  
-- **Jul. 2023** – Presented and chaired session on AI in manufacturing at the 22nd IFAC World Congress  
+- **Jul. 2023** – Presented and chaired a session on AI in manufacturing at the 22nd IFAC World Congress  
 - **Apr. 2023** – Paper *“A Maturity Model for the Autonomy of Manufacturing Systems”* published in *IJAMT*  
 - **Aug. 2022** – Delivered Marie Curie Fellowship workshop with 500+ attendees  
 
@@ -46,7 +46,8 @@ Beyond research, I serve as **Chair of the China Chapter of the Marie Curie Alum
 # Services
 
 ### Editorial Roles
-- Editorial Board Member, *International Journal of Manufacturing Research*  
+- Editorial Board Member, *International Journal of Manufacturing Research*
+- Associate Editor, *Journal of Automation and Intelligence*
 - Young Editorial Board Member, *Journal of Complex Engineering Systems*  
 
 ### Conference Service
