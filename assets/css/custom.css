@@ -36,6 +36,21 @@
   color: inherit !important;
   fill: currentColor !important;
 }
+/* Cambridge green */
+.author__urls .employer:nth-of-type(1) {
+  color: #2a7f62;
+  background: #e7f6ef;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+/* Oxford blue */
+.author__urls .employer:nth-of-type(2) {
+  color: #0a66c2;
+  background: #e8f4ff;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
 
 /* ---------- brand-ish colors ---------- */
 /* location / university (Font Awesome icon names) */
