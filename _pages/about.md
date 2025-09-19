@@ -30,7 +30,6 @@ Beyond research, I serve as **Chair of the China Chapter of the Marie Curie Alum
 - **Computational Sustainability & Biology**: AI for life cycle assessment, traceability, and systems biology  
 
 ---
-# News  
 
 # News  
 
