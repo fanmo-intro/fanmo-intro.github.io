@@ -23,60 +23,39 @@
   </div>
 
   <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-
-    {# ── Location & employers as text rows ── #}
-    <ul class="author__urls">
-      {% if author.location %}
+  <ul class="author__urls social-icons">
+    
+    {% if author.location %}
+      <li class="author__desktop">
+        <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i>{{ author.location }}
+      </li>
+    {% endif %}
+    
+    {% if author.employer %}
+      {% assign employers_list = author.employer %}
+      {% for e in employers_list %}
         <li class="author__desktop">
-          <i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}
+          <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
+          <span class="employer">{{ e | strip }}</span>
         </li>
-      {% endif %}
+      {% endfor %}
+    {% endif %}
+    
+    <!-- Pure icon row -->
+    {% if author.googlescholar %}
+      <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i><span>Scholar</span></a></li>
+    {% endif %}
+    {% if author.github %}
+      <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+    {% endif %}
+    {% if author.linkedin %}
+      <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+    {% endif %}
+    {% if author.email %}
+      <li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope"></i><span>Email</span></a></li>
+    {% endif %}
+    
+  </ul>
+</div>
 
-      {% if author.employer %}
-        {% assign employers_list = author.employer %}
-        {% for e in employers_list %}
-          <li class="author__desktop">
-            <i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>
-            <span class="employer">{{ e | strip }}</span>
-          </li>
-        {% endfor %}
-      {% endif %}
-    </ul>
-
-    {# ── Icon-only row (Scholar, GitHub, LinkedIn, Email) ── #}
-    <ul class="author__icons">
-      {% if author.googlescholar %}
-        <li>
-          <a href="{{ author.googlescholar }}" aria-label="Google Scholar" rel="me noopener" target="_blank">
-            <i class="ai ai-google-scholar" aria-hidden="true"></i>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.github %}
-        <li>
-          <a href="https://github.com/{{ author.github }}" aria-label="GitHub" rel="me noopener" target="_blank">
-            <i class="fab fa-github" aria-hidden="true"></i>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.linkedin %}
-        <li>
-          <a href="https://www.linkedin.com/in/{{ author.linkedin }}" aria-label="LinkedIn" rel="me noopener" target="_blank">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-          </a>
-        </li>
-      {% endif %}
-
-      {% if author.email %}
-        <li>
-          <a href="mailto:{{ author.email }}" aria-label="Email">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-          </a>
-        </li>
-      {% endif %}
-    </ul>
-  </div>
 </div>
