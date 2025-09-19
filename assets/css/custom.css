@@ -1,14 +1,29 @@
-/* --- Sidebar polish --- */
-.author__content h3 {                /* your name */
+/* ---------------- Sidebar Polish ---------------- */
+
+/* Name (with subtle gradient) */
+.author__content h3 {
   font-weight: 800;
   letter-spacing: 0.2px;
+  background: linear-gradient(90deg, #111, #4b5563);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
 }
 
-.author__bio {                       /* short bio text */
+/* Bio text */
+.author__bio {
   color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
 }
 
-/* list items look like soft badges */
+/* List items as soft badges */
+.author__urls {
+  padding: 0;
+  margin: 0;
+}
+
 .author__urls li {
   margin: 6px 0;
   list-style: none;
@@ -22,6 +37,8 @@
   padding: 6px 10px;
   border-radius: 10px;
   background: #f6f7fb;
+  color: inherit;
+  text-decoration: none;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
@@ -30,34 +47,41 @@
   box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
 
-/* icons follow the text color */
+/* Icons inherit text color */
 .author__urls i,
 .author__urls svg {
   color: inherit !important;
   fill: currentColor !important;
+  flex-shrink: 0;
 }
+
+/* ---------- Employer / Brand Colors ---------- */
+
 /* Cambridge green */
 .author__urls .employer:nth-of-type(1) {
-  color: #2a7f62;
-  background: #e7f6ef;
+  color: #2a7f62 !important;
+  background: #e7f6ef !important;
   padding: 4px 10px;
   border-radius: 10px;
 }
 
 /* Oxford blue */
 .author__urls .employer:nth-of-type(2) {
-  color: #0a66c2;
-  background: #e8f4ff;
+  color: #0a66c2 !important;
+  background: #e8f4ff !important;
   padding: 4px 10px;
   border-radius: 10px;
 }
 
-/* ---------- brand-ish colors ---------- */
-/* location / university (Font Awesome icon names) */
-.author__urls .fa-map-marker { color: #e03131; }     /* red pin */
-.author__urls .fa-university { color: #5c7cfa; }     /* indigo */
+/* Location / University (Font Awesome icons) */
+.author__urls .fa-map-marker {
+  color: #e03131 !important;   /* red pin */
+}
+.author__urls .fa-university {
+  color: #5c7cfa !important;   /* indigo */
+}
 
-/* email */
+/* Email */
 .author__urls .fa-envelope,
 .author__urls a[href^="mailto:"] {
   color: #d6336c !important;
@@ -73,18 +97,11 @@
 /* GitHub */
 .author__urls a[href*="github.com"] {
   color: #ffffff !important;
-  background: #24292e !important;   /* dark GitHub brand */
+  background: #24292e !important;  /* GitHub brand dark */
 }
 
 /* LinkedIn */
 .author__urls a[href*="linkedin.com"] {
   color: #0a66c2 !important;
   background: #e8f4ff !important;
-}
-
-/* optional: subtle name gradient */
-.author__content h3 {
-  background: linear-gradient(90deg, #111, #4b5563);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
