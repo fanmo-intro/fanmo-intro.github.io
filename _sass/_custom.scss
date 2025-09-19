@@ -61,69 +61,50 @@
    Sidebar — ICONS ONLY (hide all text/pills)
    ========================= */
 
-/* Lay out the icon buttons neatly */
+/* =========================
+   Sidebar — pure icons in one row
+   ========================= */
+
 .author__urls {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 10px;
 }
 
-/* Reset each list item and hide any stray text nodes */
 .author__urls li {
-  margin: 0;
   list-style: none;
-  font-size: 0;       /* hide text nodes */
-  line-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/* Link items (Email/Scholar/GitHub/LinkedIn) → round icon buttons */
+/* 统一成无背景的纯图标 */
 .author__urls li a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
+  width: 32px;     /* 统一大小 */
+  height: 32px;
+  font-size: 20px; /* 图标大小 */
+  color: #444;     /* 默认深灰 */
+  background: none !important; /* 去掉背景 */
+  border: none !important;
+  box-shadow: none !important;
   padding: 0;
-  background: #f6f7fb;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-
-  /* hide any link text */
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-  white-space: nowrap;
+  transition: color .2s ease;
 }
-.author__urls li a i,
-.author__urls li a svg { font-size: 18px; color:#fff !important; }
-.author__urls li a:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,.12); }
 
-/* Non-link items (location / universities) → round icon buttons too */
-.author__urls li.author__desktop {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #eef2f7;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+/* 悬停时变蓝 */
+.author__urls li a:hover {
+  color: #1d4ed8; /* Tailwind blue-700 */
+  transform: none;
 }
-.author__urls li.author__desktop i,
-.author__urls li.author__desktop svg { font-size: 18px !important; color:#6b7280 !important; }
 
-/* Kill any existing employer “pill” badges completely */
-.author__urls .employer { display: none !important; }
-/* …and nuke old nth-of-type tints if they exist */
-.author__urls li.author__desktop:nth-of-type(1) .employer,
-.author__urls li.author__desktop:nth-of-type(2) .employer { display: none !important; }
-
-/* Brand backgrounds for link icons */
-.author__urls a[href^="mailto:"]        { background:#d6336c !important; } /* Email */
-.author__urls a[href*="scholar.google"] { background:#1a73e8 !important; } /* Scholar */
-.author__urls a[href*="github.com"]     { background:#24292e !important; } /* GitHub */
-.author__urls a[href*="linkedin.com"]   { background:#0a66c2 !important; } /* LinkedIn */
-
-.author__urls i, .author__urls svg { fill: currentColor !important; }
+/* 隐藏文字，只保留图标 */
+.author__urls li a span,
+.author__urls li .employer {
+  display: none !important;
+}
 
 
 /* =========================
