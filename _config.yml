@@ -24,13 +24,13 @@ repository     : "fanmo-intro/fanmo-intro.github.io"
 author:
   # Biographic information
   avatar           : "Picture_Fan.jpg"
-  name             : "Your Sidebar Name"
+  name             : "Fan Mo"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
   location         : "Earth"
   employer         : "Red Brick University"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "kell6420@ox.ac.uk" 
 
   # Academic websites
   academia         : # URL
