@@ -20,6 +20,7 @@ repository     : "fanmo-intro/fanmo-intro.github.io"
 author:
   # Biographic information
   avatar   : "Picture_Fan.jpg"
+  github: "fanmo-intro"   # ← add this line
   name     : "Fan Mo"
   pronouns : 
   bio      : "AI & robotics researcher. Knowledge graphs, multimodal perception, embodied intelligence."
