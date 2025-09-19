@@ -47,149 +47,98 @@
 }
 
 /* =======================================================
-   Sidebar — Employers full width + icons in one row
+   Sidebar layout
    ======================================================= */
-
-/* Make the whole list a flex container so items can wrap nicely */
-.author__urls {
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:12px;
-  margin-top:10px;
-  padding:0;
-  list-style:none;  /* remove bullets */
-}
-.author__urls li { list-style:none; margin:0; padding:0; }
-
-
-/* -------- Employer badges: take a full row (100% width) -------- */
-/* Modern browsers support :has(); it keeps the two universities on their own lines */
-.author__urls li:has(.employer){
-  flex:0 0 100%;
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.author__urls li .employer{
-  display:inline-flex;
-  align-items:center;
-  padding:6px 10px;
-  border-radius:10px;
-  background:#f6f7fb;
-  font-weight:500;
-}
-.author__urls li .employer:hover{
-  box-shadow:0 6px 14px rgba(0,0,0,.08);
-  transform:translateY(-1px);
-}
-/* Optional tinted looks for the two rows */
-.author__urls li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
-.author__urls li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
-
-/* -------- Pure icon buttons (Email, Scholar, GitHub, LinkedIn) -------- */
-/* All link items (including mailto) sit inline as small circle icons */
-.author__urls li:has(> a){ flex:0 0 auto; }
-
-.author__urls li a{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  width:32px;
-  height:32px;
-  border-radius:50%;
-  padding:0;
-  background:transparent !important;  /* remove any pill background */
-  border:none !important;
-  box-shadow:none !important;
-  color:#444;
-  font-size:20px;                      /* icon size */
-  line-height:1;
-  transition:color .2s ease;
-}
-.author__urls li a:hover{
-  color:#1d4ed8;                       /* hover blue */
-  transform:none;
-}
-
-/* Hide link text labels, keep only the icon glyphs */
-.author__urls li a span{ display:none !important; }
-
-/* Ensure the icons follow currentColor */
-.author__urls i,
-.author__urls svg{
-  color:inherit !important;
-  fill:currentColor !important;
-}
-
-/* IMPORTANT: remove brand pill colors so Email doesn't turn pink */
- /* (Do NOT re-add rules like a[href^="mailto:"], a[href*="scholar.google"], etc.) */
-
-/* =========================
-   Sidebar width and layout spacing
-   ========================= */
 .sidebar { flex: 0 0 250px; }
 .page    { display: flex; gap: 2rem; }
 
-/* =========================
-   Sidebar — final pure icons row
-   ========================= */
+/* =======================================================
+   Location & Employers (aligned rows)
+   ======================================================= */
 
-/* 图标整体容器 */
-.author__urls {
+.author__employers {
+  margin: 0.25rem 0 0.75rem;
+  padding: 0;
+  list-style: none; /* no bullets */
+}
+
+.author__employers li {
+  display: flex;
+  align-items: center;
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.author__employers i {
+  margin-right: 0.4rem;
+  color: #444; /* match location icon */
+}
+
+.author__employers a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.author__employers a:hover {
+  text-decoration: underline;
+}
+
+/* =======================================================
+   Social icon row (Scholar, LinkedIn, Email, etc.)
+   ======================================================= */
+
+.author__urls.social-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 10px;
+  padding: 0;
+  list-style: none;
 }
 
-/* 每个 <li> */
-.author__urls li {
+.author__urls.social-icons li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* --- 纯圆形图标按钮 --- */
-.author__urls li a {
-  display: inline-flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 36px !important;      /* 图标圆圈大小 */
-  height: 36px !important;
-  border-radius: 50% !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  color: #444 !important;
-  font-size: 20px !important;   /* 图标大小 */
-  line-height: 1 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  text-decoration: none !important;
-  overflow: hidden !important;
-  white-space: nowrap !important;
+/* Circle icon buttons */
+.author__urls.social-icons li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #444;
+  font-size: 20px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: color .2s ease;
 }
 
-/* 悬停效果：变蓝 */
-.author__urls li a:hover {
-  color: #1d4ed8 !important;
-  background: transparent !important;
-  transform: none !important;
-  box-shadow: none !important;
+.author__urls.social-icons li a:hover {
+  color: #1d4ed8;
+  background: transparent;
+  transform: none;
+  box-shadow: none;
 }
 
-/* 强制隐藏文字，只保留 icon */
-.author__urls li a span,
-.author__urls li .employer {
+/* Hide link text labels (keep only icons) */
+.author__urls.social-icons li a span {
   display: none !important;
 }
 
-/* 图标继承颜色 */
-.author__urls i,
-.author__urls svg {
+.author__urls.social-icons i,
+.author__urls.social-icons svg {
   color: inherit !important;
   fill: currentColor !important;
-  font-size: 20px !important;
+  font-size: 20px;
 }
-
