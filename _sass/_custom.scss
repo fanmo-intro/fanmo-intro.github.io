@@ -131,3 +131,66 @@
    ========================= */
 .sidebar { flex: 0 0 250px; }
 .page    { display: flex; gap: 2rem; }
+
+/* =========================
+   Sidebar — final pure icons row
+   ========================= */
+
+/* 图标整体容器 */
+.author__urls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* 每个 <li> */
+.author__urls li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 纯圆形图标按钮 --- */
+.author__urls li a {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 36px !important;      /* 图标圆圈大小 */
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #444 !important;
+  font-size: 20px !important;   /* 图标大小 */
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+/* 悬停效果：变蓝 */
+.author__urls li a:hover {
+  color: #1d4ed8 !important;
+  background: transparent !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 强制隐藏文字，只保留 icon */
+.author__urls li a span,
+.author__urls li .employer {
+  display: none !important;
+}
+
+/* 图标继承颜色 */
+.author__urls i,
+.author__urls svg {
+  color: inherit !important;
+  fill: currentColor !important;
+  font-size: 20px !important;
+}
+
