@@ -47,14 +47,30 @@
 }
 
 /* =======================================================
-   Sidebar layout
+   Sidebar width and layout spacing
    ======================================================= */
 .sidebar { flex: 0 0 250px; }
 .page    { display: flex; gap: 2rem; }
 
 /* =======================================================
-   Location & Employers (aligned rows)
+   Author Bio (make bigger)
    ======================================================= */
+.author__bio {
+  font-size: 1.05rem;   /* larger than default */
+  font-weight: 500;
+  color: #1f2937;       /* darker gray */
+  margin-top: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+
+/* =======================================================
+   Location + Employers (smaller, secondary)
+   ======================================================= */
+
+.author__urls li {
+  font-size: 0.9rem;   /* smaller text */
+  color: #555;         /* lighter gray */
+}
 
 .author__employers {
   margin: 0.25rem 0 0.75rem;
@@ -66,8 +82,9 @@
   display: flex;
   align-items: center;
   margin: 0.2rem 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;   /* smaller than bio */
   line-height: 1.4;
+  color: #555;
 }
 
 .author__employers i {
@@ -76,11 +93,12 @@
 }
 
 .author__employers a {
-  color: inherit;
+  color: #555;
   text-decoration: none;
 }
 
 .author__employers a:hover {
+  color: #1d4ed8;      /* hover blue */
   text-decoration: underline;
 }
 
@@ -142,29 +160,3 @@
   fill: currentColor !important;
   font-size: 20px;
 }
-
-/* ===== Author bio bigger ===== */
-.author__bio {
-  font-size: 1.05rem;   /* larger than default */
-  font-weight: 500;
-  color: #1f2937;       /* darker gray for emphasis */
-  margin-top: 0.3rem;
-  margin-bottom: 0.6rem;
-}
-
-/* ===== Employers smaller ===== */
-.author__employers li {
-  font-size: 0.9rem;   /* smaller text */
-  color: #555;         /* lighter gray */
-}
-
-.author__employers a {
-  color: #555;
-  text-decoration: none;
-}
-
-.author__employers a:hover {
-  color: #1d4ed8;      /* hover blue */
-  text-decoration: underline;
-}
-
