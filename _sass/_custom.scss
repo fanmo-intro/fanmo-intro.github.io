@@ -1,0 +1,51 @@
+/* --- Sidebar polish & employer rows --- */
+
+/* put icon + text on one line for every row */
+.author__urls li {
+  margin: 6px 0;
+  list-style: none;
+  display: flex;            /* <i> + text/links stay on one row */
+  align-items: center;
+  gap: 10px;
+}
+
+/* badges for links (Email, Scholar, GitHub, LinkedIn, etc.) */
+.author__urls li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f6f7fb;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.author__urls li a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+}
+
+/* badges for employer entries (non-links) */
+.author__urls li .employer {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f6f7fb;
+}
+
+/* icons follow text color */
+.author__urls i,
+.author__urls svg {
+  color: inherit !important;
+  fill: currentColor !important;
+}
+
+/* brand-ish colors */
+.author__urls a[href^="mailto:"]        { color:#d6336c !important; background:#fff0f6 !important; } /* Email */
+.author__urls a[href*="scholar.google"] { color:#1a73e8 !important; background:#e8f0fe !important; } /* Scholar */
+.author__urls a[href*="github.com"]     { color:#ffffff !important; background:#24292e !important; } /* GitHub */
+.author__urls a[href*="linkedin.com"]   { color:#0a66c2 !important; background:#e8f4ff !important; } /* LinkedIn */
+
+/* optional tints for employer badges (Cambridge / Oxford) */
+.author__urls li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
+.author__urls li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
