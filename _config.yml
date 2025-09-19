@@ -19,63 +19,62 @@ repository     : "fanmo-intro/fanmo-intro.github.io"
 # =======================
 author:
   # Biographic information
-  avatar     : "Picture_Fan.jpg"             # put this image in /images or project root (as you have)
-  name       : "Fan Mo"
-  pronouns   :
-  bio        : "AI & robotics researcher. Knowledge graphs, multimodal perception, embodied intelligence."
+  avatar   : "Picture_Fan.jpg"
+  name     : "Fan Mo"
+  pronouns : 
+  bio      : "AI & robotics researcher. Knowledge graphs, multimodal perception, embodied intelligence."
   location : "Cambridge & Oxford, UK"
-  employer : 
+
+  # Employers shown为上面的徽章（我们在 include 已支持数组）
+  employer:
     - University of Cambridge
     - University of Oxford
-  uri        :
- 
 
-  # Academic websites (leave blank if unused)
+  # === 下面这些会以“图标”显示在一排 ===
+  email         : "kell6420@ox.ac.uk"  # 会渲染为 mailto: 链接（圆形信封图标）
+  googlescholar : "https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en"
+  github        : "fanmo-intro"        # 只写用户名，模板会生成 https://github.com/fanmo-intro
+  linkedin      : "fan-mo-phd-ceng-032170276"  # 只写 slug，模板会生成 https://www.linkedin.com/in/...
+
+  # 其余保持为空即可（需要时再填）
   academia      :
   arxiv         :
-  email      : "kell6420@ox.ac.uk"
-  googlescholar : "https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en"
   inspire-hep   :
   impactstory   :
   orcid         :
   semantic      :
   researchgate  :
   scopus        :
-
-  # Repositories and software development
   bitbucket     :
   codepen       :
   dribbble      :
-  github        : "fanmo-intro"
   kaggle        :
   stackoverflow :
+  artstation    :
+  bluesky       :
+  facebook      :
+  flickr        :
+  foursquare    :
+  goodreads     :
+  google_plus   :
+  keybase       :
+  instagram     :
+  lastfm        :
+  mastodon      :
+  medium        :
+  pinterest     :
+  soundcloud    :
+  steam         :
+  telegram      :
+  tumblr        :
+  twitter       :
+  vine          :
+  weibo         :
+  wikipedia     :
+  xing          :
+  youtube       :
+  zhihu         :
 
-  # Social media (fill what you use)
-  artstation :
-  bluesky    :
-  facebook   :
-  flickr     :
-  foursquare :
-  goodreads  :
-  google_plus:
-  keybase    :
-  instagram  :
-  lastfm     :
-  linkedin: "fan-mo-phd-ceng-032170276"
-  mastodon   :
-  medium     :
-  pinterest  :
-  soundcloud :
-  steam      :
-  telegram   :
-  tumblr     :
-  twitter    :
-  vine       :
-  weibo      :
-  wikipedia  :
-  xing       :
-  youtube    :
-  zhihu      :
 
 # =======================
 # Publication Categories
