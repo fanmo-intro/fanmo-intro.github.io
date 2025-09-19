@@ -42,4 +42,28 @@
     "vendor/font-awesome/brands",
 
     "custom"   // 👈 add this line to pull in our overrides
+   /* --- Sidebar: icons only for links --- */
+      .author__urls li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 42px;          /* size of icon box */
+        height: 42px;
+        border-radius: 50%;   /* makes them circular */
+        padding: 0;
+        background: #f6f7fb;
+        transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+        font-size: 18px;      /* icon size */
+        color: inherit;
+      }
+      
+      .author__urls li a span { 
+        display: none;        /* hide the text */
+      }
+      
+      .author__urls li a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
 ;
