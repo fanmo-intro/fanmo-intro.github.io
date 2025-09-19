@@ -57,26 +57,22 @@
    把所有条目（含非链接项）统一显示为圆形小图标
    ========================= */
 
-/* =========================
-   Sidebar — ICONS ONLY (hide all text/pills)
-   ========================= */
-
-/* Lay out the icon buttons neatly */
+/* 容器：横排、自动换行 */
 .author__urls {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-/* Reset each list item and hide any stray text nodes */
+/* 每个 <li>：去掉默认外边距 & 隐藏文字（只留图标） */
 .author__urls li {
   margin: 0;
   list-style: none;
-  font-size: 0;       /* hide text nodes */
+  font-size: 0;   /* 隐藏 li 内部普通文字 */
   line-height: 0;
 }
 
-/* Link items (Email/Scholar/GitHub/LinkedIn) → round icon buttons */
+/* 链接项（Email/Scholar/GitHub/LinkedIn…）做成圆形按钮 */
 .author__urls li a {
   display: inline-flex;
   justify-content: center;
@@ -88,43 +84,54 @@
   background: #f6f7fb;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 
-  /* hide any link text */
+  /* 隐藏链接中文字，仅显示图标 */
   font-size: 0;
   line-height: 0;
-  overflow: hidden;
   white-space: nowrap;
+  overflow: hidden;
 }
 .author__urls li a i,
-.author__urls li a svg { font-size: 18px; color:#fff !important; }
-.author__urls li a:hover { transform: translateY(-2px); box-shadow: 0 6px 14px rgba(0,0,0,.12); }
+.author__urls li a svg { font-size: 18px; }
 
-/* Non-link items (location / universities) → round icon buttons too */
+.author__urls li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
+/* 非链接项（地点、大学等）也做成圆形图标 */
 .author__urls li.author__desktop {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #eef2f7;
+  background: #eef2f7;              /* 中性灰蓝底 */
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
+
+/* 非链接项图标颜色/大小 */
 .author__urls li.author__desktop i,
-.author__urls li.author__desktop svg { font-size: 18px !important; color:#6b7280 !important; }
+.author__urls li.author__desktop svg {
+  font-size: 18px !important;
+  color: #6b7280 !important;        /* 中性灰图标 */
+}
 
-/* Kill any existing employer “pill” badges completely */
-.author__urls .employer { display: none !important; }
-/* …and nuke old nth-of-type tints if they exist */
-.author__urls li.author__desktop:nth-of-type(1) .employer,
-.author__urls li.author__desktop:nth-of-type(2) .employer { display: none !important; }
+/* 如果模板里雇主/学校文字包在 .employer 内，直接隐藏（兼容） */
+.author__urls li .employer { display: none !important; }
 
-/* Brand backgrounds for link icons */
+/* 品牌底色（链接项） */
 .author__urls a[href^="mailto:"]        { background:#d6336c !important; } /* Email */
 .author__urls a[href*="scholar.google"] { background:#1a73e8 !important; } /* Scholar */
 .author__urls a[href*="github.com"]     { background:#24292e !important; } /* GitHub */
 .author__urls a[href*="linkedin.com"]   { background:#0a66c2 !important; } /* LinkedIn */
 
-.author__urls i, .author__urls svg { fill: currentColor !important; }
+/* 链接项图标用白色、其余继承容器色 */
+.author__urls li a i,
+.author__urls li a svg { color: #fff !important; }
 
+.author__urls i, .author__urls svg {
+  fill: currentColor !important;
+}
 
 /* =========================
    Layout微调（可留可去）
