@@ -44,16 +44,28 @@
 
 /* email */
 .author__urls .fa-envelope,
-.author__urls a[href^="mailto:"]    { color: #d6336c; background: #fff0f6; }
+.author__urls a[href^="mailto:"] {
+  color: #d6336c !important;
+  background: #fff0f6 !important;
+}
 
 /* Google Scholar */
-.author__urls a[href*="scholar.google"] { color: #1a73e8; background: #e8f0fe; }
+.author__urls a[href*="scholar.google"] {
+  color: #1a73e8 !important;
+  background: #e8f0fe !important;
+}
 
 /* GitHub */
-.author__urls a[href*="github.com"] { color: #24292e; background: #f6f8fa; }
+.author__urls a[href*="github.com"] {
+  color: #ffffff !important;
+  background: #24292e !important;   /* dark GitHub brand */
+}
 
 /* LinkedIn */
-.author__urls a[href*="linkedin.com"] { color: #0a66c2; background: #e8f4ff; }
+.author__urls a[href*="linkedin.com"] {
+  color: #0a66c2 !important;
+  background: #e8f4ff !important;
+}
 
 /* optional: subtle name gradient */
 .author__content h3 {
