@@ -1,124 +1,90 @@
-/* =========================
-   Fan Mo — custom.scss (final)
-   ========================= */
-
-/* ---------- Theme accents ---------- */
-:root {
-  --accent: #1d4ed8;  /* Tailwind blue-700 */
-  --muted:  #6b7280;  /* gray for secondary text */
-}
-
-/* =========================
-   Page typography & width
-   ========================= */
-.page__content {
-  max-width: 960px;
-  margin: 0 auto;
-  text-align: justify;
-  text-justify: inter-ideograph;
-  line-height: 1.75;
-  font-size: 1.05rem;
-  color: #2b2b2b;
-}
-.page__content p { margin-bottom: 1.2em; }
-.page__content p + p { margin-top: 0.7rem; }
-.page__content h1,
-.page__content h2 {
-  color: var(--accent);
+/* --- Sidebar polish --- */
+.author__content h3 {                /* your name */
   font-weight: 800;
-  border-bottom: 2px solid #eee;
-  padding-bottom: .3em;
-  margin-bottom: .8em;
-}
-.page__content h3 { color:#1f2937; font-weight:700; }
-.page__content .zh { color:#374151; }
-.page__content ul { margin: .5rem 0 .8rem 1.2rem; }
-.page__content li { margin: .25rem 0; }
-@media (max-width: 768px) {
-  .page__content {
-    max-width: 100%;
-    padding: 0 1rem;
-    font-size: 1rem;
-  }
-}
-.page__content strong { color:#1a73e8; font-weight:600; }
-
-/* =======================================================
-   Sidebar — Employers full width + one icon row
-   ======================================================= */
-
-/* Make the whole list flex so items wrap into rows */
-.author__urls{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:12px;
-  margin-top:10px;
-  padding:0;
+  letter-spacing: 0.2px;
 }
 
-/* Each list item as a flex child */
-.author__urls li{
-  list-style:none;
-  margin:0;
-  padding:0;
+.author__bio {                       /* short bio text */
+  color: #4b5563;
 }
 
-/* Full-width rows: location + employer lines use .author__desktop */
-.author__urls li.author__desktop{
-  flex:0 0 100%;
-  display:flex;
-  align-items:center;
-  gap:10px;
+/* list items look like soft badges */
+.author__urls li {
+  margin: 6px 0;
+  list-style: none;
 }
 
-/* Employer badge style (keep text visible) */
-.author__urls li .employer{
-  display:inline-flex;
-  align-items:center;
-  padding:6px 10px;
-  border-radius:10px;
-  background:#f6f7fb;
-  font-weight:500;
-}
-.author__urls li .employer:hover{
-  box-shadow:0 6px 14px rgba(0,0,0,.08);
-  transform:translateY(-1px);
+.author__urls li a,
+.author__urls li span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f6f7fb;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
 
-/* Optional tints for the two universities (Cambridge / Oxford) */
-.author__urls li.author__desktop:nth-of-type(2) .employer { color:#2a7f62; background:#e7f6ef; }
-.author__urls li.author__desktop:nth-of-type(3) .employer { color:#0a66c2; background:#e8f4ff; }
-
-/* ---- Icon-only links (Email, Scholar, GitHub, LinkedIn, etc.) ---- */
-/* Let link items flow on the same row after the full-width blocks */
-.author__urls li:not(.author__desktop){ flex:0 0 auto; }
-
-/* Remove pill look and show only the icon glyphs */
-.author__urls li a{
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  background:transparent !important;
-  border:none !important;
-  box-shadow:none !important;
-  color:#444 !important;
-  font-size:0;              /* hide label text */
-  line-height:1;
-  padding:0;
-  text-decoration:none !important;
-  transition:color .2s ease;
+.author__urls li a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
 }
-.author__urls li a i,
-.author__urls li a svg{
-  font-size:20px;           /* actual icon size */
-  color:inherit !important;
-  fill:currentColor !important;
-}
-.author__urls li a:hover{ color:#1d4ed8 !important; }
 
-/* Never hide employer text */
- /* (Do NOT hide .employer anywhere) */
+/* icons follow the text color */
+.author__urls i,
+.author__urls svg {
+  color: inherit !important;
+  fill: currentColor !important;
+}
+/* Cambridge green */
+.author__urls .employer:nth-of-type(1) {
+  color: #2a7f62;
+  background: #e7f6ef;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+/* Oxford blue */
+.author__urls .employer:nth-of-type(2) {
+  color: #0a66c2;
+  background: #e8f4ff;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+/* ---------- brand-ish colors ---------- */
+/* location / university (Font Awesome icon names) */
+.author__urls .fa-map-marker { color: #e03131; }     /* red pin */
+.author__urls .fa-university { color: #5c7cfa; }     /* indigo */
+
+/* email */
+.author__urls .fa-envelope,
+.author__urls a[href^="mailto:"] {
+  color: #d6336c !important;
+  background: #fff0f6 !important;
+}
+
+/* Google Scholar */
+.author__urls a[href*="scholar.google"] {
+  color: #1a73e8 !important;
+  background: #e8f0fe !important;
+}
+
+/* GitHub */
+.author__urls a[href*="github.com"] {
+  color: #ffffff !important;
+  background: #24292e !important;   /* dark GitHub brand */
+}
+
+/* LinkedIn */
+.author__urls a[href*="linkedin.com"] {
+  color: #0a66c2 !important;
+  background: #e8f4ff !important;
+}
+
+/* optional: subtle name gradient */
+.author__content h3 {
+  background: linear-gradient(90deg, #111, #4b5563);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
