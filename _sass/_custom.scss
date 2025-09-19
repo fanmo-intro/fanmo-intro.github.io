@@ -31,6 +31,7 @@
   padding: 6px 10px;
   border-radius: 10px;
   background: #f6f7fb;
+  font-weight: 500;
 }
 
 /* icons follow text color */
@@ -49,3 +50,9 @@
 /* optional tints for employer badges (Cambridge / Oxford) */
 .author__urls li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
 .author__urls li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
+
+/* hover for employers too */
+.author__urls li .employer:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
