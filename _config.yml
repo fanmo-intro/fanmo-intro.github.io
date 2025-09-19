@@ -24,7 +24,9 @@ author:
   pronouns   :
   bio        : "AI & robotics researcher. Knowledge graphs, multimodal perception, embodied intelligence."
   location : "Cambridge & Oxford, UK"
-  employer : "University of Cambridge, University of Oxford"
+  employer : 
+    - University of Cambridge
+    - University of Oxford
   uri        :
   email      : "kell6420@ox.ac.uk"
 
