@@ -1,26 +1,42 @@
+---
+---
+
+/*
+ * This file controls what is imported from /_sass
+ * Files are processed in order; keep custom last so it overrides defaults.
+ */
+
 @import
-  "vendor/breakpoint/breakpoint",
-  "themes",
-  "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-  "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
-  "include/mixins",
-  "vendor/susy/susy",
-  "layout/reset",
-  "layout/base",
-  "include/utilities",
-  "layout/tables",
-  "layout/buttons",
-  "layout/notices",
-  "layout/masthead",
-  "layout/navigation",
-  "layout/footer",
-  "syntax",
-  "layout/forms",
-  "layout/page",
-  "layout/archive",
-  "layout/sidebar",
-  "layout/json_cv",
-  "vendor/font-awesome/fontawesome",
-  "vendor/font-awesome/solid",
-  "vendor/font-awesome/brands",
-  "custom";   /* <-- this must be the last item */
+    "vendor/breakpoint/breakpoint",
+
+    "themes",
+    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+
+    "include/mixins",
+    "vendor/susy/susy",
+
+    "layout/reset",
+    "layout/base",
+
+    "include/utilities",
+    "layout/tables",
+    "layout/buttons",
+    "layout/notices",
+    "layout/masthead",
+    "layout/navigation",
+    "layout/footer",
+    "syntax",
+
+    "layout/forms",
+
+    "layout/page",
+    "layout/archive",
+    "layout/sidebar",
+    "layout/json_cv",
+
+    "vendor/font-awesome/fontawesome",
+    "vendor/font-awesome/solid",
+    "vendor/font-awesome/brands",
+    "custom"   /* ← keep this as the very last import */
+;
