@@ -23,14 +23,15 @@
   </div>
 
   <div class="author__urls-wrapper">
-  <ul class="author__urls social-icons">
     
-    {% if author.location %}
-      <li class="author__desktop">
-        <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i>{{ author.location }}
-      </li>
-    {% endif %}
-    
+    <ul class="author__urls">
+      {% if author.location %}
+        <li>
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i>{{ author.location }}
+        </li>
+      {% endif %}
+    </ul>
+
     {% if author.employer %}
       <ul class="author__employers">
         {% assign employers_list = author.employer %}
@@ -51,24 +52,20 @@
       </ul>
     {% endif %}
 
+    <ul class="author__urls social-icons">
+      {% if author.googlescholar %}
+        <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i><span>Scholar</span></a></li>
+      {% endif %}
+      {% if author.github %}
+        <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+      {% endif %}
+      {% if author.linkedin %}
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+      {% endif %}
+      {% if author.email %}
+        <li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope"></i><span>Email</span></a></li>
+      {% endif %}
+    </ul>
 
-
-    
-    <!-- Pure icon row -->
-    {% if author.googlescholar %}
-      <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i><span>Scholar</span></a></li>
-    {% endif %}
-    {% if author.github %}
-      <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github"></i><span>GitHub</span></a></li>
-    {% endif %}
-    {% if author.linkedin %}
-      <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-    {% endif %}
-    {% if author.email %}
-      <li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope"></i><span>Email</span></a></li>
-    {% endif %}
-    
-  </ul>
-</div>
-
+  </div>
 </div>
