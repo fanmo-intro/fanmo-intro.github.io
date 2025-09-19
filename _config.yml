@@ -28,11 +28,12 @@ author:
     - University of Cambridge
     - University of Oxford
   uri        :
-  email      : "kell6420@ox.ac.uk"
+ 
 
   # Academic websites (leave blank if unused)
   academia      :
   arxiv         :
+  email      : "kell6420@ox.ac.uk"
   googlescholar : "https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en"
   inspire-hep   :
   impactstory   :
