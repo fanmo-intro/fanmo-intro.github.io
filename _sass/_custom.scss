@@ -1,23 +1,23 @@
 /* =========================
-   Fan Mo — custom.scss (final)
+   Fan Mo — _custom.scss (final clean version)
    ========================= */
 
 /* ---------- Theme accents ---------- */
 :root {
-  --accent: #1d4ed8;  /* primary blue (Tailwind blue-700) */
-  --muted:  #6b7280;  /* gray for secondary text */
+  --accent: #1d4ed8;  /* 标题蓝色 (Tailwind blue-700) */
+  --muted:  #6b7280;  /* 次要文字灰色 */
 }
 
 /* =========================
    Page typography & width
    ========================= */
 
-/* 正文更易读：两端对齐、拉宽、行距与字号 */
+/* 正文更易读：加宽、两端对齐、行距舒适 */
 .page__content {
-  max-width: 960px;              /* 默认约 720px；加宽减少右侧空白 */
-  margin: 0 auto;                /* 居中 */
+  max-width: 960px;              
+  margin: 0 auto;                
   text-align: justify;
-  text-justify: inter-ideograph; /* 中文两端对齐更自然 */
+  text-justify: inter-ideograph; 
   line-height: 1.75;
   font-size: 1.05rem;
   color: #2b2b2b;
@@ -27,7 +27,7 @@
 .page__content p { margin-bottom: 1.2em; }
 .page__content p + p { margin-top: 0.7rem; }
 
-/* 标题层级与分隔线 */
+/* 标题层级：更醒目 + 底部分隔线 */
 .page__content h1,
 .page__content h2 {
   color: var(--accent);
@@ -54,9 +54,9 @@
   }
 }
 
-/* 关键字高亮（可改色） */
+/* 关键字高亮 */
 .page__content strong {
-  color: #1a73e8; /* Google Scholar 蓝 */
+  color: #1a73e8; 
   font-weight: 600;
 }
 
@@ -97,40 +97,39 @@
 }
 .news time{ font-weight:600; color:#111; margin-right:.35rem; }
 .news a{ color:#0f172a; text-decoration:none; border-bottom:1px dotted rgba(15,23,42,.35); }
-.news a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+.news a:hover{ color:var(--accent); border-bottom-color: var(--accent); }
 
-/* =======================================================
-   Sidebar (author block): icon-only links + employer badges
-   ======================================================= */
+/* =========================
+   Sidebar (author block)
+   ========================= */
 
 /* 每行：图标 + 内容同行排列 */
-.author__urls li{
+.author__urls li {
   margin:6px 0; list-style:none;
   display:flex; align-items:center; gap:10px;
 }
 
 /* ---- 仅图标按钮（Email/Scholar/GitHub/LinkedIn 等链接） ---- */
-.author__urls li a{
+.author__urls li a {
   display:inline-flex; justify-content:center; align-items:center;
   width:42px; height:42px; border-radius:50%; padding:0;
   background:#f6f7fb;
   transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-  /* 隐藏链接文字，仅显示图标 */
   font-size:0; line-height:0; overflow:hidden; white-space:nowrap;
 }
 .author__urls li a i,
-.author__urls li a svg{ font-size:18px; }
-.author__urls li a:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.12); }
+.author__urls li a svg { font-size:18px; }
+.author__urls li a:hover { transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.12); }
 
 /* ---- 雇主徽章（保留文字） ---- */
-.author__urls li .employer{
+.author__urls li .employer {
   display:inline-flex; align-items:center;
   padding:6px 10px; border-radius:10px; background:#f6f7fb; font-weight:500;
 }
-.author__urls li .employer:hover{ box-shadow:0 6px 14px rgba(0,0,0,.08); transform:translateY(-1px); }
+.author__urls li .employer:hover { box-shadow:0 6px 14px rgba(0,0,0,.08); transform:translateY(-1px); }
 
 /* 图标跟随文字颜色 */
-.author__urls i, .author__urls svg{ color:inherit !important; fill:currentColor !important; }
+.author__urls i, .author__urls svg { color:inherit !important; fill:currentColor !important; }
 
 /* ---- 品牌底色（圆形图标按钮） ---- */
 .author__urls a[href^="mailto:"]        { color:#fff !important; background:#d6336c !important; } /* Email */
@@ -139,21 +138,15 @@
 .author__urls a[href*="linkedin.com"]   { color:#fff !important; background:#0a66c2 !important; } /* LinkedIn */
 
 /* ---- 雇主徽章配色（Cambridge / Oxford） ---- */
-.author__urls li.author__desktop:nth-of-type(1) .employer{ color:#2a7f62; background:#e7f6ef; }
-.author__urls li.author__desktop:nth-of-type(2) .employer{ color:#0a66c2; background:#e8f4ff; }
+.author__urls li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
+.author__urls li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
 
 /* =========================
-   Optional tweaks (uncomment if needed)
+   Layout tweaks
    ========================= */
-
-/* 让侧边栏更窄（默认约 300px）。需要时取消注释： */
-
 .sidebar { flex: 0 0 250px; }
-.page { display: flex; gap: 2rem; }
+.page { display:flex; gap:2rem; }
 
-
-/* 图标按钮横向排成一行： */
-
+/* 图标按钮横排 */
 .author__urls { display:flex; flex-wrap:wrap; gap:10px; }
 .author__urls li { margin:0; }
-
