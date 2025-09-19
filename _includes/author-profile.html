@@ -36,10 +36,19 @@
       {% for e in employers_list %}
         <li class="author__desktop">
           <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
-          <span class="employer">{{ e | strip }}</span>
+          {% if e.name %}
+            {% if e.url %}
+              <a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.name }}</a>
+            {% else %}
+              {{ e.name }}
+            {% endif %}
+          {% else %}
+            {{ e | strip }}
+          {% endif %}
         </li>
       {% endfor %}
     {% endif %}
+
     
     <!-- Pure icon row -->
     {% if author.googlescholar %}
