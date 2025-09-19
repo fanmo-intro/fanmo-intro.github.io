@@ -28,7 +28,7 @@
         <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
       {% endif %}
       {% if author.employer %}
-        {% assign employers_list = author.employer %}   {# array from _config.yml #}
+        {% assign employers_list = author.employer %}
         {% for e in employers_list %}
           <li class="author__desktop">
             <i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>
@@ -36,6 +36,7 @@
           </li>
         {% endfor %}
       {% endif %}
+
 
 
       {% if author.uri %}
