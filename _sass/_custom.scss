@@ -1,5 +1,5 @@
 /* =========================
-   Fan Mo — custom.scss (icons only in sidebar)
+   Fan Mo — custom.scss
    ========================= */
 
 /* ---------- Theme accents ---------- */
@@ -13,10 +13,10 @@
    ========================= */
 
 .page__content {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 960px;              
+  margin: 0 auto;                
   text-align: justify;
-  text-justify: inter-ideograph;
+  text-justify: inter-ideograph; 
   line-height: 1.75;
   font-size: 1.05rem;
   color: #2b2b2b;
@@ -36,6 +36,7 @@
 .page__content h3 { color:#1f2937; font-weight:700; }
 
 .page__content .zh { color:#374151; }
+
 .page__content ul { margin: .5rem 0 .8rem 1.2rem; }
 .page__content li { margin: .25rem 0; }
 
@@ -53,26 +54,18 @@
 }
 
 /* =========================
-   Sidebar — ICONS ONLY
-   把所有条目（含非链接项）统一显示为圆形小图标
+   Sidebar: icons + employer badges
    ========================= */
 
-/* 容器：横排、自动换行 */
-.author__urls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-/* 每个 <li>：去掉默认外边距 & 隐藏文字（只留图标） */
 .author__urls li {
-  margin: 0;
+  margin: 6px 0;
   list-style: none;
-  font-size: 0;   /* 隐藏 li 内部普通文字 */
-  line-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* 链接项（Email/Scholar/GitHub/LinkedIn…）做成圆形按钮 */
+/* --- 圆形图标按钮（Email, Scholar, GitHub, LinkedIn） --- */
 .author__urls li a {
   display: inline-flex;
   justify-content: center;
@@ -84,58 +77,61 @@
   background: #f6f7fb;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 
-  /* 隐藏链接中文字，仅显示图标 */
-  font-size: 0;
+  font-size: 0; 
   line-height: 0;
-  white-space: nowrap;
   overflow: hidden;
+  white-space: nowrap;
 }
 .author__urls li a i,
 .author__urls li a svg { font-size: 18px; }
-
 .author__urls li a:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0,0,0,.12);
 }
 
-/* 非链接项（地点、大学等）也做成圆形图标 */
-.author__urls li.author__desktop {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #eef2f7;              /* 中性灰蓝底 */
+/* --- 雇主徽章（保留文字） --- */
+.author__urls li .employer {
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f6f7fb;
+  font-weight: 500;
+}
+.author__urls li .employer:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  transform: translateY(-1px);
 }
 
-/* 非链接项图标颜色/大小 */
-.author__urls li.author__desktop i,
-.author__urls li.author__desktop svg {
-  font-size: 18px !important;
-  color: #6b7280 !important;        /* 中性灰图标 */
-}
-
-/* 如果模板里雇主/学校文字包在 .employer 内，直接隐藏（兼容） */
-.author__urls li .employer { display: none !important; }
-
-/* 品牌底色（链接项） */
-.author__urls a[href^="mailto:"]        { background:#d6336c !important; } /* Email */
-.author__urls a[href*="scholar.google"] { background:#1a73e8 !important; } /* Scholar */
-.author__urls a[href*="github.com"]     { background:#24292e !important; } /* GitHub */
-.author__urls a[href*="linkedin.com"]   { background:#0a66c2 !important; } /* LinkedIn */
-
-/* 链接项图标用白色、其余继承容器色 */
-.author__urls li a i,
-.author__urls li a svg { color: #fff !important; }
-
-.author__urls i, .author__urls svg {
+/* 图标跟随文字颜色 */
+.author__urls i,
+.author__urls svg {
+  color: inherit !important;
   fill: currentColor !important;
 }
 
+/* 品牌底色 */
+.author__urls a[href^="mailto:"]        { color:#fff !important; background:#d6336c !important; } /* Email */
+.author__urls a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; } /* Scholar */
+.author__urls a[href*="github.com"]     { color:#fff !important; background:#24292e !important; } /* GitHub */
+.author__urls a[href*="linkedin.com"]   { color:#fff !important; background:#0a66c2 !important; } /* LinkedIn */
+
+/* 雇主徽章配色 */
+.author__urls li.author__desktop:nth-of-type(1) .employer {
+  color:#2a7f62; background:#e7f6ef;
+}
+.author__urls li.author__desktop:nth-of-type(2) .employer {
+  color:#0a66c2; background:#e8f4ff;
+}
+
 /* =========================
-   Layout微调（可留可去）
+   Sidebar size
    ========================= */
 
 .sidebar { flex: 0 0 250px; }
 .page { display: flex; gap: 2rem; }
+
+/* 图标横排（可选） */
+
+.author__urls { display:flex; flex-wrap:wrap; gap:10px; }
+.author__urls li { margin:0; }
