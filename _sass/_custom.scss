@@ -51,18 +51,17 @@
    ======================================================= */
 
 /* Make the whole list a flex container so items can wrap nicely */
-.author__urls{
+.author__urls {
   display:flex;
   flex-wrap:wrap;
   align-items:center;
   gap:12px;
   margin-top:10px;
-}
-.author__urls li{
-  list-style:none;
-  margin:0;
   padding:0;
+  list-style:none;  /* remove bullets */
 }
+.author__urls li { list-style:none; margin:0; padding:0; }
+
 
 /* -------- Employer badges: take a full row (100% width) -------- */
 /* Modern browsers support :has(); it keeps the two universities on their own lines */
