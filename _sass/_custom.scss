@@ -146,13 +146,23 @@
    ========================= */
 
 /* 让侧边栏更窄： */
-/*
+
 .sidebar { flex: 0 0 250px; }
 .page { display: flex; gap: 2rem; }
-*/
+
 
 /* 图标按钮横向排成一行： */
-/*
+
 .author__urls { display:flex; flex-wrap:wrap; gap:10px; }
 .author__urls li { margin:0; }
-*/
+
+/* 标题颜色 */
+.page__content h1,
+.page__content h2 {
+  color: #1d4ed8;   /* Tailwind 的 blue-700 */
+  font-weight: 800;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.8em;
+}
+
