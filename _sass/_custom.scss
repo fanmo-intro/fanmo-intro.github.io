@@ -1,10 +1,10 @@
 /* =========================
-   Fan Mo — custom.scss
+   Fan Mo — custom.scss (final)
    ========================= */
 
 /* ---------- Theme accents ---------- */
 :root {
-  --accent: #2563eb;  /* primary blue */
+  --accent: #1d4ed8;  /* primary blue (Tailwind blue-700) */
   --muted:  #6b7280;  /* gray for secondary text */
 }
 
@@ -14,9 +14,9 @@
 
 /* 正文更易读：两端对齐、拉宽、行距与字号 */
 .page__content {
-  max-width: 960px;        /* 默认约 720px；加宽减少右侧空白 */
-  margin: 0 auto;          /* 居中 */
-  text-align: justify;     
+  max-width: 960px;              /* 默认约 720px；加宽减少右侧空白 */
+  margin: 0 auto;                /* 居中 */
+  text-align: justify;
   text-justify: inter-ideograph; /* 中文两端对齐更自然 */
   line-height: 1.75;
   font-size: 1.05rem;
@@ -113,7 +113,8 @@
 .author__urls li a{
   display:inline-flex; justify-content:center; align-items:center;
   width:42px; height:42px; border-radius:50%; padding:0;
-  background:#f6f7fb; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  background:#f6f7fb;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
   /* 隐藏链接文字，仅显示图标 */
   font-size:0; line-height:0; overflow:hidden; white-space:nowrap;
 }
@@ -145,7 +146,7 @@
    Optional tweaks (uncomment if needed)
    ========================= */
 
-/* 让侧边栏更窄： */
+/* 让侧边栏更窄（默认约 300px）。需要时取消注释： */
 
 .sidebar { flex: 0 0 250px; }
 .page { display: flex; gap: 2rem; }
@@ -155,14 +156,4 @@
 
 .author__urls { display:flex; flex-wrap:wrap; gap:10px; }
 .author__urls li { margin:0; }
-
-/* 标题颜色 */
-.page__content h1,
-.page__content h2 {
-  color: #1d4ed8;   /* Tailwind 的 blue-700 */
-  font-weight: 800;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.3em;
-  margin-bottom: 0.8em;
-}
 
