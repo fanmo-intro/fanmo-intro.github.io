@@ -47,6 +47,7 @@ Beyond research, I serve as **Chair of the China Chapter of the Marie Curie Alum
 
 ### Editorial Roles
 - Editorial Board Member, *International Journal of Manufacturing Research*
+- Guest Editor, *Applied Science*, Topic: Trends and Prospects in Advanced Automated Manufacturing Systems
 - Associate Editor, *Journal of Automation and Intelligence*
 - Young Editorial Board Member, *Journal of Complex Engineering Systems*  
 
