@@ -1,149 +1,52 @@
 /* =========================
-   Fan Mo — custom.css
+   Fan Mo — custom.scss
    ========================= */
 
-/* ---------- Theme accents (edit if you like) ---------- */
+/* ---------- Theme accents ---------- */
 :root {
   --accent: #2563eb;  /* primary blue */
   --muted:  #6b7280;  /* gray for secondary text */
 }
 
-/* ---------- Readability tweaks ---------- */
-.page__content p {
-  text-align: justify;
-  text-justify: inter-ideograph;
+/* =========================
+   Page typography & width
+   ========================= */
+
+/* 正文更易读：两端对齐、拉宽、行距与字号 */
+.page__content {
+  max-width: 960px;        /* 默认约 720px；加宽减少右侧空白 */
+  margin: 0 auto;          /* 居中 */
+  text-align: justify;     
+  text-justify: inter-ideograph; /* 中文两端对齐更自然 */
   line-height: 1.75;
+  font-size: 1.05rem;
+  color: #2b2b2b;
 }
+
+/* 段落间距 */
+.page__content p { margin-bottom: 1.2em; }
 .page__content p + p { margin-top: 0.7rem; }
 
+/* 标题层级与分隔线 */
 .page__content h1,
-.page__content h2 { color: var(--accent); font-weight: 800; }
-.page__content h3 { color: #1f2937; font-weight: 700; }
-.page__content .zh { color: #374151; }
-
-/* ---------- Two-column layout for the About page ---------- */
-.about-grid { display: grid; gap: 1.25rem; }
-@media (min-width: 992px) {
-  .about-grid { grid-template-columns: 2.2fr 1fr; align-items: start; }
+.page__content h2 {
+  color: var(--accent);
+  font-weight: 800;
+  border-bottom: 2px solid #eee;
+  padding-bottom: .3em;
+  margin-bottom: .8em;
 }
-.card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 18px 18px;
-  box-shadow: 0 6px 24px rgba(0,0,0,.06);
-}
-.card h2 { margin-top: 0; }
+.page__content h3 { color:#1f2937; font-weight:700; }
 
-/* Quick facts (right column) */
-.fact {
-  display: flex; align-items: center; gap: .6rem;
-  padding: .5rem .75rem; border-radius: 10px;
-  background: #f6f7fb; margin: .45rem 0; color: #111;
-}
-.fact i, .fact svg { color: var(--accent); }
+/* 中文段落弱化色 */
+.page__content .zh { color:#374151; }
 
-/* ---------- News timeline ---------- */
-.news { position: relative; margin-left: .4rem; padding-left: 1rem; border-left: 3px solid rgba(37,99,235,.18); }
-.news .item { position: relative; margin: .6rem 0 .6rem .25rem; }
-.news .item::before {
-  content: ""; position: absolute; left: -1.05rem; top: .35rem;
-  width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent);
-}
-.news time { font-weight: 600; color: #111; margin-right: .35rem; }
-.news a { color: #0f172a; text-decoration: none; border-bottom: 1px dotted rgba(15,23,42,.35); }
-.news a:hover { color: var(--accent); border-bottom-color: var(--accent); }
-
-/* Lists spacing */
+/* 列表更清爽 */
 .page__content ul { margin: .5rem 0 .8rem 1.2rem; }
 .page__content li { margin: .25rem 0; }
 
-/* =======================================================
-   Sidebar (author block): icon-only links + employer badges
-   ======================================================= */
-
-/* Each row: icon + content on one line */
-.author__urls li {
-  margin: 6px 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* --------- Icon-only buttons for links --------- */
-.author__urls li a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 42px; height: 42px;           /* round icon size */
-  border-radius: 50%;
-  padding: 0;
-  background: #f6f7fb;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-
-  /* hide link text, keep icon visible */
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.author__urls li a i,
-.author__urls li a svg { font-size: 18px; }
-
-.author__urls li a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
-}
-
-/* --------- Employer badges (keep text) --------- */
-.author__urls li .employer {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: #f6f7fb;
-  font-weight: 500;
-}
-.author__urls li .employer:hover {
-  box-shadow: 0 6px 14px rgba(0,0,0,.08);
-  transform: translateY(-1px);
-}
-
-/* Icons follow the text color */
-.author__urls i, .author__urls svg {
-  color: inherit !important;
-  fill: currentColor !important;
-}
-
-/* --------- Brand backgrounds for icon buttons --------- */
-.author__urls a[href^="mailto:"]        { color:#fff !important; background:#d6336c !important; } /* Email */
-.author__urls a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; } /* Scholar */
-.author__urls a[href*="github.com"]     { color:#fff !important; background:#24292e !important; } /* GitHub */
-.author__urls a[href*="linkedin.com"]   { color:#fff !important; background:#0a66c2 !important; } /* LinkedIn */
-
-/* --------- Employer tints (Cambridge / Oxford) --------- */
-.author__urls li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
-.author__urls li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
-
-/* (Optional) place icon buttons in a row under avatar — uncomment if desired */
-/*
-.author__urls { display: flex; flex-wrap: wrap; gap: 10px; }
-.author__urls li { margin: 0; }
-*/
-/* ===== 正文排版优化 ===== */
-
-/* 让正文区域占更宽的比例，减少右边留白 */
-.page__content {
-  max-width: 960px;     /* 默认可能是 720px，可以拉宽 */
-  margin: 0 auto;       /* 左右居中 */
-  text-align: justify;  /* 两端对齐（中英文都对齐） */
-  line-height: 1.75;    /* 行距更舒服 */
-  font-size: 1.05rem;   /* 字体略大一点 */
-  color: #2b2b2b;       /* 稍微深灰，护眼 */
-}
-
-/* 小屏幕手机保持原状（避免太挤） */
-@media screen and (max-width: 768px) {
+/* 小屏幕优化 */
+@media (max-width: 768px) {
   .page__content {
     max-width: 100%;
     padding: 0 1rem;
@@ -151,3 +54,105 @@
   }
 }
 
+/* 关键字高亮（可改色） */
+.page__content strong {
+  color: #1a73e8; /* Google Scholar 蓝 */
+  font-weight: 600;
+}
+
+/* =========================
+   Optional: two-column "About" layout
+   ========================= */
+.about-grid { display:grid; gap: 1.25rem; }
+@media (min-width: 992px) {
+  .about-grid { grid-template-columns: 2.2fr 1fr; align-items:start; }
+}
+.card {
+  background:#fff;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+.card h2 { margin-top:0; }
+
+/* 右栏 quick facts */
+.fact{
+  display:flex; align-items:center; gap:.6rem;
+  padding:.5rem .75rem; border-radius:10px;
+  background:#f6f7fb; margin:.45rem 0; color:#111;
+}
+.fact i,.fact svg{ color:var(--accent); }
+
+/* =========================
+   News timeline
+   ========================= */
+.news{
+  position:relative; margin-left:.4rem; padding-left:1rem;
+  border-left:3px solid rgba(37,99,235,.18);
+}
+.news .item{ position:relative; margin:.6rem 0 .6rem .25rem; }
+.news .item::before{
+  content:""; position:absolute; left:-1.05rem; top:.35rem;
+  width:.55rem; height:.55rem; border-radius:50%; background:var(--accent);
+}
+.news time{ font-weight:600; color:#111; margin-right:.35rem; }
+.news a{ color:#0f172a; text-decoration:none; border-bottom:1px dotted rgba(15,23,42,.35); }
+.news a:hover{ color:var(--accent); border-bottom-color:var(--accent); }
+
+/* =======================================================
+   Sidebar (author block): icon-only links + employer badges
+   ======================================================= */
+
+/* 每行：图标 + 内容同行排列 */
+.author__urls li{
+  margin:6px 0; list-style:none;
+  display:flex; align-items:center; gap:10px;
+}
+
+/* ---- 仅图标按钮（Email/Scholar/GitHub/LinkedIn 等链接） ---- */
+.author__urls li a{
+  display:inline-flex; justify-content:center; align-items:center;
+  width:42px; height:42px; border-radius:50%; padding:0;
+  background:#f6f7fb; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  /* 隐藏链接文字，仅显示图标 */
+  font-size:0; line-height:0; overflow:hidden; white-space:nowrap;
+}
+.author__urls li a i,
+.author__urls li a svg{ font-size:18px; }
+.author__urls li a:hover{ transform:translateY(-2px); box-shadow:0 6px 14px rgba(0,0,0,.12); }
+
+/* ---- 雇主徽章（保留文字） ---- */
+.author__urls li .employer{
+  display:inline-flex; align-items:center;
+  padding:6px 10px; border-radius:10px; background:#f6f7fb; font-weight:500;
+}
+.author__urls li .employer:hover{ box-shadow:0 6px 14px rgba(0,0,0,.08); transform:translateY(-1px); }
+
+/* 图标跟随文字颜色 */
+.author__urls i, .author__urls svg{ color:inherit !important; fill:currentColor !important; }
+
+/* ---- 品牌底色（圆形图标按钮） ---- */
+.author__urls a[href^="mailto:"]        { color:#fff !important; background:#d6336c !important; } /* Email */
+.author__urls a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; } /* Scholar */
+.author__urls a[href*="github.com"]     { color:#fff !important; background:#24292e !important; } /* GitHub */
+.author__urls a[href*="linkedin.com"]   { color:#fff !important; background:#0a66c2 !important; } /* LinkedIn */
+
+/* ---- 雇主徽章配色（Cambridge / Oxford） ---- */
+.author__urls li.author__desktop:nth-of-type(1) .employer{ color:#2a7f62; background:#e7f6ef; }
+.author__urls li.author__desktop:nth-of-type(2) .employer{ color:#0a66c2; background:#e8f4ff; }
+
+/* =========================
+   Optional tweaks (uncomment if needed)
+   ========================= */
+
+/* 让侧边栏更窄： */
+/*
+.sidebar { flex: 0 0 250px; }
+.page { display: flex; gap: 2rem; }
+*/
+
+/* 图标按钮横向排成一行： */
+/*
+.author__urls { display:flex; flex-wrap:wrap; gap:10px; }
+.author__urls li { margin:0; }
+*/
