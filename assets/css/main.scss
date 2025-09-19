@@ -1,44 +1,38 @@
 ---
 ---
 
-/*
- * This file controls what is imported from /_sass
- * Files are processed in order; keep custom last so it overrides defaults.
- */
-
+/* Only imports here */
 @import
-    "vendor/breakpoint/breakpoint",
+  "vendor/breakpoint/breakpoint",
 
-    "themes",
-    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
+  "themes",
+  "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
+  "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
 
-    "include/mixins",
-    "vendor/susy/susy",
+  "include/mixins",
+  "vendor/susy/susy",
 
-    "layout/reset",
-    "layout/base",
+  "layout/reset",
+  "layout/base",
 
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
+  "include/utilities",
+  "layout/tables",
+  "layout/buttons",
+  "layout/notices",
+  "layout/masthead",
+  "layout/navigation",
+  "layout/footer",
+  "syntax",
 
-    "layout/forms",
+  "layout/forms",
 
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv",
+  "layout/page",
+  "layout/archive",
+  "layout/sidebar",
+  "layout/json_cv",
 
-    @import
-    "vendor/font-awesome/fontawesome",
-    "vendor/font-awesome/solid",
-    "vendor/font-awesome/brands",
-    "custom";   /* keep this last */
+  "vendor/font-awesome/fontawesome",
+  "vendor/font-awesome/solid",
+  "vendor/font-awesome/brands",
 
-;
+  "custom";   /* 👈 保证这一行在最后 */
