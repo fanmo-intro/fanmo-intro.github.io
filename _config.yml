@@ -27,8 +27,10 @@ author:
 
   # Employers shown为上面的徽章（我们在 include 已支持数组）
   employer:
-    - University of Cambridge
-    - University of Oxford
+    - name: "University of Cambridge"
+      url: "https://www.cam.ac.uk"
+    - name: "University of Oxford"
+      url: "https://www.ox.ac.uk"
 
   # === 下面这些会以“图标”显示在一排 ===
   googlescholar : "https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en"
