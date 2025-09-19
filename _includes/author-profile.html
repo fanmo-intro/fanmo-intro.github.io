@@ -32,22 +32,25 @@
     {% endif %}
     
     {% if author.employer %}
-      {% assign employers_list = author.employer %}
-      {% for e in employers_list %}
-        <li class="author__desktop">
-          <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
-          {% if e.name %}
-            {% if e.url %}
-              <a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.name }}</a>
+      <ul class="author__employers">
+        {% assign employers_list = author.employer %}
+        {% for e in employers_list %}
+          <li>
+            <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
+            {% if e.name %}
+              {% if e.url %}
+                <a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.name }}</a>
+              {% else %}
+                {{ e.name }}
+              {% endif %}
             {% else %}
-              {{ e.name }}
+              {{ e | strip }}
             {% endif %}
-          {% else %}
-            {{ e | strip }}
-          {% endif %}
-        </li>
-      {% endfor %}
+          </li>
+        {% endfor %}
+      </ul>
     {% endif %}
+
 
 
     
