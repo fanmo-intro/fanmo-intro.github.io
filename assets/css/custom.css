@@ -1,0 +1,63 @@
+/* --- Sidebar polish --- */
+.author__content h3 {                /* your name */
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.author__bio {                       /* short bio text */
+  color: #4b5563;
+}
+
+/* list items look like soft badges */
+.author__urls li {
+  margin: 6px 0;
+  list-style: none;
+}
+
+.author__urls li a,
+.author__urls li span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f6f7fb;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.author__urls li a:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+}
+
+/* icons follow the text color */
+.author__urls i,
+.author__urls svg {
+  color: inherit !important;
+  fill: currentColor !important;
+}
+
+/* ---------- brand-ish colors ---------- */
+/* location / university (Font Awesome icon names) */
+.author__urls .fa-map-marker { color: #e03131; }     /* red pin */
+.author__urls .fa-university { color: #5c7cfa; }     /* indigo */
+
+/* email */
+.author__urls .fa-envelope,
+.author__urls a[href^="mailto:"]    { color: #d6336c; background: #fff0f6; }
+
+/* Google Scholar */
+.author__urls a[href*="scholar.google"] { color: #1a73e8; background: #e8f0fe; }
+
+/* GitHub */
+.author__urls a[href*="github.com"] { color: #24292e; background: #f6f8fa; }
+
+/* LinkedIn */
+.author__urls a[href*="linkedin.com"] { color: #0a66c2; background: #e8f4ff; }
+
+/* optional: subtle name gradient */
+.author__content h3 {
+  background: linear-gradient(90deg, #111, #4b5563);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
