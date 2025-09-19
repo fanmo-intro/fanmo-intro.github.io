@@ -142,3 +142,29 @@
   fill: currentColor !important;
   font-size: 20px;
 }
+
+/* ===== Author bio bigger ===== */
+.author__bio {
+  font-size: 1.05rem;   /* larger than default */
+  font-weight: 500;
+  color: #1f2937;       /* darker gray for emphasis */
+  margin-top: 0.3rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ===== Employers smaller ===== */
+.author__employers li {
+  font-size: 0.9rem;   /* smaller text */
+  color: #555;         /* lighter gray */
+}
+
+.author__employers a {
+  color: #555;
+  text-decoration: none;
+}
+
+.author__employers a:hover {
+  color: #1d4ed8;      /* hover blue */
+  text-decoration: underline;
+}
+
