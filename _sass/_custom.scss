@@ -129,52 +129,90 @@
 /* =========================
    Mobile (≤ 768px)
    ========================= */
+/* ===== MOBILE FIX PACK (≤768px) — center avatar, tidy institutions, place icons correctly ===== */
 @media (max-width:768px){
-  .sidebar{ flex:1 1 100% !important; max-width:100% !important; padding:0 12px; }
-  .page__content{ max-width:100%; padding:0 14px; font-size:1rem; }
 
-  .author__avatar img{ width:132px; height:132px; }
-  .author__content .author__bio{ max-width:100%; }
+  /* Stack layout and center the whole sidebar block */
+  .page{ display:block !important; }
+  .sidebar{
+    padding:0 16px !important;
+    margin:0 auto 14px auto !important;   /* space under the card */
+    max-width:520px !important;           /* nice readable width on phones */
+  }
 
-  /* institutions as centered chips, allow natural wrapping */
+  /* Author header */
+  .author__content{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    text-align:center !important;
+    gap:.6rem !important;
+  }
+  .author__avatar{ margin:0 auto 12px auto !important; }
+  .author__avatar img{
+    display:block !important;
+    margin:0 auto !important;
+    width:136px !important; height:136px !important;  /* centered & crisp */
+    border-radius:50% !important; object-fit:cover !important;
+  }
+  .author__content h3.author__name{ margin:.2rem 0 .2rem !important; }
+  .author__content .author__bio{
+    max-width:32ch !important;            /* keep lines short & centered */
+    margin:.1rem 0 .4rem 0 !important;
+  }
+
+  /* Institutions list — single column, centered, clean wrap */
   .author__urls:not(.social-icons){
-    align-items:center; gap:.4rem;
+    width:100% !important; text-align:center !important;
+    margin-top:.2rem !important;
   }
   .author__urls:not(.social-icons) li{
-    width:fit-content; max-width:100%;
-    margin:0; background:#f8fafc; /* slightly lighter on mobile */
+    display:flex !important;
+    justify-content:center !important;
+    align-items:center !important;
+    gap:.45rem !important;
+    margin:.18rem 0 !important;
+    white-space:normal !important;         /* allow wrap on phones */
+  }
+  .author__urls:not(.social-icons) li i{
+    width:20px !important; height:20px !important;
+    line-height:20px !important; font-size:18px !important;
+    flex:0 0 auto !important; color:#555 !important;
   }
   .author__urls:not(.social-icons) li a,
   .author__urls:not(.social-icons) li span{
-    white-space:normal !important; text-overflow:clip !important; word-break:keep-all !important; hyphens:none !important;
+    white-space:normal !important;         /* wrap naturally */
+    word-break:keep-all !important; hyphens:none !important;
+    text-overflow:clip !important;
   }
 
-  /* social icons: keep same size but soften shadow */
-  .author__urls.social-icons li a{ width:46px; height:46px; box-shadow:0 4px 12px rgba(29,78,216,.2); }
+  /* Social icons — centered row with proper spacing below institutions */
+  .author__urls-wrapper{ position:static !important; margin:.5rem 0 0 0 !important; }
+  .author__urls-wrapper::before,
+  .author__urls-wrapper::after,
+  .author__urls-wrapper .btn{ display:none !important; }
+
+  .author__urls.social-icons{
+    display:flex !important; flex-wrap:wrap !important;
+    justify-content:center !important; gap:12px !important;
+    margin:.5rem 0 .9rem 0 !important;    /* ← gives breathing room from H2 */
+    padding:0 !important; list-style:none !important;
+  }
+  .author__urls.social-icons li{ margin:0 !important; padding:0 !important; }
+  .author__urls.social-icons li a{
+    display:inline-flex !important; align-items:center !important; justify-content:center !important;
+    width:44px !important; height:44px !important;
+    border-radius:50% !important;
+    background:#f3f4f6 !important; color:#444 !important; /* neutral (no bold color) */
+    border:none !important; box-shadow:none !important;
+    font-size:0 !important; overflow:hidden !important;
+    transition:background .2s ease, color .2s ease !important;
+  }
+  .author__urls.social-icons li a:hover{ background:var(--accent) !important; color:#fff !important; }
+  .author__urls.social-icons li a i,
+  .author__urls.social-icons li a svg{ font-size:20px !important; }
+
+  /* Ensure nothing “sticks” or overlaps the heading */
+  .sticky .author__urls-wrapper{ position:static !important; }
 }
 
-/* =========================
-   Larger screens — breathing room
-   ========================= */
-@media (min-width:992px){
-  .page{ gap:40px; }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span{ font-size:.975rem; }
-  .sidebar{ flex-basis:380px !important; max-width:380px !important; }
-}
-@media (min-width:1280px){
-  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
-}
-@media (min-width:1536px){
-  .sidebar{ flex-basis:440px !important; max-width:440px !important; }
-}
-
-/* =========================
-   Optional: hide a location row if your theme injects it
-   ========================= */
-/*
-.author__urls li.author__desktop,
-.author__urls li.location,
-.author__urls li.author__location,
-.author__urls li[itemprop="homeLocation"]{ display:none !important; }
-*/
