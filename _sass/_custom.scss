@@ -164,3 +164,26 @@
     touch-action: manipulation !important;
   }
 }
+/* --- Force avatar to center on mobile and desktop --- */
+.author__avatar{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0 auto 12px auto !important;
+}
+
+.author__avatar img{
+  display:block !important;
+  margin:0 auto !important;
+  border-radius:50% !important;
+  object-fit:cover !important;
+}
+
+/* bigger and centered on mobile */
+@media (max-width:768px){
+  .author__avatar img{
+    width:160px !important;
+    height:160px !important;
+  }
+}
