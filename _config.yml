@@ -24,8 +24,6 @@ author:
   name     : "Fan Mo"
   pronouns : 
   bio      : "AI & robotics researcher. Knowledge graphs, multimodal perception, embodied intelligence."
-  location : "Cambridge & Oxford, UK"
-
   # Employers shown为上面的徽章（我们在 include 已支持数组）
   employer:
     - name: "University of Cambridge"
