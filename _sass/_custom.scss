@@ -46,12 +46,26 @@
    Author Card Hierarchy
    ========================= */
 
+/* Center avatar everywhere */
+.author__avatar{ margin:0 auto 1rem auto; display:block; }
+
+/* Bigger, crisp avatar */
+.author__avatar img{
+  width: 96px; height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media (max-width:768px){
+  .author__avatar img{ width: 128px; height: 128px; }
+}
+
 /* Name — biggest */
 .author__content h3.author__name{
   font-size:1.5rem !important;
   font-weight:700 !important;
   color:#111 !important;
   margin:.35rem 0 .5rem !important;
+  text-align:center;
 }
 
 /* Bio — same size as location/employers */
@@ -63,6 +77,13 @@
   margin:.4rem 0 .9rem !important;
   text-align:left !important;
   max-width:28ch;
+}
+@media (max-width:768px){
+  .author__content{ text-align:center; padding:0 1rem; }
+  .author__content .author__bio{
+    font-size:.95rem !important; line-height:1.55 !important;
+    max-width:100%; text-align:center !important;
+  }
 }
 
 /* Location */
@@ -102,96 +123,66 @@
   color: var(--accent);
   text-decoration: underline;
 }
+
+/* ===== Mobile: make institutions look clean (inline, centered) ===== */
 @media (max-width:768px){
-  .author__urls:not(.social-icons) li,
-  .author__urls:not(.social-icons) li a {
-    font-size: .95rem !important;
+  /* inline list like: Cambridge · Oxford */
+  .author__urls:not(.social-icons){ text-align:center; }
+  .author__urls:not(.social-icons) li{
+    display:inline; margin:0 .35rem !important; white-space:nowrap !important;
   }
+  .author__urls:not(.social-icons) li + li::before{
+    content:"· "; color:#9ca3af;
+  }
+  /* hide building icons on tight screens */
+  .author__urls:not(.social-icons) .fas.fa-building-columns{ display:none !important; }
 }
 
 /* =========================
-   Social icons
+   Social icons (always visible, no white card)
    ========================= */
 
-/* Remove the floating white card behind social icons */
-.author__urls-wrapper {
+/* Make the theme’s popover wrapper behave like plain inline content */
+.author__urls-wrapper{
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
   background: transparent !important;
   box-shadow: none !important;
   border: none !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: .5rem 0 0 0 !important;
 }
 
 /* Uniform circular icon buttons */
-.author__urls.social-icons {
+.author__urls.social-icons{
   display:flex; gap:12px; flex-wrap:wrap;
   margin-top:10px; padding:0; list-style:none;
   justify-content:center;
 }
-.author__urls.social-icons li { margin:0; padding:0; list-style:none; }
-.author__urls.social-icons li a {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  width:40px; height:40px;
-  border-radius:50%;
-  background:#f3f4f6; /* neutral circle */
-  color:#444;
+.author__urls.social-icons li{ margin:0; padding:0; list-style:none; }
+.author__urls.social-icons li a{
+  display:inline-flex; justify-content:center; align-items:center;
+  width:40px; height:40px; border-radius:50%;
+  background:#f3f4f6; color:#444;
   font-size:18px; line-height:1;
   transition:background .2s ease, color .2s ease;
-  box-shadow:none !important;
+  box-shadow:none !important; border:none !important;
 }
-.author__urls.social-icons li a:hover {
-  background: var(--accent);
-  color:#fff !important;
-}
-.author__urls.social-icons li a span { display:none !important; }
+.author__urls.social-icons li a:hover{ background: var(--accent); color:#fff !important; }
+.author__urls.social-icons li a span{ display:none !important; }
 .author__urls.social-icons i,
-.author__urls.social-icons svg {
-  width:1em; height:1em;
-  color:inherit !important;
-  fill:currentColor !important;
+.author__urls.social-icons svg{ width:1em; height:1em; color:inherit !important; fill:currentColor !important; }
+
+@media (max-width:768px){
+  .author__urls.social-icons li a{ width:34px; height:34px; font-size:16px; }
 }
 
 /* =========================
-   Responsive (mobile & tablet)
+   Responsive (wider tablets)
    ========================= */
 @media (max-width:992px){
   .sidebar{ flex:0 0 300px; }
   .author__content .author__bio{ max-width:32ch; }
-}
-@media (max-width:768px){
-  .page{ flex-direction:column; gap:1.25rem; }
-  .sidebar{ flex:0 0 100%; text-align:center; }
-  .author__avatar{ margin:0 auto 1rem auto; display:block; }
-  .author__content{ text-align:center; padding:0 1rem; }
-  .author__content h3.author__name{ font-size:1.35rem !important; }
-  .author__content .author__bio{
-    font-size:.95rem !important; line-height:1.55 !important;
-    max-width:100%; text-align:center !important;
-  }
-  .author__urls li.author__desktop,
-  .author__urls li .employer{
-    display:block !important; text-align:center !important;
-    font-size:.95rem !important; margin:.2rem auto !important;
-  }
-  .author__urls.social-icons li a{
-    width:34px; height:34px; font-size:16px;
-  }
-}
-
-/* =========================
-   Avatar size adjustments
-   ========================= */
-.author__avatar img {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-@media (max-width:768px){
-  .author__avatar img {
-    width: 112px;
-    height: 112px;
-  }
 }
