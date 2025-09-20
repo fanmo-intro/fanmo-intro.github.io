@@ -143,10 +143,10 @@
 }
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 
-/* ===== Hide the LOCATION row entirely ===== */
+/* ===== Hide the LOCATION row entirely ===== 
 .author__urls li.author__location,
 .author__urls li.author__desktop{ display:none !important; }
-
+*/
 /* ===== Remove any theme-injected bullets/separators ===== */
 .author__urls:not(.social-icons) li::before,
 .author__urls:not(.social-icons) li + li::before{ content:none !important; display:none !important; }
