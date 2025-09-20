@@ -86,7 +86,34 @@
   }
 }
 
-/* Location */
+/* =========================
+   Icon base (FA5 + FA6)
+   ========================= */
+.author__urls i[class^="fa"],
+.author__urls i[class*=" fa"]{
+  display:inline-block;
+  width:1.1em;               /* keeps text aligned even if icon fails */
+  text-align:center;
+  margin-right:.4rem;
+  line-height:1;
+  vertical-align:middle;
+  color:#444;
+}
+
+/* Helpful aliases across FA versions */
+.author__urls i.fa-building-columns,
+.author__urls i.fa-university,
+.author__urls i.fas.fa-building-columns,
+.author__urls i.fa-solid.fa-building-columns{ color:#444; }
+
+.author__urls i.fa-location-dot,
+.author__urls i.fa-map-marker-alt,
+.author__urls i.fas.fa-map-marker-alt,
+.author__urls i.fa-solid.fa-location-dot{ color:#444; }
+
+/* =========================
+   Location row
+   ========================= */
 .author__urls li.author__desktop{
   font-size:1rem !important;
   color:#555 !important;
@@ -95,7 +122,9 @@
   margin:.25rem 0 !important;
 }
 
-/* Employers */
+/* =========================
+   Employers row
+   ========================= */
 .author__urls li .employer{
   font-size:1rem !important;
   color:#555 !important;
@@ -103,10 +132,14 @@
   white-space:nowrap !important;
   display:inline-flex !important;
   align-items:center !important;
+  gap:.35rem;
 }
-.author__urls li .fas.fa-building-columns{ margin-right:.4rem; color:#444; }
-.author__urls li .employer a{ color:#555; text-decoration:none; white-space:nowrap; }
-.author__urls li .employer a:hover{ color:var(--accent); text-decoration:underline; }
+.author__urls li .employer a{
+  color:#555; text-decoration:none; white-space:nowrap;
+}
+.author__urls li .employer a:hover{
+  color:var(--accent); text-decoration:underline;
+}
 
 /* ---------- Generic author links (e.g., University of Cambridge/Oxford) ---------- */
 .author__urls:not(.social-icons) li,
@@ -124,18 +157,26 @@
   text-decoration: underline;
 }
 
-/* ===== Mobile: make institutions look clean (inline, centered) ===== */
+/* ===== Mobile: inline & centered (keep icons visible) ===== */
 @media (max-width:768px){
   /* inline list like: Cambridge · Oxford */
   .author__urls:not(.social-icons){ text-align:center; }
   .author__urls:not(.social-icons) li{
-    display:inline; margin:0 .35rem !important; white-space:nowrap !important;
+    display:inline-flex; align-items:center;
+    gap:.35rem;
+    margin:0 .35rem !important;
+    white-space:nowrap !important;
   }
   .author__urls:not(.social-icons) li + li::before{
-    content:"· "; color:#9ca3af;
+    content:"· "; color:#9ca3af; margin-right:.35rem;
   }
-  /* hide building icons on tight screens */
-  .author__urls:not(.social-icons) .fas.fa-building-columns{ display:none !important; }
+  /* NOTE: no icon-hiding here */
+}
+
+/* Optional: only hide icons on ultra-narrow screens */
+@media (max-width:360px){
+  .author__urls:not(.social-icons) i[class^="fa"],
+  .author__urls:not(.social-icons) i[class*=" fa"]{ display:none; }
 }
 
 /* =========================
