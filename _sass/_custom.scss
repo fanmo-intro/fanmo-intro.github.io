@@ -146,3 +146,21 @@
 @media (min-width:1280px){
   .sidebar{ flex-basis:400px !important; max-width:400px !important; }
 }
+/* --- Mobile polish: keep icons clearly above the heading and kill iOS callout --- */
+@media (max-width:768px){
+  /* extra breathing room below the sidebar so the icon row clears the H2 */
+  .sidebar{ margin-bottom:24px !important; }
+
+  /* icon row spacing (above heading) */
+  .author__urls.social-icons{
+    margin:.65rem 0 1.35rem 0 !important; /* top, right/left, bottom */
+  }
+
+  /* prevent iOS long-press bubble on the social buttons */
+  .author__urls.social-icons li a{
+    -webkit-touch-callout: none !important; /* hide white callout */
+    -webkit-user-select: none !important;
+    user-select: none !important;
+    touch-action: manipulation !important;
+  }
+}
