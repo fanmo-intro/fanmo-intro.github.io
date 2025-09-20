@@ -12,14 +12,13 @@
    Page typography & width
    ========================= */
 .page__content {
-  max-width: 700px;
+  max-width: 1040px;               /* wider content */
   margin: 0 auto;
   text-align: justify;
   text-justify: inter-ideograph;
   line-height: 1.75;
   font-size: 1.05rem;
   color: #2b2b2b;
-  flex: 1 1 auto;                 /* ensure content column flexes */
 }
 .page__content p { margin-bottom: 1.2em; }
 .page__content p + p { margin-top: .7rem; }
@@ -40,8 +39,20 @@
 /* =========================
    Sidebar layout
    ========================= */
-.page { display:flex; gap:2rem; }
-.sidebar { flex:0 0 400px; }      /* <-- left column width */
+.page { display:flex; gap:2rem; align-items:flex-start; }
+.sidebar { 
+  flex:0 0 320px !important;       /* wider sidebar */
+  max-width:320px !important;
+}
+@media (max-width:1280px){
+  .sidebar{ flex:0 0 300px !important; max-width:300px !important; }
+}
+@media (max-width:992px){
+  .sidebar{ flex:0 0 280px !important; max-width:280px !important; }
+}
+@media (max-width:768px){
+  .sidebar{ flex:1 1 auto !important; max-width:100% !important; }
+}
 
 /* =========================
    Author Card Hierarchy
@@ -77,7 +88,7 @@
   line-height:1.5 !important;
   margin:.4rem 0 .9rem !important;
   text-align:left !important;
-  max-width:28ch;
+  max-width:34ch;                   /* a bit wider */
 }
 @media (max-width:768px){
   .author__content{ text-align:center; padding:0 1rem; }
@@ -93,9 +104,9 @@
 .author__urls i[class^="fa"],
 .author__urls i[class*=" fa"]{
   display:inline-block;
-  width:1.1em;               /* keeps text aligned even if icon fails */
+  width:1.15em;                     /* slightly more room */
   text-align:center;
-  margin-right:.4rem;
+  margin-right:.45rem;
   line-height:1;
   vertical-align:middle;
   color:#444;
@@ -119,36 +130,28 @@
   font-size:1rem !important;
   color:#555 !important;
   line-height:1.4 !important;
-  white-space:normal !important;   /* allow wrapping so 'UK' shows */
-  margin:.25rem 0 !important;
+  white-space:nowrap !important;    /* no wrap now that sidebar is wider */
+  margin:.3rem 0 !important;
+  hyphens:none;
 }
 
 /* =========================
-   Employers row
+   Employers / Institutions
    ========================= */
-.author__urls li .employer{
-  font-size:1rem !important;
-  color:#555 !important;
-  line-height:1.35 !important;
-  white-space:nowrap !important;
-  display:inline-flex !important;
-  align-items:center !important;
-  gap:.35rem;
-}
-.author__urls li .employer a{
-  color:#555; text-decoration:none; white-space:nowrap;
-}
-.author__urls li .employer a:hover{
-  color:var(--accent); text-decoration:underline;
-}
-
-/* ---------- Generic author links (e.g., University of Cambridge/Oxford) ---------- */
 .author__urls:not(.social-icons) li,
 .author__urls:not(.social-icons) li a {
   font-size: 1rem !important;
   line-height: 1.4 !important;
 }
-.author__urls:not(.social-icons) li { margin: .25rem 0 !important; }
+.author__urls:not(.social-icons) li{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:.55rem;
+  margin:.35rem 0 !important;
+  white-space:nowrap !important;    /* keep on one line with wider sidebar */
+  max-width:100% !important;
+  hyphens:none;
+}
 .author__urls:not(.social-icons) li a {
   color: #555;
   text-decoration: none;
@@ -158,29 +161,15 @@
   text-decoration: underline;
 }
 
-/* Make rows wider & neatly aligned (icon left, text flexes) */
-.author__urls:not(.social-icons) li{
-  display:flex !important;
-  align-items:flex-start !important;
-  gap:.5rem;
-  margin:.35rem 0 !important;
-  white-space:normal !important;   /* allow wrapping */
-  max-width:100% !important;
-}
-.author__urls:not(.social-icons) li i{ flex:0 0 auto; margin-right:0; font-size:1.1rem; }
-.author__urls:not(.social-icons) li span,
-.author__urls:not(.social-icons) li a{ flex:1 1 auto; display:block; line-height:1.4; }
-
-/* ===== Mobile: inline & centered (keep icons visible) ===== */
+/* ===== Mobile: inline & centered ===== */
 @media (max-width:768px){
   .author__urls:not(.social-icons){ text-align:center; }
   .author__urls:not(.social-icons) li{
     display:inline-flex !important;
     align-items:center !important;
     gap:.35rem;
-    margin:0 .5rem .35rem .5rem !important;  /* a bit wider spacing */
-    white-space:normal !important;           /* allow wrap if needed */
-    max-width:100% !important;
+    margin:0 .6rem .35rem .6rem !important;
+    white-space:normal !important;  /* allow wrap on phones */
   }
   .author__urls:not(.social-icons) li + li::before{
     content:"· "; color:#9ca3af; margin-right:.35rem;
@@ -231,14 +220,6 @@
 .author__urls.social-icons i,
 .author__urls.social-icons svg{ width:1em; height:1em; color:inherit !important; fill:currentColor !important; }
 
-/* =========================
-   Responsive (wider tablets & mobile)
-   ========================= */
-@media (max-width:992px){
-  .sidebar{ flex:0 0 400px; }
-  .author__content .author__bio{ max-width:32ch; }
-}
 @media (max-width:768px){
-  .page{ display:block; }          /* stack columns on small screens */
-  .sidebar{ width:100%; }          /* full width sidebar on mobile */
+  .author__urls.social-icons li a{ width:34px; height:34px; font-size:16px; }
 }
