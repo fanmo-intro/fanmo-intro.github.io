@@ -11,8 +11,17 @@
 /* =========================
    Page typography & width
    ========================= */
+.page { 
+  display:flex; 
+  gap:2rem; 
+  align-items:flex-start; 
+  flex-wrap:wrap;                 /* prevents overflow on narrower screens */
+}
+
 .page__content {
-  max-width: 1040px;               /* wider content */
+  flex:1 1 600px;                 /* grow to fill beside sidebar */
+  min-width:0;
+  max-width: 1040px;              /* wider content */
   margin: 0 auto;
   text-align: justify;
   text-justify: inter-ideograph;
@@ -37,21 +46,14 @@
 }
 
 /* =========================
-   Sidebar layout
+   Sidebar layout (fluid width)
    ========================= */
-.page { display:flex; gap:2rem; align-items:flex-start; }
 .sidebar { 
-  flex:0 0 500px !important;       /* wider sidebar */
-  max-width:500px !important;
-}
-@media (max-width:1280px){
-  .sidebar{ flex:0 0 300px !important; max-width:300px !important; }
-}
-@media (max-width:992px){
-  .sidebar{ flex:0 0 280px !important; max-width:280px !important; }
+  flex:0 0 clamp(300px, 28vw, 420px) !important;  /* fluid, no hard 500px */
+  max-width:clamp(300px, 28vw, 420px) !important;
 }
 @media (max-width:768px){
-  .sidebar{ flex:1 1 auto !important; max-width:100% !important; }
+  .sidebar{ flex:1 1 100% !important; max-width:100% !important; }
 }
 
 /* =========================
@@ -80,7 +82,7 @@
   text-align:center;
 }
 
-/* Bio — same size as location/employers */
+/* Bio */
 .author__content .author__bio{
   font-size:1rem !important;
   font-weight:400 !important;
@@ -88,7 +90,7 @@
   line-height:1.5 !important;
   margin:.4rem 0 .9rem !important;
   text-align:left !important;
-  max-width:34ch;                   /* a bit wider */
+  max-width:34ch;
 }
 @media (max-width:768px){
   .author__content{ text-align:center; padding:0 1rem; }
@@ -104,7 +106,7 @@
 .author__urls i[class^="fa"],
 .author__urls i[class*=" fa"]{
   display:inline-block;
-  width:1.15em;                     /* slightly more room */
+  width:1.15em;
   text-align:center;
   margin-right:.45rem;
   line-height:1;
@@ -130,13 +132,13 @@
   font-size:1rem !important;
   color:#555 !important;
   line-height:1.4 !important;
-  white-space:nowrap !important;    /* no wrap now that sidebar is wider */
+  white-space:nowrap !important;   /* single line with wider sidebar */
   margin:.3rem 0 !important;
   hyphens:none;
 }
 
 /* =========================
-   Employers / Institutions
+   Institutions / generic author links
    ========================= */
 .author__urls:not(.social-icons) li,
 .author__urls:not(.social-icons) li a {
@@ -148,7 +150,7 @@
   align-items:flex-start !important;
   gap:.55rem;
   margin:.35rem 0 !important;
-  white-space:nowrap !important;    /* keep on one line with wider sidebar */
+  white-space:nowrap !important;   /* keep on one line on desktop */
   max-width:100% !important;
   hyphens:none;
 }
@@ -169,7 +171,7 @@
     align-items:center !important;
     gap:.35rem;
     margin:0 .6rem .35rem .6rem !important;
-    white-space:normal !important;  /* allow wrap on phones */
+    white-space:normal !important; /* allow wrap on phones */
   }
   .author__urls:not(.social-icons) li + li::before{
     content:"· "; color:#9ca3af; margin-right:.35rem;
@@ -185,8 +187,6 @@
 /* =========================
    Social icons (always visible, no white card)
    ========================= */
-
-/* Make the theme’s popover wrapper behave like plain inline content */
 .author__urls-wrapper,
 .sticky .author__urls-wrapper{
   position: static !important;
@@ -200,7 +200,6 @@
   margin: .5rem 0 0 0 !important;
 }
 
-/* Uniform circular icon buttons */
 .author__urls.social-icons{
   display:flex; gap:12px; flex-wrap:wrap;
   margin-top:10px; padding:0; list-style:none;
