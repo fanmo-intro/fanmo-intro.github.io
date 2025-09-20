@@ -62,7 +62,7 @@
   line-height:1.5 !important;
   margin:.4rem 0 .9rem !important;
   text-align:left !important;
-  max-width:28ch;                /* comfortable line-length on desktop */
+  max-width:28ch;
 }
 
 /* Location */
@@ -93,9 +93,7 @@
   font-size: 1rem !important;
   line-height: 1.4 !important;
 }
-.author__urls:not(.social-icons) li { 
-  margin: .25rem 0 !important; 
-}
+.author__urls:not(.social-icons) li { margin: .25rem 0 !important; }
 .author__urls:not(.social-icons) li a {
   color: #555;
   text-decoration: none;
@@ -111,22 +109,49 @@
   }
 }
 
-/* Social icons row */
-.author__urls.social-icons{
+/* =========================
+   Social icons
+   ========================= */
+
+/* Remove the floating white card behind social icons */
+.author__urls-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Uniform circular icon buttons */
+.author__urls.social-icons {
   display:flex; gap:12px; flex-wrap:wrap;
   margin-top:10px; padding:0; list-style:none;
+  justify-content:center;
 }
-.author__urls.social-icons li{ margin:0; padding:0; list-style:none; }
-.author__urls.social-icons li a{
-  display:inline-flex; justify-content:center; align-items:center;
-  width:34px; height:34px; border-radius:50%;
-  background:transparent; border:none; color:#444;
-  font-size:18px; line-height:1; transition:color .2s ease;
+.author__urls.social-icons li { margin:0; padding:0; list-style:none; }
+.author__urls.social-icons li a {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  width:40px; height:40px;
+  border-radius:50%;
+  background:#f3f4f6; /* neutral circle */
+  color:#444;
+  font-size:18px; line-height:1;
+  transition:background .2s ease, color .2s ease;
+  box-shadow:none !important;
 }
-.author__urls.social-icons li a:hover{ color:var(--accent); }
-.author__urls.social-icons li a span{ display:none !important; }
+.author__urls.social-icons li a:hover {
+  background: var(--accent);
+  color:#fff !important;
+}
+.author__urls.social-icons li a span { display:none !important; }
 .author__urls.social-icons i,
-.author__urls.social-icons svg{ color:inherit !important; fill:currentColor !important; }
+.author__urls.social-icons svg {
+  width:1em; height:1em;
+  color:inherit !important;
+  fill:currentColor !important;
+}
 
 /* =========================
    Responsive (mobile & tablet)
@@ -150,53 +175,23 @@
     display:block !important; text-align:center !important;
     font-size:.95rem !important; margin:.2rem auto !important;
   }
-  .author__urls.social-icons{ justify-content:center; }
   .author__urls.social-icons li a{
-    width:30px; height:30px; font-size:16px;
+    width:34px; height:34px; font-size:16px;
   }
 }
 
 /* =========================
-   Mobile polish: avatar & social icons
+   Avatar size adjustments
    ========================= */
-
-/* Larger, crisp circular avatar (desktop + mobile) */
-.author__avatar img{
+.author__avatar img {
   width: 96px;
   height: 96px;
   border-radius: 50%;
   object-fit: cover;
 }
 @media (max-width:768px){
-  .author__avatar img{
-    width: 112px;   /* bigger on phones */
+  .author__avatar img {
+    width: 112px;
     height: 112px;
   }
-}
-
-/* Remove white card/background around the social icons wrapper */
-.author__urls-wrapper{
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* Ensure icon buttons themselves never show a white box */
-.author__urls.social-icons li a{
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-/* Normalize SVG/FontAwesome glyph sizing + color inheritance */
-.author__urls.social-icons i,
-.author__urls.social-icons svg{
-  width: 1em; height: 1em;
-  color: inherit !important;
-  fill: currentColor !important;
-}
-
-/* Optional: subtle hover tint for better feedback on mobile */
-.author__urls.social-icons li a:hover{
-  background: rgba(29,78,216,.08) !important;
 }
