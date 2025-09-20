@@ -163,3 +163,12 @@
   }
 }
 
+/* Nudge main content a little to the right on desktop */
+@media (min-width: 992px){
+  .page{ gap: 3rem; }           /* was 2rem — increase the space */
+}
+
+/* Optional: tiny extra nudge if you want more */
+@media (min-width: 1200px){
+  .page__content{ padding-left: .5rem; }  /* adjust .25rem–.75rem to taste */
+}
