@@ -1,5 +1,5 @@
 /* =========================
-   Fan Mo — custom.scss (final, clean)
+   Fan Mo — custom.scss (final, full, clean)
    ========================= */
 
 /* ---------- Theme accents ---------- */
@@ -15,7 +15,6 @@
   display:flex; gap:2.5rem; align-items:flex-start; flex-wrap:wrap;
 }
 .sidebar{
-  /* wide enough so "University of Cambridge" fits on one line */
   flex:0 0 clamp(340px, 28vw, 420px) !important;
   max-width:clamp(340px, 28vw, 420px) !important;
 }
@@ -54,30 +53,37 @@
 /* =========================
    Institutions / meta list
    ========================= */
-/* Base icon sizing (Font Awesome 5/6 safe) */
 .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
   width:1em; text-align:center; margin-right:.4rem; line-height:1;
   color:#444; vertical-align:middle;
 }
-
-/* Make each row a single line (desktop), with ellipsis if too long */
 .author__urls:not(.social-icons){
   list-style:none; padding:0; margin:.25rem 0 0 0;
 }
 .author__urls:not(.social-icons) li{
   display:flex !important; align-items:center !important; gap:.45rem;
   margin:.32rem 0 !important; max-width:100%;
-  white-space:nowrap !important;        /* no wrap on desktop */
+  white-space:nowrap !important;
+}
+.author__urls:not(.social-icons) li i{
+  flex:0 0 auto;
 }
 .author__urls:not(.social-icons) li a,
 .author__urls:not(.social-icons) li span{
   color:#555; text-decoration:none; line-height:1.4;
-  overflow:hidden; text-overflow:ellipsis; white-space:inherit;
+  display:inline-block !important;
+  white-space:nowrap !important;
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  max-width:100%;
+  word-break:keep-all !important;
+  hyphens:none !important;
 }
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
+.author__urls:not(.social-icons) li br{ display:none !important; }
 
 /* =========================
-   Social icons (icon-only pills)
+   Social icons
    ========================= */
 .author__urls-wrapper{ position:static !important; margin:.6rem 0 0 0 !important; }
 .author__urls-wrapper::before,
@@ -94,7 +100,7 @@
   width:40px; height:40px; border-radius:50%;
   background:#f3f4f6; color:#444; border:none; box-shadow:none;
   transition:background .2s ease, color .2s ease;
-  font-size:0 !important; overflow:hidden;   /* hide stray text nodes */
+  font-size:0 !important; overflow:hidden;
 }
 .author__urls.social-icons li a:hover{ background:var(--accent); color:#fff !important; }
 .author__urls.social-icons li a i,
@@ -103,33 +109,75 @@
 }
 
 /* =========================
-   Mobile (≤ 768px)
+   Mobile (≤768px)
    ========================= */
 @media (max-width:768px){
   .sidebar{ flex:1 1 100% !important; max-width:100% !important; padding:0 1rem; }
   .page__content{ max-width:100%; padding:0 1rem; font-size:1rem; }
 
-  .author__avatar img{ width:128px; height:128px; }
-  .author__content{ text-align:center; }
+  /* center avatar */
+  .author__content{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:center !important;
+    text-align:center !important;
+    gap:.6rem !important;
+  }
+  .author__avatar{ width:100% !important; margin:0 auto .8rem auto !important; }
+  .author__avatar img{ width:132px !important; height:132px !important; }
+
   .author__content .author__bio{ text-align:center !important; max-width:100%; }
 
-  /* allow wrapping on phones so long names don’t overflow */
+  /* institutions: inline chips */
+  .author__urls:not(.social-icons){
+    width:100% !important; text-align:center !important;
+  }
   .author__urls:not(.social-icons) li{
+    display:inline-flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:.4rem !important;
+    margin:.15rem .6rem .35rem .6rem !important;
     white-space:normal !important;
   }
+  .author__urls:not(.social-icons) li i{
+    width:20px !important; height:20px !important;
+    font-size:18px !important;
+    color:#555 !important;
+  }
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span{
+    white-space:normal !important;
+    word-break:keep-all !important;
+    hyphens:none !important;
+    text-overflow:clip !important;
+  }
+
+  /* social icons larger touch targets */
+  .author__urls.social-icons li a{ width:44px !important; height:44px !important; }
+  .author__urls.social-icons li a i,
+  .author__urls.social-icons li a svg{ font-size:20px !important; }
 }
 
 /* =========================
-   Small desktop tweaks
+   Desktop tweaks
    ========================= */
 @media (min-width:992px){
   .page{ gap:3rem; }
-  /* tiny font squeeze to help long institution names fit */
   .author__urls:not(.social-icons) li a,
   .author__urls:not(.social-icons) li span{ font-size:.975rem; }
+  .sidebar{ flex:0 0 380px !important; max-width:380px !important; }
+}
+@media (min-width:1280px){
+  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
+}
+@media (min-width:1536px){
+  .sidebar{ flex-basis:440px !important; max-width:440px !important; }
 }
 
-/* ===== Optional: hide the location row if present ===== */
+/* =========================
+   Optional: hide location row
+   ========================= */
 /*
 .author__urls li.author__desktop,
 .author__urls li.location,
@@ -138,74 +186,3 @@
   display:none !important;
 }
 */
-
-/* === Institutions keep ONE line, kill forced breaks === */
-.author__urls:not(.social-icons) li br{
-  display:none !important;                 /* 干掉硬换行 */
-}
-.author__urls:not(.social-icons) li{
-  display:flex !important;
-  align-items:center !important;
-  gap:.45rem !important;
-  margin:.32rem 0 !important;
-}
-.author__urls:not(.social-icons) li i{
-  flex:0 0 auto;                           /* 图标不挤压文字 */
-}
-.author__urls:not(.social-icons) li a,
-.author__urls:not(.social-icons) li span{
-  display:inline-block !important;         /* 避免块级元素换行 */
-  white-space:nowrap !important;           /* 不换行 */
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;       /* 放不下就省略号 */
-  max-width:100%;
-  word-break:keep-all !important;
-  hyphens:none !important;
-}
-
-/* 宽一点侧栏，防止刚好卡在边界还要省略号 */
-@media (min-width:992px){
-  .sidebar{ flex:0 0 360px !important; max-width:360px !important; }
-}
-@media (min-width:1280px){
-  .sidebar{ flex-basis:380px !important; max-width:380px !important; }
-}
-
-/* --- Keep institution rows on ONE line (desktop), ellipsis if tight --- */
-.author__urls:not(.social-icons) li{
-  display:flex !important;
-  align-items:center !important;
-  gap:.45rem !important;
-  margin:.32rem 0 !important;
-}
-.author__urls:not(.social-icons) li br{
-  display:none !important;                 /* 防止模板里出现 <br> 时强制换行 */
-}
-.author__urls:not(.social-icons) li *{
-  white-space:nowrap !important;           /* 不换行 */
-  word-break:keep-all !important;
-  hyphens:none !important;
-}
-.author__urls:not(.social-icons) li a,
-.author__urls:not(.social-icons) li span{
-  overflow:hidden !important;
-  text-overflow:ellipsis !important;       /* 放不下就省略号 */
-}
-
-/* 给侧栏一点空间，让长机构名更容易单行显示 */
-@media (min-width:992px){
-  .sidebar{ flex:0 0 380px !important; max-width:380px !important; }
-}
-@media (min-width:1280px){
-  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
-}
-
-/* 手机上允许正常换行，避免被截断 */
-@media (max-width:768px){
-  .author__urls:not(.social-icons) li *{
-    white-space:normal !important;
-    text-overflow:clip !important;
-  }
-}
-
-
