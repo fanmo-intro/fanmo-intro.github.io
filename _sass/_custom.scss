@@ -12,7 +12,7 @@
    Page typography & width
    ========================= */
 .page__content {
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: justify;
   text-justify: inter-ideograph;
@@ -235,7 +235,7 @@
    Responsive (wider tablets & mobile)
    ========================= */
 @media (max-width:992px){
-  .sidebar{ flex:0 0 300px; }
+  .sidebar{ flex:0 0 400px; }
   .author__content .author__bio{ max-width:32ch; }
 }
 @media (max-width:768px){
