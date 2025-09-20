@@ -148,3 +148,18 @@
   .author__urls.social-icons li a i,
   .author__urls.social-icons li a svg{ font-size:20px !important; }
 }
+/* --- Hide location row in author card --- */
+.author__urls li.author__desktop,
+.author__urls li.location,
+.author__urls li.author__location,
+.author__urls li[itemprop="homeLocation"]{
+  display:none !important;
+}
+
+/* Prevent a leading "·" when location is hidden on mobile */
+@media (max-width:768px){
+  .author__urls:not(.social-icons) li.author__desktop + li::before{
+    content:none !important;
+  }
+}
+
