@@ -198,3 +198,27 @@
   .sidebar{ flex-basis:400px !important; max-width:400px !important; }
 }
 
+/* ---- keep institution rows on ONE line ---- */
+.author__urls:not(.social-icons) li{
+  grid-template-columns: 22px 1fr;   /* icon + flexible text */
+  align-items: center !important;
+}
+
+.author__urls:not(.social-icons) li span,
+.author__urls:not(.social-icons) li a{
+  white-space: nowrap !important;    /* no wrapping */
+  overflow: hidden !important;       /* avoid layout break if too long */
+  text-overflow: ellipsis !important;
+  hyphens: none !important;
+  word-break: keep-all !important;
+}
+
+/* (optional) only allow wrapping on small phones */
+@media (max-width: 420px){
+  .author__urls:not(.social-icons) li span,
+  .author__urls:not(.social-icons) li a{
+    white-space: normal !important;
+    text-overflow: clip !important;
+  }
+}
+
