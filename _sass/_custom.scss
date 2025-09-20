@@ -44,11 +44,13 @@
    Author card (elevated)
    ========================= */
 .sidebar .author__content{
-  background:#fff; border:1px solid var(--line);
-  border-radius:18px; padding:24px 20px;
-  box-shadow:0 8px 24px rgba(0,0,0,.04);
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  padding:0 !important;
   display:flex; flex-direction:column; align-items:center; gap:12px;
 }
+
 .author__avatar{ margin:0 auto 6px auto; }
 .author__avatar img{
   width:112px; height:112px; border-radius:9999px; object-fit:cover;
