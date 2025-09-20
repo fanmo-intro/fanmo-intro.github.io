@@ -140,3 +140,36 @@
   display:none !important;
 }
 */
+
+/* === Institutions keep ONE line, kill forced breaks === */
+.author__urls:not(.social-icons) li br{
+  display:none !important;                 /* 干掉硬换行 */
+}
+.author__urls:not(.social-icons) li{
+  display:flex !important;
+  align-items:center !important;
+  gap:.45rem !important;
+  margin:.32rem 0 !important;
+}
+.author__urls:not(.social-icons) li i{
+  flex:0 0 auto;                           /* 图标不挤压文字 */
+}
+.author__urls:not(.social-icons) li a,
+.author__urls:not(.social-icons) li span{
+  display:inline-block !important;         /* 避免块级元素换行 */
+  white-space:nowrap !important;           /* 不换行 */
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;       /* 放不下就省略号 */
+  max-width:100%;
+  word-break:keep-all !important;
+  hyphens:none !important;
+}
+
+/* 宽一点侧栏，防止刚好卡在边界还要省略号 */
+@media (min-width:992px){
+  .sidebar{ flex:0 0 360px !important; max-width:360px !important; }
+}
+@media (min-width:1280px){
+  .sidebar{ flex-basis:380px !important; max-width:380px !important; }
+}
+
