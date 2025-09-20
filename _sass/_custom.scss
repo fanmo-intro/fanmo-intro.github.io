@@ -1,27 +1,28 @@
+---
+---
 /* =========================
-   Fan Mo — custom.scss (final, slim + working)
+   Fan Mo — custom.scss (final, clean)
    ========================= */
 
 /* ---------- Theme accents ---------- */
-:root {
-  --accent: #1d4ed8;  /* Tailwind blue-700 */
-  --muted:  #6b7280;  /* gray for secondary text */
+:root{
+  --accent:#1d4ed8;
+  --muted:#6b7280;
 }
 
 /* =========================
    Layout
    ========================= */
 .page{
-  display:flex; gap:2rem; align-items:flex-start; flex-wrap:wrap; /* wrap on smaller screens */
+  display:flex; gap:2.5rem; align-items:flex-start; flex-wrap:wrap;
 }
 .sidebar{
-  /* fluid width so the main column never gets crushed, wide enough for one-line items */
-  flex:0 0 clamp(300px, 28vw, 420px) !important;
-  max-width:clamp(300px, 28vw, 420px) !important;
+  /* wide enough so "University of Cambridge" fits on one line */
+  flex:0 0 clamp(340px, 28vw, 420px) !important;
+  max-width:clamp(340px, 28vw, 420px) !important;
 }
 .page__content{
-  flex:1 1 600px; min-width:0;
-  max-width:1040px; margin:0 auto;
+  flex:1 1 600px; min-width:0; max-width:1040px; margin:0 auto;
   text-align:justify; text-justify:inter-ideograph;
   line-height:1.75; font-size:1.05rem; color:#2b2b2b;
 }
@@ -38,187 +39,104 @@
 /* =========================
    Author card
    ========================= */
-.author__avatar{ margin:0 auto 1rem; display:block; }
+.author__avatar{ display:block; margin:0 auto 1rem auto; }
 .author__avatar img{
-  width:96px; height:96px; border-radius:50%; object-fit:cover;
+  display:block; margin:0 auto; width:96px; height:96px;
+  border-radius:50%; object-fit:cover;
 }
 .author__content h3.author__name{
   font-size:1.5rem !important; font-weight:700 !important; color:#111 !important;
   margin:.35rem 0 .5rem !important; text-align:center;
 }
 .author__content .author__bio{
-  font-size:1rem !important; font-weight:400 !important; color:#333 !important;
-  line-height:1.5 !important; margin:.4rem 0 .9rem !important; text-align:left !important;
-  max-width:34ch;
+  font-size:1rem !important; color:#333 !important; line-height:1.5 !important;
+  margin:.4rem 0 .9rem !important; max-width:34ch; text-align:left !important;
 }
 
 /* =========================
-   Icon base (Font Awesome 5 & 6)
+   Institutions / meta list
    ========================= */
+/* Base icon sizing (Font Awesome 5/6 safe) */
 .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
-  display:inline-block; width:1.15em; text-align:center;
-  margin-right:.45rem; line-height:1; vertical-align:middle; color:#444;
+  width:1em; text-align:center; margin-right:.4rem; line-height:1;
+  color:#444; vertical-align:middle;
 }
-/* aliases across versions */
-.author__urls i.fa-building-columns,
-.author__urls i.fa-university,
-.author__urls i.fas.fa-building-columns,
-.author__urls i.fa-solid.fa-building-columns{ color:#444; }
-.author__urls i.fa-location-dot,
-.author__urls i.fa-map-marker-alt,
-.author__urls i.fas.fa-map-marker-alt,
-.author__urls i.fa-solid.fa-location-dot{ color:#444; }
 
-/* =========================
-   Location / institutions
-   ========================= */
-.author__urls li.author__desktop{
-  font-size:1rem !important; color:#555 !important; line-height:1.4 !important;
-  white-space:nowrap !important; margin:.3rem 0 !important; hyphens:none;
-}
-.author__urls:not(.social-icons) li,
-.author__urls:not(.social-icons) li a{
-  font-size:1rem !important; line-height:1.4 !important;
+/* Make each row a single line (desktop), with ellipsis if too long */
+.author__urls:not(.social-icons){
+  list-style:none; padding:0; margin:.25rem 0 0 0;
 }
 .author__urls:not(.social-icons) li{
-  display:flex !important; align-items:flex-start !important; gap:.55rem;
-  margin:.35rem 0 !important; white-space:nowrap !important; max-width:100% !important; hyphens:none;
+  display:flex !important; align-items:center !important; gap:.45rem;
+  margin:.32rem 0 !important; max-width:100%;
+  white-space:nowrap !important;        /* no wrap on desktop */
 }
-.author__urls:not(.social-icons) li a{ color:#555; text-decoration:none; }
+.author__urls:not(.social-icons) li a,
+.author__urls:not(.social-icons) li span{
+  color:#555; text-decoration:none; line-height:1.4;
+  overflow:hidden; text-overflow:ellipsis; white-space:inherit;
+}
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 
 /* =========================
-   Social icon buttons (icon-only)
+   Social icons (icon-only pills)
    ========================= */
-.author__urls-wrapper,
-.sticky .author__urls-wrapper{
-  position:static !important; opacity:1 !important; visibility:visible !important;
-  transform:none !important; background:transparent !important; box-shadow:none !important;
-  border:none !important; padding:0 !important; margin:.5rem 0 0 0 !important;
-}
+.author__urls-wrapper{ position:static !important; margin:.6rem 0 0 0 !important; }
+.author__urls-wrapper::before,
+.author__urls-wrapper::after,
+.author__urls-wrapper .btn{ display:none !important; }
+
 .author__urls.social-icons{
-  display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; padding:0; list-style:none;
-  justify-content:center;
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
+  margin:10px 0 8px 0; padding:0; list-style:none;
 }
-.author__urls.social-icons li{ margin:0; padding:0; list-style:none; }
-/* Make them icon-only everywhere (no stray text on mobile) */
+.author__urls.social-icons li{ margin:0; padding:0; }
 .author__urls.social-icons li a{
-  display:inline-flex; justify-content:center; align-items:center;
+  display:inline-flex; align-items:center; justify-content:center;
   width:40px; height:40px; border-radius:50%;
-  background:#f3f4f6; color:#444; border:none !important; box-shadow:none !important;
+  background:#f3f4f6; color:#444; border:none; box-shadow:none;
   transition:background .2s ease, color .2s ease;
-  font-size:0 !important;                 /* hides any label text nodes */
-  overflow:hidden;
+  font-size:0 !important; overflow:hidden;   /* hide stray text nodes */
 }
 .author__urls.social-icons li a:hover{ background:var(--accent); color:#fff !important; }
 .author__urls.social-icons li a i,
 .author__urls.social-icons li a svg{
   font-size:18px !important; width:1em; height:1em; color:inherit !important; fill:currentColor !important;
 }
-.author__urls.social-icons li a span{ display:none !important; }
 
 /* =========================
-   Mobile tweaks (<= 768px)
+   Mobile (≤ 768px)
    ========================= */
 @media (max-width:768px){
-  /* Shared padding so avatar and name share the same center */
   .sidebar{ flex:1 1 100% !important; max-width:100% !important; padding:0 1rem; }
   .page__content{ max-width:100%; padding:0 1rem; font-size:1rem; }
 
-  .author__content{ text-align:center; padding:0 !important; }
-  .author__avatar{
-    width:100%; margin:0 auto 1rem auto !important; padding:0 !important;
-    display:flex; justify-content:center;
-  }
-  .author__avatar img{ width:128px; height:128px; margin:0 !important; }
+  .author__avatar img{ width:128px; height:128px; }
+  .author__content{ text-align:center; }
+  .author__content .author__bio{ text-align:center !important; max-width:100%; }
 
-  /* Inline institutions, keep icons visible, allow wrap */
-  .author__urls:not(.social-icons){ text-align:center; }
+  /* allow wrapping on phones so long names don’t overflow */
   .author__urls:not(.social-icons) li{
-    display:inline-flex !important; align-items:center !important;
-    gap:.35rem; margin:0 .6rem .35rem .6rem !important;
-    white-space:normal !important; /* allow wrap on phones */
+    white-space:normal !important;
   }
-  .author__urls:not(.social-icons) li + li::before{
-    content:"· "; color:#9ca3af; margin-right:.35rem;
-  }
-
-  /* Bigger touch targets for social icons */
-  .author__urls.social-icons li a{ width:44px; height:44px; }
-  .author__urls.social-icons li a i,
-  .author__urls.social-icons li a svg{ font-size:20px !important; }
 }
-/* --- Hide location row in author card --- */
+
+/* =========================
+   Small desktop tweaks
+   ========================= */
+@media (min-width:992px){
+  .page{ gap:3rem; }
+  /* tiny font squeeze to help long institution names fit */
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span{ font-size:.975rem; }
+}
+
+/* ===== Optional: hide the location row if present ===== */
+/*
 .author__urls li.author__desktop,
 .author__urls li.location,
 .author__urls li.author__location,
 .author__urls li[itemprop="homeLocation"]{
   display:none !important;
 }
-
-/* Prevent a leading "·" when location is hidden on mobile */
-@media (max-width:768px){
-  .author__urls:not(.social-icons) li.author__desktop + li::before{
-    content:none !important;
-  }
-}
-
-/* Nudge main content a little to the right on desktop */
-@media (min-width: 992px){
-  .page{ gap: 3rem; }           /* was 2rem — increase the space */
-}
-
-/* Optional: tiny extra nudge if you want more */
-@media (min-width: 1200px){
-  .page__content{ padding-left: .5rem; }  /* adjust .25rem–.75rem to taste */
-}
-
-/* === Keep "University of Cambridge" on ONE line (desktop) === */
-@media (min-width: 992px){
-  /* give a little more room */
-  .sidebar{
-    flex:0 0 380px !important;
-    max-width:380px !important;
-  }
-  /* squeeze spacing so long names fit */
-  .author__urls:not(.social-icons) li{ gap:.4rem !important; }
-  .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
-    width:1em !important;          /* was 1.15em */
-    margin-right:.35rem !important;
-  }
-  /* never wrap institution names */
-  .author__urls:not(.social-icons) li a{
-    white-space:nowrap !important;
-    font-size:0.975rem;            /* tiny shrink to help it fit */
-  }
-}
-
-/* If it STILL wraps on your screen, bump the width a touch more: 390–400px */
-@media (min-width: 1280px){
-  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
-}
-
-/* ---- keep institution rows on ONE line ---- */
-.author__urls:not(.social-icons) li{
-  grid-template-columns: 22px 1fr;   /* icon + flexible text */
-  align-items: center !important;
-}
-
-.author__urls:not(.social-icons) li span,
-.author__urls:not(.social-icons) li a{
-  white-space: nowrap !important;    /* no wrapping */
-  overflow: hidden !important;       /* avoid layout break if too long */
-  text-overflow: ellipsis !important;
-  hyphens: none !important;
-  word-break: keep-all !important;
-}
-
-/* (optional) only allow wrapping on small phones */
-@media (max-width: 420px){
-  .author__urls:not(.social-icons) li span,
-  .author__urls:not(.social-icons) li a{
-    white-space: normal !important;
-    text-overflow: clip !important;
-  }
-}
-
+*/
