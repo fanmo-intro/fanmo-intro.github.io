@@ -150,10 +150,10 @@
 .author__urls:not(.social-icons) li::before,
 .author__urls:not(.social-icons) li + li::before{ content:none !important; display:none !important; }
 
-/* (Optional) Hide the LOCATION row completely */
+/* (Optional) Hide the LOCATION row completely
 .author__urls li.author__location,
 .author__urls li.author__desktop{ display:none !important; }
-
+ */
 /* =========================
    Social icons (no popover, perfect centering)
    ========================= */
