@@ -118,7 +118,7 @@
   font-size:1rem !important;
   color:#555 !important;
   line-height:1.4 !important;
-  white-space:nowrap !important;
+  white-space:normal !important;   /* allow wrapping so 'UK' shows */
   margin:.25rem 0 !important;
 }
 
@@ -157,20 +157,33 @@
   text-decoration: underline;
 }
 
+/* Make rows wider & neatly aligned (icon left, text flexes) */
+.author__urls:not(.social-icons) li{
+  display:flex !important;
+  align-items:flex-start !important;
+  gap:.5rem;
+  margin:.35rem 0 !important;
+  white-space:normal !important;   /* allow wrapping */
+  max-width:100% !important;
+}
+.author__urls:not(.social-icons) li i{ flex:0 0 auto; margin-right:0; font-size:1.1rem; }
+.author__urls:not(.social-icons) li span,
+.author__urls:not(.social-icons) li a{ flex:1 1 auto; display:block; line-height:1.4; }
+
 /* ===== Mobile: inline & centered (keep icons visible) ===== */
 @media (max-width:768px){
-  /* inline list like: Cambridge · Oxford */
   .author__urls:not(.social-icons){ text-align:center; }
   .author__urls:not(.social-icons) li{
-    display:inline-flex; align-items:center;
+    display:inline-flex !important;
+    align-items:center !important;
     gap:.35rem;
-    margin:0 .35rem !important;
-    white-space:nowrap !important;
+    margin:0 .5rem .35rem .5rem !important;  /* a bit wider spacing */
+    white-space:normal !important;           /* allow wrap if needed */
+    max-width:100% !important;
   }
   .author__urls:not(.social-icons) li + li::before{
     content:"· "; color:#9ca3af; margin-right:.35rem;
   }
-  /* NOTE: no icon-hiding here */
 }
 
 /* Optional: only hide icons on ultra-narrow screens */
