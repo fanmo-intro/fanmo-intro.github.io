@@ -6,11 +6,11 @@
 :root{
   --accent:#1d4ed8;
   --muted:#6b7280;
-  --sidebar-meta-size:0.92rem;     /* size for location/institutions (desktop) */
+  --sidebar-meta-size:0.92rem;     /* size for institutions (desktop) */
   --sidebar-meta-color:#4b5563;
 }
 @media (max-width:768px){
-  :root{ --sidebar-meta-size:0.98rem; }       /* a touch larger on phones */
+  :root{ --sidebar-meta-size:0.98rem; }       /* slightly larger on phones */
 }
 
 /* =========================
@@ -85,11 +85,14 @@
 /* =========================
    Author Card
    ========================= */
-.author__avatar{ margin:0 auto 1rem auto; display:block; }
+.author__avatar{ margin:0 auto 1rem auto; display:block; text-align:center; }
 .author__avatar img{
-  width:96px; height:96px; border-radius:50%; object-fit:cover;
+  width:96px; height:96px; border-radius:50%; object-fit:cover; display:block; margin:0 auto;
 }
-@media (max-width:768px){ .author__avatar img{ width:128px; height:128px; } }
+@media (max-width:768px){
+  .author__avatar{ display:grid; place-items:center; margin:0 auto 1rem auto; }
+  .author__avatar img{ width:128px; height:128px; }
+}
 
 .author__content h3.author__name{
   font-size:1.5rem !important; font-weight:700 !important; color:#111 !important;
@@ -114,14 +117,14 @@
 }
 
 /* =========================
-   Metadata rows (institutions list)
+   Institutions list (clean alignment)
    ========================= */
 .author__urls:not(.social-icons){
   width:100%; margin:.25rem 0 0 0; padding:0; list-style:none !important;
 }
 .author__urls:not(.social-icons) li{
   display:grid !important;
-  grid-template-columns:24px 1fr;
+  grid-template-columns:24px 1fr;  /* fixed icon + flexible text */
   align-items:center !important;
   column-gap:.6rem;
   margin:.28rem 0 !important;
@@ -143,26 +146,31 @@
 }
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 
-/* ===== Hide the LOCATION row entirely ===== 
-.author__urls li.author__location,
-.author__urls li.author__desktop{ display:none !important; }
-*/
-/* ===== Remove any theme-injected bullets/separators ===== */
+/* Remove any theme-injected bullets/separators */
 .author__urls:not(.social-icons) li::before,
 .author__urls:not(.social-icons) li + li::before{ content:none !important; display:none !important; }
 
+/* (Optional) Hide the LOCATION row completely */
+.author__urls li.author__location,
+.author__urls li.author__desktop{ display:none !important; }
+
 /* =========================
-   Social icons (perfect centering)
+   Social icons (no popover, perfect centering)
    ========================= */
 .author__urls-wrapper,
 .sticky .author__urls-wrapper{
   position:static !important; opacity:1 !important; visibility:visible !important;
   transform:none !important; background:transparent !important; box-shadow:none !important;
-  border:none !important; padding:0 !important; margin:.5rem 0 0 0 !important;
+  border:none !important; padding:0 !important; margin:.6rem 0 .4rem 0 !important;
 }
+/* Kill the popover arrow & the toggle button entirely */
+.author__urls-wrapper::before,
+.author__urls-wrapper::after{ content:none !important; display:none !important; }
+.author__urls-wrapper .btn{ display:none !important; }
+
 .author__urls.social-icons{
-  display:flex; flex-wrap:wrap; gap:12px; justify-content:center;
-  margin-top:10px; padding:0; list-style:none;
+  display:flex !important; flex-wrap:wrap; gap:12px; justify-content:center;
+  margin:10px 0 8px 0; padding:0; list-style:none;
 }
 .author__urls.social-icons li{ margin:0; padding:0; }
 .author__urls.social-icons li a{
