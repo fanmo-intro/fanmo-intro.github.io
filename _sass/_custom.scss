@@ -232,3 +232,19 @@
 @media (max-width:768px){
   .author__urls:not(.social-icons){ padding:0 1rem; }
 }
+/* === Unify location & institution typography (match location size) === */
+:root { --sidebar-meta-size: 1rem; }  /* adjust once if you ever want it bigger/smaller */
+
+.author__urls li.author__desktop,
+.author__urls:not(.social-icons) li{
+  font-size: var(--sidebar-meta-size) !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
+}
+
+/* Make links/spans inherit the same size so nothing looks off */
+.author__urls li.author__desktop a,
+.author__urls:not(.social-icons) li a,
+.author__urls:not(.social-icons) li span{
+  font-size: inherit !important;
+}
