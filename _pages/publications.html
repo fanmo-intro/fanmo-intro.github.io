@@ -5,8 +5,6 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% include base_path %}
-
 {% if site.author.googlescholar %}
 <div class="wordwrap">
   You can also find my articles on
@@ -14,46 +12,8 @@ author_profile: true
 </div>
 {% endif %}
 
-{%- comment -%}
-  Collect and group by year (works with Minimal Mistakes collection `site.publications`)
-{%- endcomment -%}
-{% assign pubs = site.publications | sort: "date" | reverse %}
-{% assign groups = pubs | group_by_exp: "p", "p.date | date: '%Y'" %}
-
-{%- for g in groups -%}
-  <h2 id="{{ g.name }}">{{ g.name }}</h2>
-  <ol class="pub-list">
-  {%- for p in g.items -%}
-    <li class="pub">
-      {%- comment -%} Authors (bold your name if desired) {%- endcomment -%}
-      <span class="pub-authors">
-        {{ p.authors | default: p.author | replace: "Fan Mo", "<strong>Fan Mo</strong>" }}
-      </span>.
-      {%- comment -%} Title, link to the post page (or external if `external_url`) {%- endcomment -%}
-      <span class="pub-title">
-        “
-        {%- if p.external_url -%}
-          <a href="{{ p.external_url }}">{{ p.title }}</a>
-        {%- else -%}
-          <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
-        {%- endif -%}
-        ”
-      </span>.
-      {%- comment -%} Venue/journal/conference {%- endcomment -%}
-      <span class="pub-venue">{{ p.venue | default: p.publication }}</span>,
-      {{ g.name }}.
-
-      {%- comment -%} Optional badges/links if provided in front matter {%- endcomment -%}
-      {%- assign links = "" -%}
-      {%- if p.doi -%}{% assign links = links | append: '<a class="pub-badge" href="https://doi.org/' | append: p.doi | append: '">DOI</a> ' %}{%- endif -%}
-      {%- if p.pdf -%}{% assign links = links | append: '<a class="pub-badge" href="' | append: p.pdf | append: '">PDF</a> ' %}{%- endif -%}
-      {%- if p.code -%}{% assign links = links | append: '<a class="pub-badge" href="' | append: p.code | append: '">Code</a> ' %}{%- endif -%}
-      {%- if p.slides -%}{% assign links = links | append: '<a class="pub-badge" href="' | append: p.slides | append: '">Slides</a> ' %}{%- endif -%}
-      {%- if p.video -%}{% assign links = links | append: '<a class="pub-badge" href="' | append: p.video | append: '">Video</a> ' %}{%- endif -%}
-      {%- if links != "" -%}
-        <span class="pub-links">{{ links | strip }}</span>
-      {%- endif -%}
-    </li>
-  {%- endfor -%}
-  </ol>
-{%- endfor -%}
+<ul class="pub-list">
+{% for post in site.publications reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+</ul>
