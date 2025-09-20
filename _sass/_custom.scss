@@ -87,6 +87,30 @@
 .author__urls li .employer a{ color:#555; text-decoration:none; white-space:nowrap; }
 .author__urls li .employer a:hover{ color:var(--accent); text-decoration:underline; }
 
+/* ---------- NEW: Generic author links (e.g., University of Cambridge/Oxford) ---------- */
+.author__urls:not(.social-icons) li,
+.author__urls:not(.social-icons) li a {
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+}
+.author__urls:not(.social-icons) li { 
+  margin: .25rem 0 !important; 
+}
+.author__urls:not(.social-icons) li a {
+  color: #555;
+  text-decoration: none;
+}
+.author__urls:not(.social-icons) li a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+@media (max-width:768px){
+  .author__urls:not(.social-icons) li,
+  .author__urls:not(.social-icons) li a {
+    font-size: .95rem !important;
+  }
+}
+
 /* Social icons row */
 .author__urls.social-icons{
   display:flex; gap:12px; flex-wrap:wrap;
