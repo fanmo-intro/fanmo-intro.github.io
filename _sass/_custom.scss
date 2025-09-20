@@ -87,7 +87,7 @@
 .author__urls li .employer a{ color:#555; text-decoration:none; white-space:nowrap; }
 .author__urls li .employer a:hover{ color:var(--accent); text-decoration:underline; }
 
-/* ---------- NEW: Generic author links (e.g., University of Cambridge/Oxford) ---------- */
+/* ---------- Generic author links (e.g., University of Cambridge/Oxford) ---------- */
 .author__urls:not(.social-icons) li,
 .author__urls:not(.social-icons) li a {
   font-size: 1rem !important;
@@ -154,4 +154,49 @@
   .author__urls.social-icons li a{
     width:30px; height:30px; font-size:16px;
   }
+}
+
+/* =========================
+   Mobile polish: avatar & social icons
+   ========================= */
+
+/* Larger, crisp circular avatar (desktop + mobile) */
+.author__avatar img{
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+@media (max-width:768px){
+  .author__avatar img{
+    width: 112px;   /* bigger on phones */
+    height: 112px;
+  }
+}
+
+/* Remove white card/background around the social icons wrapper */
+.author__urls-wrapper{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Ensure icon buttons themselves never show a white box */
+.author__urls.social-icons li a{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Normalize SVG/FontAwesome glyph sizing + color inheritance */
+.author__urls.social-icons i,
+.author__urls.social-icons svg{
+  width: 1em; height: 1em;
+  color: inherit !important;
+  fill: currentColor !important;
+}
+
+/* Optional: subtle hover tint for better feedback on mobile */
+.author__urls.social-icons li a:hover{
+  background: rgba(29,78,216,.08) !important;
 }
