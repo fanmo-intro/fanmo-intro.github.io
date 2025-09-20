@@ -41,8 +41,8 @@
    ========================= */
 .page { display:flex; gap:2rem; align-items:flex-start; }
 .sidebar { 
-  flex:0 0 320px !important;       /* wider sidebar */
-  max-width:320px !important;
+  flex:0 0 500px !important;       /* wider sidebar */
+  max-width:500px !important;
 }
 @media (max-width:1280px){
   .sidebar{ flex:0 0 300px !important; max-width:300px !important; }
