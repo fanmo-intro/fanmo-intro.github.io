@@ -31,6 +31,31 @@ Beyond research, I serve as **Chair of the China Chapter of the Marie Curie Alum
 
 ---
 
+
+# Services
+
+### Editorial Roles
+- Editorial Board Member, *International Journal of Manufacturing Research*
+- Guest Editor, *Applied Science*, Topic: Trends and Prospects in Advanced Automated Manufacturing Systems
+- Associate Editor, *Journal of Automation and Intelligence*
+- Young Editorial Board Member, *Journal of Complex Engineering Systems*  
+
+### Conference Service
+- Session Chair, *FAIM* (2022–2024)  
+- Session Chair, *22nd IFAC World Congress* (2023)  
+- Session Chair, *ACM MUM* (2024)  
+- Lead Organizer & Chair, *MCAA China Chapter Annual Conferences & Forums* (2023–2024)  
+- Organizer, *MCAA Asia Connect Forum on AI and Computer Science* (2024)  
+
+### Reviewer
+- *IEEE Transactions on Industrial Informatics*  
+- *Journal of Intelligent Manufacturing*  
+- *Engineering Applications of Artificial Intelligence*  
+- *Expert Systems with Applications*  
+- *Journal of Manufacturing Systems*  
+- Reviewer for *NeurIPS* and other AI/manufacturing conferences  
+
+---
 # News  
 
 - **Jun. 2025** – Paper *“Intelligent Configuration Management in Modular Production Systems: Integrating Operational Semantics with Knowledge Graphs”* published in *Journal of Manufacturing Systems*  
@@ -63,29 +88,5 @@ Beyond research, I serve as **Chair of the China Chapter of the Marie Curie Alum
 - **Aug. 2022** – Delivered Marie Curie Fellowship workshop with 500+ attendees  
 - **Jun. 2022** – Paper *“Service Based Approach to Asset Administration Shell for Controlling Testing Processes in Manufacturing”* published in *MIM 2022 Proceedings (IFAC)*  
 
----
-
-# Services
-
-### Editorial Roles
-- Editorial Board Member, *International Journal of Manufacturing Research*
-- Guest Editor, *Applied Science*, Topic: Trends and Prospects in Advanced Automated Manufacturing Systems
-- Associate Editor, *Journal of Automation and Intelligence*
-- Young Editorial Board Member, *Journal of Complex Engineering Systems*  
-
-### Conference Service
-- Session Chair, *FAIM* (2022–2024)  
-- Session Chair, *22nd IFAC World Congress* (2023)  
-- Session Chair, *ACM MUM* (2024)  
-- Lead Organizer & Chair, *MCAA China Chapter Annual Conferences & Forums* (2023–2024)  
-- Organizer, *MCAA Asia Connect Forum on AI and Computer Science* (2024)  
-
-### Reviewer
-- *IEEE Transactions on Industrial Informatics*  
-- *Journal of Intelligent Manufacturing*  
-- *Engineering Applications of Artificial Intelligence*  
-- *Expert Systems with Applications*  
-- *Journal of Manufacturing Systems*  
-- Reviewer for *NeurIPS* and other AI/manufacturing conferences  
 
 ---
