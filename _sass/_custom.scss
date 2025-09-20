@@ -215,4 +215,87 @@
   /* Ensure nothing “sticks” or overlaps the heading */
   .sticky .author__urls-wrapper{ position:static !important; }
 }
+/* ==== Match "first attachment" mobile layout (no card, centered, neat icons) ==== */
+
+/* remove the white card everywhere */
+.sidebar .author__content{
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
+
+/* keep desktop institutions on one line with ellipsis (no visual change) */
+.author__urls:not(.social-icons) li{
+  display:flex !important; align-items:center !important; gap:.45rem !important;
+  margin:.32rem 0 !important; max-width:100%;
+  white-space:nowrap !important;
+}
+.author__urls:not(.social-icons) li i{ flex:0 0 auto; }
+.author__urls:not(.social-icons) li a,
+.author__urls:not(.social-icons) li span{
+  flex:1 1 auto !important; min-width:0 !important;
+  overflow:hidden !important; text-overflow:ellipsis !important;
+  white-space:inherit; line-height:1.35; color:#555; text-decoration:none;
+}
+.author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
+.author__urls:not(.social-icons) li br{ display:none !important; }
+
+/* ===== MOBILE (≤768px) — center avatar, center text, simple clean lists ===== */
+@media (max-width:768px){
+  /* stack layout and center the whole block */
+  .page{ display:block !important; }
+  .sidebar{ padding:0 16px !important; margin:0 auto 14px auto !important; max-width:520px !important; }
+
+  /* avatar + name like the first screenshot */
+  .author__content{ display:flex !important; flex-direction:column !important; align-items:center !important; text-align:center !important; gap:.6rem !important; }
+  .author__avatar{ margin:0 auto 12px auto !important; }
+  .author__avatar img{
+    display:block !important; margin:0 auto !important;
+    width:160px !important; height:160px !important; border-radius:50% !important; object-fit:cover !important;
+  }
+  .author__content h3.author__name{
+    font-size:2rem !important; font-weight:800 !important; margin:.25rem 0 .25rem 0 !important; color:#1f2937 !important; text-align:center !important;
+  }
+  .author__content .author__bio{
+    font-size:1.05rem !important; line-height:1.55 !important; color:#374151 !important;
+    max-width:32ch !important; margin:0 auto .6rem auto !important; text-align:center !important;
+  }
+
+  /* institutions — one column centered, no chips, icon normal size */
+  .author__urls:not(.social-icons){ width:100% !important; text-align:center !important; margin-top:.2rem !important; padding:0 !important; }
+  .author__urls:not(.social-icons) li{
+    justify-content:center !important; align-items:center !important; gap:.5rem !important;
+    margin:.2rem 0 !important; white-space:normal !important;       /* allow wrap on very small screens */
+  }
+  .author__urls:not(.social-icons) li i{
+    width:auto !important; height:auto !important; font-size:18px !important; line-height:1 !important; color:#6b7280 !important;
+  }
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span{
+    white-space:normal !important; text-overflow:clip !important; word-break:keep-all !important; hyphens:none !important;
+    font-size:1.05rem !important;
+  }
+
+  /* social icons — neat centered row below institutions (won't overlap heading) */
+  .author__urls-wrapper{ position:static !important; margin:.55rem 0 .9rem 0 !important; }
+  .author__urls-wrapper::before,
+  .author__urls-wrapper::after,
+  .author__urls-wrapper .btn{ display:none !important; }
+
+  .author__urls.social-icons{
+    display:flex !important; flex-wrap:wrap !important; justify-content:center !important;
+    gap:14px !important; margin:0 !important; padding:0 !important; list-style:none !important;
+  }
+  .author__urls.social-icons li{ margin:0 !important; padding:0 !important; }
+  .author__urls.social-icons li a{
+    display:inline-flex !important; align-items:center !important; justify-content:center !important;
+    width:44px !important; height:44px !important; border-radius:50% !important;
+    background:#f3f4f6 !important; color:#374151 !important; border:none !important; box-shadow:none !important;
+    font-size:0 !important; overflow:hidden !important; transition:background .2s ease, color .2s ease !important;
+  }
+  .author__urls.social-icons li a:hover{ background:var(--accent) !important; color:#fff !important; }
+  .author__urls.social-icons li a i,
+  .author__urls.social-icons li a svg{ font-size:20px !important; }
+}
 
