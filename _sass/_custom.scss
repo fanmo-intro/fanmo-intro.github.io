@@ -11,23 +11,15 @@
 /* =========================
    Page typography & width
    ========================= */
-.page { 
-  display:flex; 
-  gap:2rem; 
-  align-items:flex-start; 
-  flex-wrap:wrap;                 /* prevents overflow on narrower screens */
-}
-
 .page__content {
-  flex:1 1 600px;                 /* grow to fill beside sidebar */
-  min-width:0;
-  max-width: 1040px;              /* wider content */
+  max-width: 1040px;            /* wider content */
   margin: 0 auto;
   text-align: justify;
   text-justify: inter-ideograph;
   line-height: 1.75;
   font-size: 1.05rem;
   color: #2b2b2b;
+  flex: 1 1 auto;
 }
 .page__content p { margin-bottom: 1.2em; }
 .page__content p + p { margin-top: .7rem; }
@@ -41,19 +33,40 @@
 }
 .page__content h3 { color:#1f2937; font-weight:700; }
 .page__content strong { color:#1a73e8; font-weight:600; }
+
 @media (max-width:768px){
   .page__content{ max-width:100%; padding:0 1rem; font-size:1rem; }
 }
 
 /* =========================
-   Sidebar layout (fluid width)
+   Sidebar layout
    ========================= */
-.sidebar { 
-  flex:0 0 clamp(300px, 28vw, 420px) !important;  /* fluid, no hard 500px */
-  max-width:clamp(300px, 28vw, 420px) !important;
+.page { display:flex; gap:2rem; align-items:flex-start; }
+
+.sidebar{
+  flex:0 0 500px !important;     /* wider sidebar */
+  max-width:500px !important;
+  display:flex;
+}
+@media (max-width:1280px){
+  .sidebar{ flex:0 0 300px !important; max-width:300px !important; }
+}
+@media (max-width:992px){
+  .sidebar{ flex:0 0 280px !important; max-width:280px !important; }
 }
 @media (max-width:768px){
-  .sidebar{ flex:1 1 100% !important; max-width:100% !important; }
+  .page{ display:block; }
+  .sidebar{ flex:1 1 auto !important; max-width:100% !important; width:100%; }
+}
+
+/* Keep the author card tidy and centered */
+.sidebar .author__content{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;            /* avatar + name centered */
+  gap:.6rem;
+  padding:0;
 }
 
 /* =========================
@@ -65,12 +78,12 @@
 
 /* Bigger, crisp avatar */
 .author__avatar img{
-  width: 96px; height: 96px;
-  border-radius: 50%;
-  object-fit: cover;
+  width:96px; height:96px;
+  border-radius:50%;
+  object-fit:cover;
 }
 @media (max-width:768px){
-  .author__avatar img{ width: 128px; height: 128px; }
+  .author__avatar img{ width:128px; height:128px; }
 }
 
 /* Name — biggest */
@@ -106,9 +119,8 @@
 .author__urls i[class^="fa"],
 .author__urls i[class*=" fa"]{
   display:inline-block;
-  width:1.15em;
+  width:1.05em;
   text-align:center;
-  margin-right:.45rem;
   line-height:1;
   vertical-align:middle;
   color:#444;
@@ -119,106 +131,104 @@
 .author__urls i.fa-university,
 .author__urls i.fas.fa-building-columns,
 .author__urls i.fa-solid.fa-building-columns{ color:#444; }
-
 .author__urls i.fa-location-dot,
 .author__urls i.fa-map-marker-alt,
 .author__urls i.fas.fa-map-marker-alt,
 .author__urls i.fa-solid.fa-location-dot{ color:#444; }
 
 /* =========================
-   Location row
+   Metadata rows (location / institutions)
+   two-column grid for perfect alignment
    ========================= */
+.author__urls:not(.social-icons){
+  width:100%;
+  margin:.25rem 0 0 0;
+  padding:0;
+  list-style:none;
+}
+.author__urls:not(.social-icons) li{
+  display:grid !important;
+  grid-template-columns: 24px 1fr;   /* fixed icon column + flexible text */
+  align-items:center !important;
+  column-gap:.6rem;
+  margin:.35rem 0 !important;
+  white-space:normal !important;     /* allow natural wrapping */
+  hyphens:auto;
+}
+.author__urls:not(.social-icons) li i{
+  width:24px; height:24px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin:0;
+  font-size:1.05rem;
+  line-height:1;
+}
+.author__urls:not(.social-icons) li a{
+  color:#555; text-decoration:none;
+}
+.author__urls:not(.social-icons) li a:hover{
+  color:var(--accent); text-decoration:underline;
+}
+
+/* Specific row tweak */
 .author__urls li.author__desktop{
   font-size:1rem !important;
   color:#555 !important;
   line-height:1.4 !important;
-  white-space:nowrap !important;   /* single line with wider sidebar */
   margin:.3rem 0 !important;
-  hyphens:none;
+  white-space:normal !important;
+  hyphens:auto;
 }
 
 /* =========================
-   Institutions / generic author links
-   ========================= */
-.author__urls:not(.social-icons) li,
-.author__urls:not(.social-icons) li a {
-  font-size: 1rem !important;
-  line-height: 1.4 !important;
-}
-.author__urls:not(.social-icons) li{
-  display:flex !important;
-  align-items:flex-start !important;
-  gap:.55rem;
-  margin:.35rem 0 !important;
-  white-space:nowrap !important;   /* keep on one line on desktop */
-  max-width:100% !important;
-  hyphens:none;
-}
-.author__urls:not(.social-icons) li a {
-  color: #555;
-  text-decoration: none;
-}
-.author__urls:not(.social-icons) li a:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* ===== Mobile: inline & centered ===== */
-@media (max-width:768px){
-  .author__urls:not(.social-icons){ text-align:center; }
-  .author__urls:not(.social-icons) li{
-    display:inline-flex !important;
-    align-items:center !important;
-    gap:.35rem;
-    margin:0 .6rem .35rem .6rem !important;
-    white-space:normal !important; /* allow wrap on phones */
-  }
-  .author__urls:not(.social-icons) li + li::before{
-    content:"· "; color:#9ca3af; margin-right:.35rem;
-  }
-}
-
-/* Optional: only hide icons on ultra-narrow screens */
-@media (max-width:360px){
-  .author__urls:not(.social-icons) i[class^="fa"],
-  .author__urls:not(.social-icons) i[class*=" fa"]{ display:none; }
-}
-
-/* =========================
-   Social icons (always visible, no white card)
+   Social icons — perfectly centered circles
    ========================= */
 .author__urls-wrapper,
 .sticky .author__urls-wrapper{
-  position: static !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: .5rem 0 0 0 !important;
+  position:static !important;
+  opacity:1 !important;
+  visibility:visible !important;
+  transform:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border:none !important;
+  padding:0 !important;
+  margin:.5rem 0 0 0 !important;
 }
 
 .author__urls.social-icons{
-  display:flex; gap:12px; flex-wrap:wrap;
-  margin-top:10px; padding:0; list-style:none;
+  display:flex; flex-wrap:wrap; gap:12px;
   justify-content:center;
+  margin-top:10px; padding:0; list-style:none;
 }
-.author__urls.social-icons li{ margin:0; padding:0; list-style:none; }
+.author__urls.social-icons li{ margin:0; padding:0; }
 .author__urls.social-icons li a{
   display:inline-flex; justify-content:center; align-items:center;
   width:40px; height:40px; border-radius:50%;
   background:#f3f4f6; color:#444;
-  font-size:18px; line-height:1;
-  transition:background .2s ease, color .2s ease;
+  line-height:0;                 /* kill baseline wobble */
   box-shadow:none !important; border:none !important;
+  transition:background .2s ease, color .2s ease, transform .12s ease;
 }
-.author__urls.social-icons li a:hover{ background: var(--accent); color:#fff !important; }
-.author__urls.social-icons li a span{ display:none !important; }
+.author__urls.social-icons li a:hover{
+  background:var(--accent); color:#fff !important;
+  transform:translateY(-1px);
+}
 .author__urls.social-icons i,
-.author__urls.social-icons svg{ width:1em; height:1em; color:inherit !important; fill:currentColor !important; }
+.author__urls.social-icons svg{
+  display:block;                 /* exact center inside the circle */
+  width:1.15em; height:1.15em;
+  color:inherit !important; fill:currentColor !important;
+}
 
 @media (max-width:768px){
-  .author__urls.social-icons li a{ width:34px; height:34px; font-size:16px; }
+  .author__urls.social-icons li a{ width:34px; height:34px; }
+}
+
+/* =========================
+   Mobile refinements
+   ========================= */
+@media (max-width:768px){
+  .author__urls:not(.social-icons){ padding:0 1rem; }
 }
