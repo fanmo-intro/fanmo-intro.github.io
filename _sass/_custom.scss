@@ -172,3 +172,29 @@
 @media (min-width: 1200px){
   .page__content{ padding-left: .5rem; }  /* adjust .25rem–.75rem to taste */
 }
+
+/* === Keep "University of Cambridge" on ONE line (desktop) === */
+@media (min-width: 992px){
+  /* give a little more room */
+  .sidebar{
+    flex:0 0 380px !important;
+    max-width:380px !important;
+  }
+  /* squeeze spacing so long names fit */
+  .author__urls:not(.social-icons) li{ gap:.4rem !important; }
+  .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
+    width:1em !important;          /* was 1.15em */
+    margin-right:.35rem !important;
+  }
+  /* never wrap institution names */
+  .author__urls:not(.social-icons) li a{
+    white-space:nowrap !important;
+    font-size:0.975rem;            /* tiny shrink to help it fit */
+  }
+}
+
+/* If it STILL wraps on your screen, bump the width a touch more: 390–400px */
+@media (min-width: 1280px){
+  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
+}
+
