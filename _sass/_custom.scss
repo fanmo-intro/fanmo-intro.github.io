@@ -191,6 +191,25 @@
     touch-action: manipulation !important;
   }
 }
+.author__avatar {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto 12px auto !important;
+  width: 140px !important;   /* square container */
+  height: 140px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;  /* hide any overflow corners */
+}
+
+.author__avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;   /* ensures proportional crop */
+  border-radius: 50% !important;
+  display: block !important;
+}
+
 
 /* =========================
    Large screens tweaks
