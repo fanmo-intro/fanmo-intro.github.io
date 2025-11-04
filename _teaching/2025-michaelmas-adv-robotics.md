@@ -1,11 +1,10 @@
 ---
 title: "Advanced Robotics — AI & Control"
-collection: teaching
-type: "Graduate Course"
-permalink: /teaching/2025-michaelmas-adv-robotics
-venue: "Centre for Human-Inspired Artificial Intelligence, University of Cambridge"
 date: 2025-10-01
+venue: "Centre for Human-Inspired Artificial Intelligence, University of Cambridge"
 location: "Cambridge, UK"
+layout: teaching
+permalink: /teaching/2025-michaelmas-adv-robotics/
 ---
 
 **Role:** Guest Lecturer / Module Lead  
@@ -15,8 +14,8 @@ Developed and delivered a 6-week module on perception-driven control for collabo
 Topics included **sensor fusion**, **model-based control**, **sim-to-real transfer**, and **safe reinforcement learning**.  
 
 **Responsibilities**
-- Delivered 8 lectures and 3 lab sessions  
-- Designed final project assessment  
-- Supervised 6 student research projects  
+- Delivered 8 lectures and 3 lab sessions.  
+- Designed practical lab assignments and final project.  
+- Supervised 6 student research projects.  
 
 [📄 Download syllabus (PDF)](/assets/teaching/adv-robotics-syllabus.pdf)
