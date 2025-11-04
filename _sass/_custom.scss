@@ -39,20 +39,58 @@
    Author block (NO card)
    ========================= */
 .sidebar .author__content{
-  background:transparent !important; border:none !important; box-shadow:none !important;
-  padding:0 !important; display:flex; flex-direction:column; align-items:center; gap:.6rem;
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.6rem;
 }
-.author__avatar{ margin:0 auto .5rem auto; }
+
+/* Avatar container: force centering + clipping to circle */
+.author__avatar{
+  width:100% !important;
+  display:flex !important;
+  justify-content:center !important;
+  align-items:center !important;
+  margin:0 auto 12px auto !important;
+
+  /* make sure container clips children to a circle when needed */
+  border-radius:50% !important;
+  overflow:hidden !important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* helps iOS clipping */
+}
+
+/* Default avatar image size & behavior */
 .author__avatar img{
-  display:block; margin:0 auto; width:112px; height:112px; border-radius:50%; object-fit:cover;
+  display:block !important;
+  margin:0 auto !important;
+  width:112px;
+  height:112px;
+  max-width:100%;
+  border-radius:50% !important;   /* ensure the <img> itself is circular */
+  object-fit:cover !important;
+  object-position:center center !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
+
+/* Name & bio */
 .author__content h3.author__name{
-  font-size:1.6rem !important; font-weight:800 !important; color:var(--ink) !important;
-  margin:.2rem 0 .25rem !important; text-align:center;
+  font-size:1.6rem !important;
+  font-weight:800 !important;
+  color:var(--ink) !important;
+  margin:.2rem 0 .25rem !important;
+  text-align:center;
 }
 .author__content .author__bio{
-  color:#374151 !important; font-size:1rem !important; line-height:1.6 !important;
-  text-align:center !important; max-width:36ch; margin:0 0 .4rem 0 !important;
+  color:#374151 !important;
+  font-size:1rem !important;
+  line-height:1.6 !important;
+  text-align:center !important;
+  max-width:36ch;
+  margin:0 0 .4rem 0 !important;
 }
 
 /* Divider (remove) */
@@ -113,7 +151,11 @@
   .page{ display:block !important; }
   .sidebar{ padding:0 16px !important; margin:0 auto 14px auto !important; max-width:520px !important; }
 
-  .author__avatar img{ width:160px; height:160px; }
+  /* bigger and centered on mobile */
+  .author__avatar img{
+    width:160px !important;
+    height:160px !important;
+  }
   .author__content h3.author__name{ font-size:2rem !important; }
   .author__content .author__bio{ font-size:1.05rem !important; max-width:32ch !important; }
 
@@ -132,22 +174,7 @@
 
   /* Never sticky on mobile; prevents overlap with H2 */
   .sticky .author__urls-wrapper{ position:static !important; }
-}
 
-/* =========================
-   Large screens tweaks
-   ========================= */
-@media (min-width:992px){
-  .page{ gap:40px; }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span{ font-size:.975rem; }
-  .sidebar{ flex-basis:380px !important; max-width:380px !important; }
-}
-@media (min-width:1280px){
-  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
-}
-/* --- Mobile polish: keep icons clearly above the heading and kill iOS callout --- */
-@media (max-width:768px){
   /* extra breathing room below the sidebar so the icon row clears the H2 */
   .sidebar{ margin-bottom:24px !important; }
 
@@ -164,26 +191,16 @@
     touch-action: manipulation !important;
   }
 }
-/* --- Force avatar to center on mobile and desktop --- */
-.author__avatar{
-  width:100% !important;
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  margin:0 auto 12px auto !important;
-}
 
-.author__avatar img{
-  display:block !important;
-  margin:0 auto !important;
-  border-radius:50% !important;
-  object-fit:cover !important;
+/* =========================
+   Large screens tweaks
+   ========================= */
+@media (min-width:992px){
+  .page{ gap:40px; }
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span{ font-size:.975rem; }
+  .sidebar{ flex-basis:380px !important; max-width:380px !important; }
 }
-
-/* bigger and centered on mobile */
-@media (max-width:768px){
-  .author__avatar img{
-    width:160px !important;
-    height:160px !important;
-  }
+@media (min-width:1280px){
+  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
 }
