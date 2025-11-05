@@ -73,3 +73,22 @@
 .author__employers a:hover {
   text-decoration: underline;
 }
+/* ---- Fix desktop social links not clickable ---- */
+.sidebar,
+.author__urls,
+.author__urls a {
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+}
+.author__urls img {
+  pointer-events: none !important;
+}
+
+/* Prevent overlay content from blocking sidebar */
+.page__content {
+  pointer-events: auto !important;
+}
+.page__inner-wrap::after {
+  pointer-events: none !important;
+}
