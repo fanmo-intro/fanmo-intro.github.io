@@ -73,22 +73,100 @@
 .author__employers a:hover {
   text-decoration: underline;
 }
-/* ---- Fix desktop social links not clickable ---- */
+
+/* ===========================================
+   BEGIN: Fix social / sidebar icons not clickable on desktop
+   =========================================== */
+
+/*
+Rationale:
+- Your site shows social links clickable on mobile but blocked on desktop.
+- Typical cause: desktop layout places an (invisible) overlay or another element above the sidebar,
+  or the <img> intercepts pointer events. This block adds defensive rules:
+   1) Ensure sidebar/social containers and <a> are on top and accept pointer events.
+   2) Ensure images inside links don't intercept clicks (so <a> receives them).
+   3) Temporarily disable pointer-events on common overlay selectors at desktop widths.
+- These rules use common AcademicPages / Minimal Mistakes selectors. If you prefer, replace or
+  narrow selectors to the exact classes in your `_includes/*` files.
+*/
+
+/* 1) Make sure sidebar and social containers accept pointer events and sit on top */
 .sidebar,
+.site-sidebar,
+.author-profile,
+.profile-social,
 .author__urls,
-.author__urls a {
-  position: relative;
+.author__links,
+.author__meta,
+.social-icons,
+.sidebar-social {
+  position: relative !important;
   z-index: 9999 !important;
   pointer-events: auto !important;
 }
-.author__urls img {
+
+/* 2) Anchors should handle clicks; images inside should not intercept pointer events */
+.sidebar a,
+.site-sidebar a,
+.author-profile a,
+.profile-social a,
+.author__urls a,
+.author__links a,
+.author__meta a,
+.social-icons a,
+.sidebar-social a {
+  position: relative !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
+}
+
+/* Let the <img> inside not intercept pointer events so the <a> receives the click */
+.sidebar img,
+.site-sidebar img,
+.author-profile img,
+.profile-social img,
+.author__urls img,
+.author__links img,
+.author__meta img,
+.social-icons img,
+.sidebar-social img {
   pointer-events: none !important;
 }
 
-/* Prevent overlay content from blocking sidebar */
-.page__content {
+/* 3) Defensive: at desktop widths, common overlay/cover candidates should not block pointer events.
+   Replace these with a more specific selector if you identify the real overlay element.
+*/
+@media (min-width: 900px) {
+  .overlay,
+  .page-cover,
+  .site-cover,
+  .content-overlay,
+  .sidebar-overlay,
+  .page__content::before,
+  .page__inner-wrap::after {
+    pointer-events: none !important;
+  }
+}
+
+/* 4) If the site uses a main content wrapper that might be absolutely positioned over sidebar,
+   ensure it doesn't block pointer events (be conservative here; refine if necessary) */
+.page__content,
+.page-wrap,
+.wrapper,
+.main {
   pointer-events: auto !important;
 }
-.page__inner-wrap::after {
-  pointer-events: none !important;
+
+/* 5) Optional debug helpers (remove after confirming). They help visualize clickable anchors.
+   Uncomment if you need to visually debug in the browser. */
+/*
+.profile-social a:hover,
+.author-profile a:hover,
+.author__urls a:hover {
+  outline: 2px solid rgba(0,0,0,0.06);
+  outline-offset: 2px;
 }
+*/
+
+/* END: Fix social / sidebar icons not clickable on desktop */
+/* =========================================== */
