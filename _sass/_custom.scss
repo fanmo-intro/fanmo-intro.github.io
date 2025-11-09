@@ -51,15 +51,17 @@
 
 /* Avatar container: force centering + clipping to circle */
 .author__avatar{
-  width:100% !important;
-  display:flex !important;
-  justify-content:center !important;
-  align-items:center !important;
-  margin:0 auto 12px auto !important;
+  /* unified avatar container sizing & centering */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 auto 12px auto !important;
+  width: 140px !important;   /* square container */
+  height: 140px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;  /* hide any overflow corners */
 
   /* make sure container clips children to a circle when needed */
-  border-radius:50% !important;
-  overflow:hidden !important;
   -webkit-mask-image: -webkit-radial-gradient(white, black); /* helps iOS clipping */
 }
 
@@ -67,8 +69,8 @@
 .author__avatar img{
   display:block !important;
   margin:0 auto !important;
-  width:112px;
-  height:112px;
+  width:100% !important;
+  height:100% !important;
   max-width:100%;
   border-radius:50% !important;   /* ensure the <img> itself is circular */
   object-fit:cover !important;
@@ -104,7 +106,9 @@
 }
 .author__urls:not(.social-icons) li{
   display:flex !important; align-items:center !important; gap:.5rem;
-  margin:.25rem 0 !important; max-width:100%; white-space:nowrap !important;
+  margin:.25rem 0 !important; max-width:100%;
+  /* desktop behavior: keep row single-line unless overridden by mobile rules */
+  white-space:nowrap !important;
 }
 .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
   width:1em; text-align:center; color:#4b5563; line-height:1;
@@ -191,25 +195,22 @@
     touch-action: manipulation !important;
   }
 }
-.author__avatar {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin: 0 auto 12px auto !important;
-  width: 140px !important;   /* square container */
-  height: 140px !important;
-  border-radius: 50% !important;
-  overflow: hidden !important;  /* hide any overflow corners */
-}
 
-.author__avatar img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;   /* ensures proportional crop */
-  border-radius: 50% !important;
-  display: block !important;
+/* =========================================
+   Ensure institution names stay on one line
+   (desktop/tablet only — mobile still allows wrap)
+   ========================================= */
+@media (min-width: 769px) {
+  .author__urls:not(.social-icons) li {
+    white-space: nowrap !important; /* keep the whole row single-line on >=769px */
+  }
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span {
+    white-space: nowrap !important;    /* no internal breaks */
+    overflow: hidden !important;       /* preserve ellipsis if too long */
+    text-overflow: ellipsis !important;/* show ellipsis on overflow */
+  }
 }
-
 
 /* =========================
    Large screens tweaks
@@ -223,19 +224,3 @@
 @media (min-width:1280px){
   .sidebar{ flex-basis:400px !important; max-width:400px !important; }
 }
-/* =========================================
-   Ensure institution names stay on one line
-   (desktop/tablet only — mobile still allows wrap)
-   ========================================= */
-@media (min-width: 769px) {
-  .author__urls:not(.social-icons) li {
-    white-space: nowrap !important; /* keep the whole row single-line */
-  }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span {
-    white-space: nowrap !important;    /* no internal breaks */
-    overflow: hidden !important;       /* preserve ellipsis if too long */
-    text-overflow: ellipsis !important;/* show ellipsis on overflow */
-  }
-}
-
