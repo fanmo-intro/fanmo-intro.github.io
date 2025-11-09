@@ -23,9 +23,10 @@
 
 /* Wider sidebar for better line length */
 .sidebar{
-  flex:0 0 clamp(420px,45vw,600px) !important;
-  max-width:clamp(420px,45vw,600px) !important;
+  flex:0 0 clamp(380px,35vw,520px) !important;
+  max-width:clamp(380px,35vw,520px) !important;
 }
+
 
 
 .page__content{
@@ -139,17 +140,22 @@
   line-height:1;
   flex:0 0 auto;
 }
+/* ---------- institution name behavior fix ---------- */
 .author__urls:not(.social-icons) li a,
-.author__urls:not(.social-icons) li span{
+.author__urls:not(.social-icons) li span {
   color:#374151;
   text-decoration:none;
   line-height:1.35;
   flex:1 1 auto !important;
   min-width:0 !important;
-  overflow:visible !important;       /* 允许完整显示 */
-  text-overflow:unset !important;    /* 禁止省略号 */
-  white-space:nowrap !important;     /* 单行显示 */
+  overflow:visible !important;        /* 不截断 */
+  text-overflow:unset !important;     /* 禁止省略号 */
+  white-space:normal !important;      /* 宽度不足时自动换行 */
+  text-align:center !important;       /* 居中对齐 */
+  word-break:keep-all !important;     /* 保留单词整体 */
+  hyphens:none !important;            /* 禁止断词 */
 }
+
 .author__urls:not(.social-icons) li {
   justify-content: flex-start !important;
   padding-left: 0.4rem !important;
