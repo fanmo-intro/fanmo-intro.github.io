@@ -135,6 +135,8 @@
   white-space:normal !important;
   justify-content:flex-start !important;
   padding:0 .25rem;
+  /* ensure parent doesn't clip child text/pill */
+  overflow: visible !important;
 }
 
 .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
@@ -154,7 +156,13 @@
   line-height:1.35;
   flex:1 1 auto !important;
   min-width:0 !important;
-  overflow:visible !important;       /* allow wrap / full view on small screens */
+
+  /* --- REMOVE oval clipping / background --- */
+  background: none !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+
+  /* default wrapping for mobile */
   text-overflow:unset !important;    /* disable ellipsis baseline */
   white-space:normal !important;     /* allow wrapping by default */
   display:inline-block;
@@ -162,6 +170,25 @@
   word-break:keep-all !important;
   hyphens:none !important;
 }
+
+/* subtle hover highlight without clipping */
+.author__urls:not(.social-icons) li a:hover{
+  color:var(--accent);
+  text-decoration:underline;
+  background: rgba(29,78,216,0.05); /* very light accent tint */
+  border-radius:6px;
+  padding:0.08rem 0.35rem;           /* tiny padding so hover bg doesn't clip text */
+}
+
+/* remove any pseudo-element content that might be adding a pill */
+.author__urls:not(.social-icons) li a::before,
+.author__urls:not(.social-icons) li a::after,
+.author__urls:not(.social-icons) li span::before,
+.author__urls:not(.social-icons) li span::after{
+  content: none !important;
+  display: none !important;
+}
+
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 .author__urls:not(.social-icons) li br{ display:none !important; }
 
@@ -278,6 +305,10 @@
     text-overflow:ellipsis !important; /* desktop: show ellipsis only if can't fit */
     display:inline-block;
     text-align:left !important;
+
+    /* ensure no pill background or clipping remains on desktop either */
+    background: none !important;
+    border-radius: 0 !important;
   }
 }
 
@@ -295,4 +326,3 @@
 @media (min-width:1280px){
   .sidebar{ flex-basis:460px !important; max-width:460px !important; }
 }
-
