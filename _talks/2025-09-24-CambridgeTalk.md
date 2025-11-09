@@ -1,4 +1,4 @@
-
+---
 title: "Large Language Models and Graph Neural Networks for Intelligent Manufacturing Systems"
 collection: talks
 type: "Talk"
