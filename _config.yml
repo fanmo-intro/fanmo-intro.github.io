@@ -10,9 +10,9 @@ title          : "Fan Mo"
 title_separator: "-"
 name           : &name "Fan Mo"
 description    : &description "Fan Mo's academic portfolio"
-url            : "https://fanmo-intro.github.io"   # main site root
+url            : "https://github.com/mf093087"   # main site root
 baseurl        : ""                                 # keep empty for main site
-repository     : "fanmo-intro/fanmo-intro.github.io"
+repository     : ""
 
 # =======================
 # Sidebar / Author block
