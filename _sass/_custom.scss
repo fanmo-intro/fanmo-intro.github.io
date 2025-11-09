@@ -23,9 +23,10 @@
 
 /* Wider sidebar for better line length */
 .sidebar{
-  flex:0 0 clamp(340px,32vw,480px) !important;
-  max-width:clamp(340px,32vw,480px) !important;
+  flex:0 0 clamp(380px,35vw,520px) !important;
+  max-width:clamp(380px,35vw,520px) !important;
 }
+
 
 .page__content{
   flex:1 1 600px;
