@@ -149,6 +149,11 @@
   text-overflow:unset !important;    /* 禁止省略号 */
   white-space:nowrap !important;     /* 单行显示 */
 }
+.author__urls:not(.social-icons) li {
+  justify-content: flex-start !important;
+  padding-left: 0.4rem !important;
+  padding-right: 0.4rem !important;
+}
 
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 .author__urls:not(.social-icons) li br{ display:none !important; }
