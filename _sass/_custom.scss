@@ -1,5 +1,7 @@
 /* =========================================
-   Fan Mo — custom.scss (mobile neat, no card)
+   Fan Mo — custom.scss (final)
+   - Desktop: keep institution names one-line when possible
+   - Mobile: allow wrap & center, no ellipsis
    ========================================= */
 
 /* ---------- Theme accents & base ---------- */
@@ -21,13 +23,12 @@
   gap:32px;
 }
 
-/* Wider sidebar for better line length */
+/* Wider sidebar for better line length on desktop */
 .sidebar{
-  flex:0 0 clamp(380px,35vw,520px) !important;
-  max-width:clamp(380px,35vw,520px) !important;
+  /* adjust as needed: min, preferred (vw), max */
+  flex:0 0 clamp(360px,32vw,520px) !important;
+  max-width:clamp(360px,32vw,520px) !important;
 }
-
-
 
 .page__content{
   flex:1 1 600px;
@@ -73,12 +74,10 @@
   justify-content: center !important;
   align-items: center !important;
   margin: 0 auto 12px auto !important;
-  width: 140px !important;   /* square container */
+  width: 140px !important;
   height: 140px !important;
   border-radius: 50% !important;
-  overflow: hidden !important;  /* hide any overflow corners */
-
-  /* helps iOS clipping */
+  overflow: hidden !important;
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
@@ -89,7 +88,7 @@
   width:100% !important;
   height:100% !important;
   max-width:100%;
-  border-radius:50% !important;   /* ensure the <img> itself is circular */
+  border-radius:50% !important;
   object-fit:cover !important;
   object-position:center center !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
@@ -124,15 +123,20 @@
   margin:.2rem 0 0 0;
   width:100%;
 }
+
+/* List item: icon + text */
 .author__urls:not(.social-icons) li{
   display:flex !important;
   align-items:center !important;
-  gap:.5rem;
+  gap:.6rem;
   margin:.25rem 0 !important;
   max-width:100%;
-  /* desktop behavior: keep row single-line unless overridden by mobile rules */
-  white-space:nowrap !important;
+  /* baseline: let media queries control nowrap/wrap */
+  white-space:normal !important;
+  justify-content:flex-start !important;
+  padding:0 .25rem;
 }
+
 .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
   width:1em;
   text-align:center;
@@ -140,28 +144,24 @@
   line-height:1;
   flex:0 0 auto;
 }
-/* ---------- institution name behavior fix ---------- */
+
+/* Default text behavior: visible and able to wrap on small screens.
+   Desktop override will force single-line when desired. */
 .author__urls:not(.social-icons) li a,
-.author__urls:not(.social-icons) li span {
+.author__urls:not(.social-icons) li span{
   color:#374151;
   text-decoration:none;
   line-height:1.35;
   flex:1 1 auto !important;
   min-width:0 !important;
-  overflow:visible !important;        /* 不截断 */
-  text-overflow:unset !important;     /* 禁止省略号 */
-  white-space:normal !important;      /* 宽度不足时自动换行 */
-  text-align:center !important;       /* 居中对齐 */
-  word-break:keep-all !important;     /* 保留单词整体 */
-  hyphens:none !important;            /* 禁止断词 */
+  overflow:visible !important;       /* allow wrap / full view on small screens */
+  text-overflow:unset !important;    /* disable ellipsis baseline */
+  white-space:normal !important;     /* allow wrapping by default */
+  display:inline-block;
+  text-align:center;                  /* center on mobile by default */
+  word-break:keep-all !important;
+  hyphens:none !important;
 }
-
-.author__urls:not(.social-icons) li {
-  justify-content: flex-start !important;
-  padding-left: 0.4rem !important;
-  padding-right: 0.4rem !important;
-}
-
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 .author__urls:not(.social-icons) li br{ display:none !important; }
 
@@ -181,7 +181,7 @@
   flex-wrap:wrap;
   justify-content:center;
   gap:12px;
-  margin:.6rem 0 1.1rem 0; /* ensures row appears ABOVE the H2 with space */
+  margin:.6rem 0 1.1rem 0;
   padding:0;
   list-style:none;
 }
@@ -212,7 +212,7 @@
   .page{ display:block !important; }
   .sidebar{ padding:0 16px !important; margin:0 auto 14px auto !important; max-width:520px !important; }
 
-  /* bigger and centered on mobile avatar */
+  /* larger avatar on mobile */
   .author__avatar img{
     width:160px !important;
     height:160px !important;
@@ -220,18 +220,21 @@
   .author__content h3.author__name{ font-size:2rem !important; }
   .author__content .author__bio{ font-size:1.05rem !important; max-width:32ch !important; }
 
+  /* center institution rows and allow wrap */
   .author__urls:not(.social-icons){ text-align:center !important; }
   .author__urls:not(.social-icons) li{
     justify-content:center !important;
-    white-space:normal !important; /* allow wrap on tiny phones */
+    white-space:normal !important;
+    padding:0 .5rem;
   }
   .author__urls:not(.social-icons) li a,
   .author__urls:not(.social-icons) li span{
     white-space:normal !important;
     text-overflow:clip !important;
-    word-break:keep-all !important;
-    hyphens:none !important;
+    word-break:break-word !important;
+    hyphens:auto !important;
     font-size:1.05rem !important;
+    text-align:center !important;
   }
 
   /* Social icons row sits ABOVE the main heading with generous spacing */
@@ -245,12 +248,12 @@
 
   /* icon row spacing (above heading) */
   .author__urls.social-icons{
-    margin:.65rem 0 1.35rem 0 !important; /* top, right/left, bottom */
+    margin:.65rem 0 1.35rem 0 !important;
   }
 
   /* prevent iOS long-press bubble on the social buttons */
   .author__urls.social-icons li a{
-    -webkit-touch-callout: none !important; /* hide white callout */
+    -webkit-touch-callout: none !important;
     -webkit-user-select: none !important;
     user-select: none !important;
     touch-action: manipulation !important;
@@ -258,18 +261,23 @@
 }
 
 /* =========================================
-   Ensure institution names stay on one line
-   (desktop/tablet only — mobile still allows wrap)
+   Desktop/tablet (>=769px):
+   - prefer single-line institution text
+   - allow ellipsis if it's absolutely too long
    ========================================= */
 @media (min-width:769px) {
-  .author__urls:not(.social-icons) li .institution,
-  .author__urls:not(.social-icons) li .employer-name,
-  .author__urls:not(.social-icons) li .location {
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    display: inline-block; /* ensure ellipsis works */
-    vertical-align: middle;
+  .author__urls:not(.social-icons) li{
+    white-space:nowrap !important;
+    justify-content:flex-start !important;
+    padding:0 .25rem;
+  }
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span {
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important; /* desktop: show ellipsis only if can't fit */
+    display:inline-block;
+    text-align:left !important;
   }
 }
 
@@ -281,9 +289,9 @@
   .author__urls:not(.social-icons) li a,
   .author__urls:not(.social-icons) li span{ font-size:.975rem; }
 
-  /* keep flex-basis consistent with clamp but allow a conservative fallback */
-  .sidebar{ flex-basis:380px !important; max-width:380px !important; }
+  /* ensure reasonable fallback sizes on very large screens */
+  .sidebar{ flex-basis:420px !important; max-width:420px !important; }
 }
 @media (min-width:1280px){
-  .sidebar{ flex-basis:400px !important; max-width:400px !important; }
+  .sidebar{ flex-basis:460px !important; max-width:460px !important; }
 }
