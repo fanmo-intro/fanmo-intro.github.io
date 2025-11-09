@@ -223,3 +223,19 @@
 @media (min-width:1280px){
   .sidebar{ flex-basis:400px !important; max-width:400px !important; }
 }
+/* =========================================
+   Ensure institution names stay on one line
+   (desktop/tablet only — mobile still allows wrap)
+   ========================================= */
+@media (min-width: 769px) {
+  .author__urls:not(.social-icons) li {
+    white-space: nowrap !important; /* keep the whole row single-line */
+  }
+  .author__urls:not(.social-icons) li a,
+  .author__urls:not(.social-icons) li span {
+    white-space: nowrap !important;    /* no internal breaks */
+    overflow: hidden !important;       /* preserve ellipsis if too long */
+    text-overflow: ellipsis !important;/* show ellipsis on overflow */
+  }
+}
+
