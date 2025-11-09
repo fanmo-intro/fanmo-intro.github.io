@@ -295,10 +295,4 @@
 @media (min-width:1280px){
   .sidebar{ flex-basis:460px !important; max-width:460px !important; }
 }
-/* --- fix institution ellipse clipping --- */
-.author__urls:not(.social-icons) li a,
-.author__urls:not(.social-icons) li span {
-  background: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-}
+
