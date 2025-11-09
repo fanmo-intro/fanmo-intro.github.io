@@ -60,7 +60,18 @@
         <li><a href="{{ author.googlescholar }}"><i class="ai ai-google-scholar"></i><span>Scholar</span></a></li>
       {% endif %}
       {% if author.github %}
-        <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+        {% comment %} Support either full URL or just username {% endcomment %}
+        {% assign _github = author.github | strip %}
+        {% if _github contains "://" or _github contains "github.com" %}
+          {% assign github_url = _github %}
+        {% else %}
+          {% assign github_url = "https://github.com/" | append: _github %}
+        {% endif %}
+        <li>
+          <a href="{{ github_url }}" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i><span>GitHub</span>
+          </a>
+        </li>
       {% endif %}
       {% if author.linkedin %}
         <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
