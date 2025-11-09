@@ -12,7 +12,7 @@ name           : &name "Fan Mo"
 description    : &description "Fan Mo's academic portfolio"
 url            : "https://github.com/mf093087"   # main site root
 baseurl        : ""                                 # keep empty for main site
-repository     : ""
+repository     : "intro.github.io"
 
 # =======================
 # Sidebar / Author block
