@@ -14,23 +14,39 @@
 /* =========================
    Page layout & typography
    ========================= */
-.page{ display:flex; flex-wrap:wrap; align-items:flex-start; gap:32px; }
-.sidebar{
-  flex:0 0 clamp(340px,28vw,420px) !important;
-  max-width:clamp(340px,28vw,420px) !important;
+.page{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:flex-start;
+  gap:32px;
 }
+
+/* Wider sidebar for better line length */
+.sidebar{
+  flex:0 0 clamp(340px,32vw,480px) !important;
+  max-width:clamp(340px,32vw,480px) !important;
+}
+
 .page__content{
-  flex:1 1 600px; min-width:0; max-width:1040px; margin:0 auto;
-  color:var(--text); line-height:1.75; font-size:1.05rem;
-  text-align:justify; text-justify:inter-ideograph;
+  flex:1 1 600px;
+  min-width:0;
+  max-width:1040px;
+  margin:0 auto;
+  color:var(--text);
+  line-height:1.75;
+  font-size:1.05rem;
+  text-align:justify;
+  text-justify:inter-ideograph;
 }
 .page__content p{ margin:0 0 1.15em 0; }
 .page__content p + p{ margin-top:.65rem; }
 .page__content h1,
 .page__content h2{
-  color:var(--accent); font-weight:800;
+  color:var(--accent);
+  font-weight:800;
   border-bottom:2px solid var(--line);
-  padding-bottom:.35rem; margin:.15rem 0 .9rem;
+  padding-bottom:.35rem;
+  margin:.15rem 0 .9rem;
 }
 .page__content h3{ color:var(--ink); font-weight:700; margin:1.1rem 0 .5rem; }
 .page__content strong{ color:#1a73e8; font-weight:600; }
@@ -49,9 +65,8 @@
   gap:.6rem;
 }
 
-/* Avatar container: force centering + clipping to circle */
+/* Avatar container: unified sizing & centering, clipped to circle */
 .author__avatar{
-  /* unified avatar container sizing & centering */
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -61,8 +76,8 @@
   border-radius: 50% !important;
   overflow: hidden !important;  /* hide any overflow corners */
 
-  /* make sure container clips children to a circle when needed */
-  -webkit-mask-image: -webkit-radial-gradient(white, black); /* helps iOS clipping */
+  /* helps iOS clipping */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 /* Default avatar image size & behavior */
@@ -102,23 +117,37 @@
    Institutions / meta (simple rows)
    ========================= */
 .author__urls:not(.social-icons){
-  list-style:none; padding:0; margin:.2rem 0 0 0; width:100%;
+  list-style:none;
+  padding:0;
+  margin:.2rem 0 0 0;
+  width:100%;
 }
 .author__urls:not(.social-icons) li{
-  display:flex !important; align-items:center !important; gap:.5rem;
-  margin:.25rem 0 !important; max-width:100%;
+  display:flex !important;
+  align-items:center !important;
+  gap:.5rem;
+  margin:.25rem 0 !important;
+  max-width:100%;
   /* desktop behavior: keep row single-line unless overridden by mobile rules */
   white-space:nowrap !important;
 }
 .author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
-  width:1em; text-align:center; color:#4b5563; line-height:1;
+  width:1em;
+  text-align:center;
+  color:#4b5563;
+  line-height:1;
   flex:0 0 auto;
 }
 .author__urls:not(.social-icons) li a,
 .author__urls:not(.social-icons) li span{
-  color:#374151; text-decoration:none; line-height:1.35;
-  flex:1 1 auto !important; min-width:0 !important; /* enables ellipsis */
-  overflow:hidden !important; text-overflow:ellipsis !important; white-space:inherit;
+  color:#374151;
+  text-decoration:none;
+  line-height:1.35;
+  flex:1 1 auto !important;
+  min-width:0 !important; /* enables ellipsis */
+  overflow:hidden !important;
+  text-overflow:ellipsis !important;
+  white-space:inherit;
 }
 .author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
 .author__urls:not(.social-icons) li br{ display:none !important; }
@@ -126,23 +155,38 @@
 /* =========================
    Social icons (clean row)
    ========================= */
-.author__urls-wrapper{ position:static !important; margin:.6rem 0 0 0 !important; }
+.author__urls-wrapper{
+  position:static !important;
+  margin:.6rem 0 0 0 !important;
+}
 .author__urls-wrapper::before,
 .author__urls-wrapper::after,
 .author__urls-wrapper .btn{ display:none !important; }
 
 .author__urls.social-icons{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:12px;
-  margin:.6rem 0 1.1rem 0; /* <- ensures row appears ABOVE the H2 with space */
-  padding:0; list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin:.6rem 0 1.1rem 0; /* ensures row appears ABOVE the H2 with space */
+  padding:0;
+  list-style:none;
 }
 .author__urls.social-icons li{ margin:0; padding:0; }
 .author__urls.social-icons li a{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:44px; height:44px; border-radius:50%;
-  background:#f3f4f6; color:#444; border:none; box-shadow:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#f3f4f6;
+  color:#444;
+  border:none;
+  box-shadow:none;
   transition:background .2s ease, color .2s ease;
-  font-size:0 !important; overflow:hidden;
+  font-size:0 !important;
+  overflow:hidden;
 }
 .author__urls.social-icons li a:hover{ background:var(--accent); color:#fff !important; }
 .author__urls.social-icons li a i,
@@ -155,7 +199,7 @@
   .page{ display:block !important; }
   .sidebar{ padding:0 16px !important; margin:0 auto 14px auto !important; max-width:520px !important; }
 
-  /* bigger and centered on mobile */
+  /* bigger and centered on mobile avatar */
   .author__avatar img{
     width:160px !important;
     height:160px !important;
@@ -165,11 +209,15 @@
 
   .author__urls:not(.social-icons){ text-align:center !important; }
   .author__urls:not(.social-icons) li{
-    justify-content:center !important; white-space:normal !important; /* allow wrap on tiny phones */
+    justify-content:center !important;
+    white-space:normal !important; /* allow wrap on tiny phones */
   }
   .author__urls:not(.social-icons) li a,
   .author__urls:not(.social-icons) li span{
-    white-space:normal !important; text-overflow:clip !important; word-break:keep-all !important; hyphens:none !important;
+    white-space:normal !important;
+    text-overflow:clip !important;
+    word-break:keep-all !important;
+    hyphens:none !important;
     font-size:1.05rem !important;
   }
 
@@ -200,7 +248,6 @@
    Ensure institution names stay on one line
    (desktop/tablet only — mobile still allows wrap)
    ========================================= */
-/* 保证机构名在桌面单行（已包含在你之前的 custom.scss，如果缺请添加） */
 @media (min-width:769px) {
   .author__urls:not(.social-icons) li .institution,
   .author__urls:not(.social-icons) li .employer-name,
@@ -208,11 +255,10 @@
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    display: inline-block; /* 保证 ellipsis 生效 */
+    display: inline-block; /* ensure ellipsis works */
     vertical-align: middle;
   }
 }
-
 
 /* =========================
    Large screens tweaks
@@ -221,6 +267,8 @@
   .page{ gap:40px; }
   .author__urls:not(.social-icons) li a,
   .author__urls:not(.social-icons) li span{ font-size:.975rem; }
+
+  /* keep flex-basis consistent with clamp but allow a conservative fallback */
   .sidebar{ flex-basis:380px !important; max-width:380px !important; }
 }
 @media (min-width:1280px){
