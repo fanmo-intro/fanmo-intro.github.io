@@ -200,17 +200,19 @@
    Ensure institution names stay on one line
    (desktop/tablet only — mobile still allows wrap)
    ========================================= */
-@media (min-width: 769px) {
-  .author__urls:not(.social-icons) li {
-    white-space: nowrap !important; /* keep the whole row single-line on >=769px */
-  }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span {
-    white-space: nowrap !important;    /* no internal breaks */
-    overflow: hidden !important;       /* preserve ellipsis if too long */
-    text-overflow: ellipsis !important;/* show ellipsis on overflow */
+/* 保证机构名在桌面单行（已包含在你之前的 custom.scss，如果缺请添加） */
+@media (min-width:769px) {
+  .author__urls:not(.social-icons) li .institution,
+  .author__urls:not(.social-icons) li .employer-name,
+  .author__urls:not(.social-icons) li .location {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: inline-block; /* 保证 ellipsis 生效 */
+    vertical-align: middle;
   }
 }
+
 
 /* =========================
    Large screens tweaks
