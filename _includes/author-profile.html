@@ -27,25 +27,28 @@
     <ul class="author__urls">
       {% if author.location %}
         <li>
-          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i>{{ author.location }}
+          <i class="fas fa-fw fa-location-dot" aria-hidden="true"></i>
+          <span class="location">{{ author.location }}</span>
         </li>
       {% endif %}
     </ul>
 
     {% if author.employer %}
-      <ul class="author__employers">
+      <ul class="author__employers author__urls">
         {% assign employers_list = author.employer %}
         {% for e in employers_list %}
           <li>
             <i class="fas fa-fw fa-building-columns" aria-hidden="true"></i>
             {% if e.name %}
               {% if e.url %}
-                <a href="{{ e.url }}" target="_blank" rel="noopener">{{ e.name }}</a>
+                <a href="{{ e.url }}" target="_blank" rel="noopener">
+                  <span class="employer-name institution">{{ e.name }}</span>
+                </a>
               {% else %}
-                {{ e.name }}
+                <span class="employer-name institution">{{ e.name }}</span>
               {% endif %}
             {% else %}
-              {{ e | strip }}
+              <span class="employer-name institution">{{ e | strip }}</span>
             {% endif %}
           </li>
         {% endfor %}
