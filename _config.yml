@@ -4,40 +4,28 @@
 # =======================
 # Basic Site Settings
 # =======================
-locale         : "en-US"
-site_theme     : "default"
-title          : "Fan Mo"
+locale: "en-US"
+site_theme: "default"
+title: "Fan Mo"
 title_separator: "-"
-name           : &name "Fan Mo"
-description    : &description "Fan Mo's academic portfolio"
-url            : "https://github.com/mf093087"   # main site root
-baseurl        : ""                                 # keep empty for main site
-repository     : "intro.github.io"
+name: &name "Fan Mo"
+description: &description "Fan Mo's academic portfolio"
+url: "https://fanmo-intro.github.io"
+baseurl: ""
+repository: "fanmo-intro.github.io"
 
 # =======================
 # Sidebar / Author block
 # =======================
 author:
-  # Biographic information
-  avatar   : "Picture_Fan.jpg"
-  github: "fanmo-intro"
-  name     : "Fan Mo"
-  pronouns :
-  bio      : "AI & robotics researcher. Knowledge graphs, multimodal perception, embodied intelligence."
-
+  avatar: "Picture_Fan.jpg"
+  name: "Fan Mo"
+  bio: "AI, robotics, knowledge graphs, multimodal perception, embodied intelligence."
   employer:
     - name: "University of Cambridge"
       url: "https://www.cam.ac.uk"
     - name: "University of Oxford"
       url: "https://www.ox.ac.uk"
-
-  # --- 保留原来单字段（可选） ---
-  googlescholar : "https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en"
-  email         : "kell6420@ox.ac.uk"
-  # 如果你之前只写了 LinkedIn 的 slug，建议改成完整链接：
-  linkedin      : "https://www.linkedin.com/in/fan-mo-phd-ceng-032170276"
-
-  # --- 新增：统一的 links 数组（主题会用它来渲染可点的社交图标） ---
   links:
     - label: "Google Scholar"
       icon: "ai ai-google-scholar"
@@ -52,44 +40,45 @@ author:
       icon: "fas fa-envelope"
       url: "mailto:kell6420@ox.ac.uk"
 
+
   # 其余保持为空
-  academia      :
-  arxiv         :
-  inspire-hep   :
-  impactstory   :
-  orcid         :
-  semantic      :
-  researchgate  :
-  scopus        :
-  bitbucket     :
-  codepen       :
-  dribbble      :
-  kaggle        :
-  stackoverflow :
-  artstation    :
-  bluesky       :
-  facebook      :
-  flickr        :
-  foursquare    :
-  goodreads     :
-  google_plus   :
-  keybase       :
-  instagram     :
-  lastfm        :
-  mastodon      :
-  medium        :
-  pinterest     :
-  soundcloud    :
-  steam         :
-  telegram      :
-  tumblr        :
-  twitter       :
-  vine          :
-  weibo         :
-  wikipedia     :
-  xing          :
-  youtube       :
-  zhihu         :
+  academia:
+  arxiv:
+  inspire-hep:
+  impactstory:
+  orcid:
+  semantic:
+  researchgate:
+  scopus:
+  bitbucket:
+  codepen:
+  dribbble:
+  kaggle:
+  stackoverflow:
+  artstation:
+  bluesky:
+  facebook:
+  flickr:
+  foursquare:
+  goodreads:
+  google_plus:
+  keybase:
+  instagram:
+  lastfm:
+  mastodon:
+  medium:
+  pinterest:
+  soundcloud:
+  steam:
+  telegram:
+  tumblr:
+  twitter:
+  vine:
+  weibo:
+  wikipedia:
+  xing:
+  youtube:
+  zhihu:
 
 # =======================
 # Publication Categories
@@ -105,71 +94,71 @@ publication_category:
 # =======================
 # Site Settings
 # =======================
-teaser          :
-breadcrumbs     : false
+teaser:
+breadcrumbs: false
 words_per_minute: 160
-future          : true
-read_more       : "disabled"
-talkmap_link    : false
+future: true
+read_more: "disabled"
+talkmap_link: false
 comments:
-  provider      :
+  provider:
   disqus:
-    shortname   :
+    shortname:
   discourse:
-    server      :
+    server:
   facebook:
-    appid       :
-    num_posts   :
-    colorscheme :
+    appid:
+    num_posts:
+    colorscheme:
 staticman:
-  allowedFields : ['name', 'email', 'url', 'message']
-  branch        : "gh-pages"
-  commitMessage : "New comment."
-  filename      : comment-{@timestamp}
-  format        : "yml"
-  moderation    : true
-  path          : "_data/comments/{options.slug}"
+  allowedFields: ['name', 'email', 'url', 'message']
+  branch: "gh-pages"
+  commitMessage: "New comment."
+  filename: comment-{@timestamp}
+  format: "yml"
+  moderation: true
+  path: "_data/comments/{options.slug}"
   requiredFields: ['name', 'email', 'message']
   transforms:
-    email       : "md5"
+    email: "md5"
   generatedFields:
     date:
-      type      : "date"
+      type: "date"
       options:
-        format  : "iso8601"
+        format: "iso8601"
 atom_feed:
-  hide          : false
-  path          :
+  hide: false
+  path:
 
 # =======================
 # SEO Related
 # =======================
-google_site_verification :
-bing_site_verification   :
-alexa_site_verification  :
-yandex_site_verification :
+google_site_verification:
+bing_site_verification:
+alexa_site_verification:
+yandex_site_verification:
 
 # =======================
 # Social Sharing
 # =======================
 twitter:
-  username     :
+  username:
 facebook:
-  username     :
-  app_id       :
-  publisher    :
-og_image       :
-og_description :
+  username:
+  app_id:
+  publisher:
+og_image:
+og_description:
 social:
-  type         :
-  name         :
-  links        :
+  type:
+  name:
+  links:
 
 # =======================
 # Analytics
 # =======================
 analytics:
-  provider     : "false"     # "false", "google", "google-universal", "google-analytics-4", "custom"
+  provider: "false" # "false", "google", "google-universal", "google-analytics-4", "custom"
   google:
     tracking_id:
 
@@ -210,29 +199,29 @@ exclude:
 keep_files:
   - .git
   - .svn
-encoding    : "utf-8"
+encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 # =======================
 # Conversion
 # =======================
-markdown          : kramdown
-highlighter       : rouge
-lsi               : false
-excerpt_separator : "\n\n"
-incremental       : false
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
 
 # =======================
 # Markdown Processing
 # =======================
 kramdown:
-  input        : GFM
-  hard_wrap    : false
-  auto_ids     : true
-  footnote_nr  : 1
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
   entity_output: as_char
-  toc_levels   : 1..6
-  smart_quotes : lsquo,rsquo,ldquo,rdquo
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
 # =======================
@@ -240,16 +229,16 @@ kramdown:
 # =======================
 collections:
   teaching:
-    output   : true
+    output: true
     permalink: /:collection/:path/
   publications:
-    output   : true
+    output: true
     permalink: /:collection/:path/
   portfolio:
-    output   : true
+    output: true
     permalink: /:collection/:path/
   talks:
-    output   : true
+    output: true
     permalink: /:collection/:path/
 
 # =======================
@@ -260,64 +249,64 @@ defaults:
       path: ""
       type: posts
     values:
-      layout        : single
+      layout: single
       author_profile: true
-      read_time     : true
-      comments      : true
-      share         : true
-      related       : true
+      read_time: true
+      comments: true
+      share: true
+      related: true
   - scope:
       path: ""
       type: pages
     values:
-      layout        : single
+      layout: single
       author_profile: true
   - scope:
       path: ""
       type: teaching
     values:
-      layout        : single
+      layout: single
       author_profile: true
-      share         : true
-      comments      : true
+      share: true
+      comments: true
   - scope:
       path: ""
       type: publications
     values:
-      layout        : single
+      layout: single
       author_profile: true
-      share         : true
-      comments      : true
+      share: true
+      comments: true
   - scope:
       path: ""
       type: portfolio
     values:
-      layout        : single
+      layout: single
       author_profile: true
-      share         : true
-      comment       : true
+      share: true
+      comment: true
   - scope:
       path: ""
       type: talks
     values:
-      layout        : talk
+      layout: talk
       author_profile: true
-      share         : true
+      share: true
 
 # =======================
 # Sass/SCSS
 # =======================
 sass:
   sass_dir: _sass
-  style  : compressed
+  style: compressed
 
 # =======================
 # Outputting
 # =======================
-permalink    : /:categories/:title/
-# paginate   : 5
+permalink: /:categories/:title/
+# paginate: 5
 # paginate_path: /page:num/
-timezone     : Etc/UTC
+timezone: Etc/UTC
 
 # =======================
 # Plugins (GitHub Pages compatible)

@@ -1,75 +1,130 @@
 /* =========================================
-   Fan Mo — custom.scss (final)
-   - Desktop: keep institution names one-line when possible
-   - Mobile: allow wrap & center, no ellipsis
+   Fan Mo — custom.scss (最终合并修复版 v15)
    ========================================= */
 
 /* ---------- Theme accents & base ---------- */
-:root{
-  --accent:#1d4ed8;     /* blue-700 */
-  --ink:#1f2937;        /* headings */
-  --text:#2b2b2b;       /* body */
-  --muted:#6b7280;      /* secondary */
-  --line:#e5e7eb;       /* dividers */
+:root {
+  --accent: #2563eb;  /* primary blue */
+  --muted:  #6b7280;
+  --ink: #1f2937;
+  --text: #2b2b2b;
+  --line: #e5e7eb;
 }
 
 /* =========================
-   Page layout & typography
+   Page layout
    ========================= */
-.page{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:flex-start;
-  gap:32px;
+
+/* Force left-right layout and not centered */
+body .page {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  gap: 32px !important;
+  margin: 0 !important;
+  max-width: none !important;
+  padding: 0 5% !important;
 }
 
-/* Wider sidebar for better line length on desktop */
-.sidebar{
-  /* adjust as needed: min, preferred (vw), max */
-  flex:0 0 clamp(360px,32vw,520px) !important;
-  max-width:clamp(360px,32vw,520px) !important;
+/* Sidebar width */
+.sidebar {
+  width: 250px !important;
+  max-width: 250px !important;
+  flex-basis: 250px !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  margin-left: 0;
+  padding-right: 24px;
 }
 
-.page__content{
-  flex:1 1 600px;
-  min-width:0;
-  max-width:1040px;
-  margin:0 auto;
-  color:var(--text);
-  line-height:1.75;
-  font-size:1.05rem;
-  text-align:justify;
-  text-justify:inter-ideograph;
+/* =========================
+   Page typography & width
+   ========================= */
+
+.page__content {
+  max-width: 2540px;
+  margin: 0;
+  text-align: justify;
+  text-justify: inter-ideograph;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  color: var(--text);
+  flex: 1 1 600px;
+  min-width: 0;
 }
-.page__content p{ margin:0 0 1.15em 0; }
-.page__content p + p{ margin-top:.65rem; }
+
+.page__content p { margin-bottom: 1.2em; }
+.page__content p + p { margin-top: 0.7rem; }
 .page__content h1,
-.page__content h2{
-  color:var(--accent);
-  font-weight:800;
-  border-bottom:2px solid var(--line);
-  padding-bottom:.35rem;
-  margin:.15rem 0 .9rem;
+.page__content h2 {
+  color: var(--accent);
+  font-weight: 800;
+  border-bottom: 2px solid #eee;
+  padding-bottom: .3em;
+  margin-bottom: .8em;
 }
-.page__content h3{ color:var(--ink); font-weight:700; margin:1.1rem 0 .5rem; }
-.page__content strong{ color:#1a73e8; font-weight:600; }
+.page__content h3 { color:#1f2937; font-weight:700; }
+.page__content .zh { color:#374151; }
+.page__content ul { margin: .5rem 0 .8rem 1.2rem; }
+.page__content li { margin: .25rem 0; }
+.page__content strong {
+  color: #1a73e8;
+  font-weight: 600;
+}
 
 /* =========================
-   Author block (NO card)
+   "About" layout
    ========================= */
-.sidebar .author__content{
-  background:transparent !important;
-  border:none !important;
-  box-shadow:none !important;
-  padding:0 !important;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:.6rem;
+.about-grid { display:grid; gap: 1.25rem; }
+@media (min-width: 992px) {
+  .about-grid { grid-template-columns: 2.2fr 1fr; align-items:start; }
+}
+.card {
+  background:#fff;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 6px 24px rgba(0,0,0,.06);
+}
+.card h2 { margin-top:0; }
+.fact {
+  display:flex; align-items:center; gap:.6rem;
+  padding:.5rem .75rem; border-radius:10px;
+  background:#f6f7fb; margin:.45rem 0; color:#111;
+}
+.fact i,.fact svg{ color:var(--accent); }
+
+/* =========================
+   News timeline
+   ========================= */
+.news {
+  position:relative; margin-left:.4rem; padding-left:1rem;
+  border-left:3px solid rgba(37,99,235,.18);
+}
+.news .item { position:relative; margin:.6rem 0 .6rem .25rem; }
+.news .item::before {
+  content:""; position:absolute; left:-1.05rem; top:.35rem;
+  width:.55rem; height:.55rem; border-radius:50%; background:var(--accent);
+}
+.news time { font-weight:600; color:#111; margin-right:.35rem; }
+.news a { color:#0f172a; text-decoration:none; border-bottom:1px dotted rgba(15,23,42,.35); }
+.news a:hover { color:var(--accent); border-bottom-color:var(--accent); }
+
+/* =======================================================
+   Sidebar (author block)
+   ======================================================= */
+
+.sidebar .author__content {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
 }
 
-/* Avatar container: unified sizing & centering, clipped to circle */
-.author__avatar{
+.author__avatar {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
@@ -81,248 +136,385 @@
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-/* Default avatar image size & behavior */
-.author__avatar img{
-  display:block !important;
-  margin:0 auto !important;
-  width:100% !important;
-  height:100% !important;
-  max-width:100%;
-  border-radius:50% !important;
-  object-fit:cover !important;
-  object-position:center center !important;
+.author__avatar img {
+  display: block !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.06);
 }
 
-/* Name & bio */
-.author__content h3.author__name{
-  font-size:1.6rem !important;
-  font-weight:800 !important;
-  color:var(--ink) !important;
-  margin:.2rem 0 .25rem !important;
-  text-align:center;
-}
-.author__content .author__bio{
-  color:#374151 !important;
-  font-size:1rem !important;
-  line-height:1.6 !important;
-  text-align:center !important;
-  max-width:36ch;
-  margin:0 0 .4rem 0 !important;
+.author__content h3.author__name {
+  font-size: 1.6rem !important;
+  font-weight: 800 !important;
+  color: var(--ink) !important;
+  margin: .2rem 0 .25rem !important;
+  text-align: center;
+  width: 100%;
 }
 
-/* Divider (remove) */
-.sidebar .author__content::after{ content:none !important; }
-
-/* =========================
-   Institutions / meta (simple rows)
-   ========================= */
-.author__urls:not(.social-icons){
-  list-style:none;
-  padding:0;
-  margin:.2rem 0 0 0;
-  width:100%;
+/* Bio left-aligned */
+.author__content .author__bio {
+  color: #374151 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6 !important;
+  text-align: left !important;
+  max-width: 100% !important;
+  margin: 0 0 .4rem 0 !important;
+  width: 100%;
 }
 
-/* List item: icon + text */
-.author__urls:not(.social-icons) li{
-  display:flex !important;
-  align-items:center !important;
-  gap:.6rem;
-  margin:.25rem 0 !important;
-  max-width:100%;
-  /* baseline: let media queries control nowrap/wrap */
-  white-space:normal !important;
-  justify-content:flex-start !important;
-  padding:0 .25rem;
-  /* ensure parent doesn't clip child text/pill */
-  overflow: visible !important;
+.author__content .author__bio::before {
+  content: "Research Interest";
+  display: block;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: left;
 }
 
-.author__urls i[class^="fa"], .author__urls i[class*=" fa"]{
-  width:1em;
-  text-align:center;
-  color:#4b5563;
-  line-height:1;
-  flex:0 0 auto;
+/* =======================================================
+   Sidebar: employers + social icons
+   ======================================================= */
+
+.author__urls:not(.social-icons) {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0 0;
+  width: 100%;
+  text-align: center;
+}
+.author__urls:not(.social-icons) li {
+  margin: 6px 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.author__urls:not(.social-icons) li .employer {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: #f6f7fb;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #374151;
+}
+.author__urls:not(.social-icons) li .employer:hover {
+  box-shadow: 0 6px 14px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+.author__urls:not(.social-icons) li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
+.author__urls:not(.social-icons) li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
+
+.author__urls.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: .6rem 0 .9rem 0;
+  list-style: none;
+}
+.author__urls.social-icons li {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Default text behavior: visible and able to wrap on small screens.
-   Desktop override will force single-line when desired. */
-.author__urls:not(.social-icons) li a,
-.author__urls:not(.social-icons) li span{
-  color:#374151;
-  text-decoration:none;
-  line-height:1.35;
-  flex:1 1 auto !important;
-  min-width:0 !important;
-
-  /* --- REMOVE oval clipping / background --- */
-  background: none !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-
-  /* default wrapping for mobile */
-  text-overflow:unset !important;    /* disable ellipsis baseline */
-  white-space:normal !important;     /* allow wrapping by default */
-  display:inline-block;
-  text-align:center;                  /* center on mobile by default */
-  word-break:keep-all !important;
-  hyphens:none !important;
+/* Icon buttons */
+.author__urls.social-icons li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 0;
+  background: #f6f7fb;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  font-size: 0; /* hide textual label */
+  line-height: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/* subtle hover highlight without clipping */
-.author__urls:not(.social-icons) li a:hover{
-  color:var(--accent);
-  text-decoration:underline;
-  background: rgba(29,78,216,0.05); /* very light accent tint */
-  border-radius:6px;
-  padding:0.08rem 0.35rem;           /* tiny padding so hover bg doesn't clip text */
-}
-
-/* remove any pseudo-element content that might be adding a pill */
-.author__urls:not(.social-icons) li a::before,
-.author__urls:not(.social-icons) li a::after,
-.author__urls:not(.social-icons) li span::before,
-.author__urls:not(.social-icons) li span::after{
-  content: none !important;
-  display: none !important;
-}
-
-.author__urls:not(.social-icons) li a:hover{ color:var(--accent); text-decoration:underline; }
-.author__urls:not(.social-icons) li br{ display:none !important; }
-
-/* =========================
-   Social icons (clean row)
-   ========================= */
-.author__urls-wrapper{
-  position:static !important;
-  margin:.6rem 0 0 0 !important;
-}
-.author__urls-wrapper::before,
-.author__urls-wrapper::after,
-.author__urls-wrapper .btn{ display:none !important; }
-
-.author__urls.social-icons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  margin:.6rem 0 1.1rem 0;
-  padding:0;
-  list-style:none;
-}
-.author__urls.social-icons li{ margin:0; padding:0; }
-.author__urls.social-icons li a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:44px;
-  height:44px;
-  border-radius:50%;
-  background:#f3f4f6;
-  color:#444;
-  border:none;
-  box-shadow:none;
-  transition:background .2s ease, color .2s ease;
-  font-size:0 !important;
-  overflow:hidden;
-}
-.author__urls.social-icons li a:hover{ background:var(--accent); color:#fff !important; }
+/* Ensure icon elements are visible & sized reliably */
 .author__urls.social-icons li a i,
-.author__urls.social-icons li a svg{ font-size:19px !important; width:1em; height:1em; }
+.author__urls.social-icons li a svg {
+  display: inline-block !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  color: inherit !important;
+  fill: currentColor !important;
+  pointer-events: none;
+}
+
+/* hover effect */
+.author__urls.social-icons li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+.author__urls.social-icons li a:hover i,
+.author__urls.social-icons li a:hover svg {
+  transform: translateY(-2px) scale(1.05);
+  transition: transform .15s ease;
+}
+
+/* brand bg colors */
+.author__urls.social-icons a[href^="mailto:"] { color:#fff !important; background:#d6336c !important; }
+.author__urls.social-icons a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; }
+.author__urls.social-icons a[href*="github.com"] { color:#fff !important; background:#24292e !important; }
+.author__urls.social-icons a[href*="linkedin.com"] { color:#fff !important; background:#0a66c2 !important; }
 
 /* =========================
-   Mobile (≤768px): centered & neat
+   Media Queries
    ========================= */
-@media (max-width:768px){
-  .page{ display:block !important; }
-  .sidebar{ padding:0 16px !important; margin:0 auto 14px auto !important; max-width:520px !important; }
-
-  /* larger avatar on mobile */
-  .author__avatar img{
-    width:160px !important;
-    height:160px !important;
+@media (max-width: 768px) {
+  body .page { 
+    display: block !important;
+    padding: 0 !important;
   }
-  .author__content h3.author__name{ font-size:2rem !important; }
-  .author__content .author__bio{ font-size:1.05rem !important; max-width:32ch !important; }
-
-  /* center institution rows and allow wrap */
-  .author__urls:not(.social-icons){ text-align:center !important; }
-  .author__urls:not(.social-icons) li{
-    justify-content:center !important;
-    white-space:normal !important;
-    padding:0 .5rem;
+  .sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    margin: 0 auto 14px auto !important;
   }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span{
-    white-space:normal !important;
-    text-overflow:clip !important;
-    word-break:break-word !important;
-    hyphens:auto !important;
-    font-size:1.05rem !important;
-    text-align:center !important;
+  .page__content {
+    max-width: 100%;
+    padding: 0 1rem;
+    font-size: 1rem;
   }
-
-  /* Social icons row sits ABOVE the main heading with generous spacing */
-  .author__urls.social-icons{ margin:.65rem 0 1.25rem 0 !important; }
-
-  /* Never sticky on mobile; prevents overlap with H2 */
-  .sticky .author__urls-wrapper{ position:static !important; }
-
-  /* extra breathing room below the sidebar so the icon row clears the H2 */
-  .sidebar{ margin-bottom:24px !important; }
-
-  /* icon row spacing (above heading) */
-  .author__urls.social-icons{
-    margin:.65rem 0 1.35rem 0 !important;
+  .author__avatar img { width: 160px !important; height: 160px !important; }
+  .author__content h3.author__name { font-size: 2rem !important; }
+  .author__content .author__bio { 
+    font-size: 1.05rem !important; 
+    max-width: 100% !important;
+    text-align: left !important;
   }
-
-  /* prevent iOS long-press bubble on the social buttons */
-  .author__urls.social-icons li a{
-    -webkit-touch-callout: none !important;
-    -webkit-user-select: none !important;
-    user-select: none !important;
-    touch-action: manipulation !important;
-  }
+  .author__urls:not(.social-icons) { margin: .65rem 0 0.25rem 0 !important; }
+  .author__urls.social-icons { margin: .65rem 0 1.25rem 0 !important; }
+  .sticky .author__urls-wrapper { position: static !important; }
+  .sidebar { margin-bottom: 24px !important; }
 }
 
-/* =========================================
-   Desktop/tablet (>=769px):
-   - prefer single-line institution text
-   - allow ellipsis if it's absolutely too long
-   ========================================= */
-@media (min-width:769px) {
-  .author__urls:not(.social-icons) li{
-    white-space:nowrap !important;
-    justify-content:flex-start !important;
-    padding:0 .25rem;
-  }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span {
-    white-space:nowrap !important;
-    overflow:hidden !important;
-    text-overflow:ellipsis !important; /* desktop: show ellipsis only if can't fit */
-    display:inline-block;
-    text-align:left !important;
-
-    /* ensure no pill background or clipping remains on desktop either */
-    background: none !important;
-    border-radius: 0 !important;
-  }
+@media (min-width: 769px) {
+  body .page { display: flex !important; }
+  .author__urls:not(.social-icons) li { justify-content: flex-start; }
+  .author__urls:not(.social-icons) li .employer { font-size: 0.9rem; }
+  .author__urls.social-icons { justify-content: center; }
 }
 
-/* =========================
-   Large screens tweaks
-   ========================= */
-@media (min-width:992px){
-  .page{ gap:40px; }
-  .author__urls:not(.social-icons) li a,
-  .author__urls:not(.social-icons) li span{ font-size:.975rem; }
-
-  /* ensure reasonable fallback sizes on very large screens */
-  .sidebar{ flex-basis:420px !important; max-width:420px !important; }
+@media (min-width: 992px) {
+  .page { gap: 40px; }
 }
-@media (min-width:1280px){
-  .sidebar{ flex-basis:460px !important; max-width:460px !important; }
+@media (min-width: 1280px) {
+  /* no-op */
+}
+/* === 修正图标显示大小与可见性 === */
+/* Ensure icon elements are visible & sized reliably */
+/* 强制 icon 显示 */
+.author__urls.social-icons li a i,
+.author__urls.social-icons li a svg {
+  display: inline-block !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  color: inherit !important;
+}
+/* --- Social icons: more robust & debug-friendly --- */
+.author__urls.social-icons li a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  padding: 0;
+  background: #f6f7fb;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  text-decoration: none;
+  color: inherit;
+  /* 不再强制 font-size:0 —— 遇到文本 fallback 时更友好 */
+  font-size: 0; /* 保留但下面强制子元素显示 */
+  line-height: 0;
+  overflow: visible; /* 防止 svg 被裁切 */
+  white-space: nowrap;
+}
+
+/* ensure icon elements are visible & sized reliably */
+.author__urls.social-icons li a i,
+.author__urls.social-icons li a svg {
+  display: inline-block !important;
+  font-size: 18px !important;
+  line-height: 1 !important;
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  color: inherit !important;
+  fill: currentColor !important;
+  pointer-events: auto; /* 允许交互，便于调试与无障碍 */
+}
+
+/* Font Awesome: protective rules (helps when FA uses webfont) */
+.author__urls.social-icons li a i.fas,
+.author__urls.social-icons li a i.far,
+.author__urls.social-icons li a i.fab,
+.author__urls.social-icons li a i.fal,
+.author__urls.social-icons li a i.fad {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif !important;
+  font-weight: 900 !important; /* solid icons */
+  speak: none;
+}
+
+/* Academicons protective rule */
+.author__urls.social-icons li a i.ai {
+  font-family: "academicons" !important;
+  font-style: normal;
+  font-weight: normal !important;
+}
+
+/* focus & hover */
+.author__urls.social-icons li a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.14);
+  transform: translateY(-1px);
+}
+.author__urls.social-icons li a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.12);
+}
+
+/* keep brand backgrounds */
+.author__urls.social-icons a[href^="mailto:"] { color:#fff !important; background:#d6336c !important; }
+.author__urls.social-icons a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; }
+.author__urls.social-icons a[href*="github.com"] { color:#fff !important; background:#24292e !important; }
+.author__urls.social-icons a[href*="linkedin.com"] { color:#fff !important; background:#0a66c2 !important; }
+
+/* debug helper: temporarily show a visible label (remove in production) */
+.author__urls.social-icons.debug li a::after {
+  content: attr(title);
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+  color: #666;
+}
+/* ---------- Author contact (icons under name) ---------- */
+.author__contact {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center under the name */
+  margin: 0.35rem 0 0.35rem 0; /* slight spacing under name */
+  padding: 0;
+}
+
+/* Social icons (inline SVG friendly) */
+.author__urls.social-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* each icon wrapper */
+.author__urls.social-icons li {
+  margin: 0;
+  list-style: none;
+}
+
+/* circular button */
+.author__urls.social-icons li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  text-decoration: none;
+  background: #f6f7fb;
+  color: var(--ink);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  box-shadow: none;
+  overflow: visible;
+}
+
+/* svg inside button inherits color */
+.author__urls.social-icons li a svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
+}
+
+/* hover & focus */
+.author__urls.social-icons li a:hover,
+.author__urls.social-icons li a:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(2,6,23,0.06);
+  outline: none;
+}
+
+/* brand backgrounds (keeps your previous logic but via classes too) */
+.author__urls.social-icons a.icon-mail { color:#fff; background:#d6336c; }
+.author__urls.social-icons a.icon-scholar { color:#fff; background:#1a73e8; }
+.author__urls.social-icons a.icon-github { color:#fff; background:#24292e; }
+.author__urls.social-icons a.icon-linkedin { color:#fff; background:#0a66c2; }
+
+/* responsive: slightly larger tap targets on small screens */
+@media (max-width: 480px) {
+  .author__urls.social-icons li a { width:48px; height:48px; }
+  .author__urls.social-icons li a svg { width:20px; height:20px; }
+}
+/* --- contact icons under name --- */
+.author__contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.author__contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f6f7fb;
+  color: var(--ink);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.author__contact-icons a svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* hover brand colors */
+.author__contact-icons a[href*="scholar.google"] { background:#1a73e8; color:#fff; }
+.author__contact-icons a[href*="github.com"] { background:#24292e; color:#fff; }
+.author__contact-icons a[href^="mailto:"] { background:#d6336c; color:#fff; }
+
+.author__contact-icons a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }

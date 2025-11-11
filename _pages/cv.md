@@ -12,7 +12,7 @@ redirect_from:
 
 Education
 ======
-* **Ph.D., AI, Knowledge Graphs & Robotics**, Joint PhD (University of Nottingham · University of Oxford · KTH), 2020–2023  
+* **Ph.D, AI, Knowledge Graphs & Robotics**, Joint PhD (University of Nottingham · University of Oxford · KTH), 2020–2023  
 * **M.Sc., Software Engineering**, University of Oxford, 2022–2024  
 * **M.Sc., Engineering**, University of Stuttgart, 2015–2017  
 * **B.Eng., Control/Automation**, Tongji University (visiting at TUM), 2009–2013
