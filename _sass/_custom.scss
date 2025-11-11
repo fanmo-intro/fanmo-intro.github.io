@@ -1,5 +1,5 @@
 /* =========================================
-   Fan Mo — custom.scss (最终合并修复版 v15)
+   Fan Mo — custom.scss (整理与移动端侧栏右移)
    ========================================= */
 
 /* ---------- Theme accents & base ---------- */
@@ -12,49 +12,73 @@
 }
 
 /* =========================
-   Page layout
+   Page layout (基础)
    ========================= */
 
-/* Force left-right layout and not centered */
+/* 全局 page 布局：左右并排，默认较小 gap（可调整） */
+html body .page,
 body .page {
   display: flex !important;
-  flex-wrap: wrap !important;
+  flex-wrap: nowrap !important;
   align-items: flex-start !important;
-  gap: 32px !important;
-  margin: 0 !important;
+  gap: 12px !important;       /* 控制侧边栏与正文间距（调小或调大） */
+  margin: 0 auto !important;
+  padding: 0 4% !important;
   max-width: none !important;
-  padding: 0 5% !important;
+  box-sizing: border-box !important;
 }
 
-/* Sidebar width */
+/* 侧边栏固定宽度并靠左（去掉大的 left margin） */
 .sidebar {
+  flex: 0 0 250px !important;   /* 可调整为 220 / 240 / 260 */
   width: 250px !important;
   max-width: 250px !important;
-  flex-basis: 250px !important;
-  flex-grow: 0 !important;
-  flex-shrink: 0 !important;
-  margin-left: 0;
-  padding-right: 24px;
+  margin-left: 0 !important;
+  padding-left: 18px !important;
+  padding-right: 12px !important;
+  box-sizing: border-box !important;
+}
+
+/* 正文：占据剩余空间，尽量靠近侧边栏 */
+.page__content {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding-left: 8px !important;  /* 与侧边栏间的微小呼吸空间 */
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 如果页面有多余的内层容器，移除它们的默认 padding */
+.page__inner-wrap,
+.page__container,
+.wrapper,
+.main,
+.content {
+  max-width: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* =========================
-   Page typography & width
+   版式与文字
    ========================= */
 
 .page__content {
   max-width: 2540px;
-  margin: 0;
   text-align: justify;
   text-justify: inter-ideograph;
   line-height: 1.75;
   font-size: 1.05rem;
   color: var(--text);
-  flex: 1 1 600px;
-  min-width: 0;
+  box-sizing: border-box;
 }
 
 .page__content p { margin-bottom: 1.2em; }
 .page__content p + p { margin-top: 0.7rem; }
+
 .page__content h1,
 .page__content h2 {
   color: var(--accent);
@@ -67,51 +91,11 @@ body .page {
 .page__content .zh { color:#374151; }
 .page__content ul { margin: .5rem 0 .8rem 1.2rem; }
 .page__content li { margin: .25rem 0; }
-.page__content strong {
-  color: #1a73e8;
-  font-weight: 600;
-}
+.page__content strong { color: #1a73e8; font-weight: 600; }
 
 /* =========================
-   "About" layout
-   ========================= */
-.about-grid { display:grid; gap: 1.25rem; }
-@media (min-width: 992px) {
-  .about-grid { grid-template-columns: 2.2fr 1fr; align-items:start; }
-}
-.card {
-  background:#fff;
-  border-radius:14px;
-  padding:18px;
-  box-shadow:0 6px 24px rgba(0,0,0,.06);
-}
-.card h2 { margin-top:0; }
-.fact {
-  display:flex; align-items:center; gap:.6rem;
-  padding:.5rem .75rem; border-radius:10px;
-  background:#f6f7fb; margin:.45rem 0; color:#111;
-}
-.fact i,.fact svg{ color:var(--accent); }
-
-/* =========================
-   News timeline
-   ========================= */
-.news {
-  position:relative; margin-left:.4rem; padding-left:1rem;
-  border-left:3px solid rgba(37,99,235,.18);
-}
-.news .item { position:relative; margin:.6rem 0 .6rem .25rem; }
-.news .item::before {
-  content:""; position:absolute; left:-1.05rem; top:.35rem;
-  width:.55rem; height:.55rem; border-radius:50%; background:var(--accent);
-}
-.news time { font-weight:600; color:#111; margin-right:.35rem; }
-.news a { color:#0f172a; text-decoration:none; border-bottom:1px dotted rgba(15,23,42,.35); }
-.news a:hover { color:var(--accent); border-bottom-color:var(--accent); }
-
-/* =======================================================
    Sidebar (author block)
-   ======================================================= */
+   ========================= */
 
 .sidebar .author__content {
   background: transparent !important;
@@ -122,6 +106,7 @@ body .page {
   flex-direction: column;
   align-items: center;
   gap: .6rem;
+  box-sizing: border-box;
 }
 
 .author__avatar {
@@ -157,7 +142,7 @@ body .page {
   width: 100%;
 }
 
-/* Bio left-aligned */
+/* Bio left-aligned inside sidebar */
 .author__content .author__bio {
   color: #374151 !important;
   font-size: 0.9rem !important;
@@ -168,114 +153,22 @@ body .page {
   width: 100%;
 }
 
-.author__content .author__bio::before {
-  content: "Research Interest";
-  display: block;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--ink);
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-  text-align: left;
-}
+/* employers + social icons simplified & robust */
+.author__urls:not(.social-icons) { list-style:none; padding:0; margin: .6rem 0 0 0; width:100%; text-align:center; }
+.author__urls:not(.social-icons) li { margin:6px 0; display:flex; align-items:center; justify-content:center; gap:10px; }
+.author__urls:not(.social-icons) li .employer { display:inline-flex; align-items:center; padding:6px 10px; border-radius:10px; background:#f6f7fb; font-weight:500; font-size:.9rem; color:#374151; }
 
-/* =======================================================
-   Sidebar: employers + social icons
-   ======================================================= */
+/* small icon buttons */
+.author__urls.social-icons { display:flex; gap:10px; justify-content:center; padding:0; margin:.6rem 0 .9rem 0; }
+.author__urls.social-icons li a { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; background:#f6f7fb; transition:transform .15s ease,box-shadow .15s ease; text-decoration:none; color:inherit; }
+.author__urls.social-icons li a svg { width:18px; height:18px; display:block; fill:currentColor; }
 
-.author__urls:not(.social-icons) {
-  list-style: none;
-  padding: 0;
-  margin: 0.6rem 0 0 0;
-  width: 100%;
-  text-align: center;
-}
-.author__urls:not(.social-icons) li {
-  margin: 6px 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.author__urls:not(.social-icons) li .employer {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 10px;
-  border-radius: 10px;
-  background: #f6f7fb;
-  font-weight: 500;
-  font-size: 0.9rem;
-  color: #374151;
-}
-.author__urls:not(.social-icons) li .employer:hover {
-  box-shadow: 0 6px 14px rgba(0,0,0,.08);
-  transform: translateY(-1px);
-}
-.author__urls:not(.social-icons) li.author__desktop:nth-of-type(1) .employer { color:#2a7f62; background:#e7f6ef; }
-.author__urls:not(.social-icons) li.author__desktop:nth-of-type(2) .employer { color:#0a66c2; background:#e8f4ff; }
+/* contact icons under name */
+.author__contact-icons { display:flex; justify-content:center; gap:10px; margin-top:.25rem; margin-bottom:.4rem; }
+.author__contact-icons a { display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:#f6f7fb; color:var(--ink); transition:transform .15s ease, box-shadow .15s ease; }
+.author__contact-icons a svg { width:18px; height:18px; fill:currentColor; }
 
-.author__urls.social-icons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-  width: 100%;
-  padding: 0;
-  margin: .6rem 0 .9rem 0;
-  list-style: none;
-}
-.author__urls.social-icons li {
-  margin: 0;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* Icon buttons */
-.author__urls.social-icons li a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  padding: 0;
-  background: #f6f7fb;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-  font-size: 0; /* hide textual label */
-  line-height: 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/* Ensure icon elements are visible & sized reliably */
-.author__urls.social-icons li a i,
-.author__urls.social-icons li a svg {
-  display: inline-block !important;
-  font-size: 18px !important;
-  line-height: 1 !important;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  color: inherit !important;
-  fill: currentColor !important;
-  pointer-events: none;
-}
-
-/* hover effect */
-.author__urls.social-icons li a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
-}
-.author__urls.social-icons li a:hover i,
-.author__urls.social-icons li a:hover svg {
-  transform: translateY(-2px) scale(1.05);
-  transition: transform .15s ease;
-}
-
-/* brand bg colors */
+/* brand colours (保留) */
 .author__urls.social-icons a[href^="mailto:"] { color:#fff !important; background:#d6336c !important; }
 .author__urls.social-icons a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; }
 .author__urls.social-icons a[href*="github.com"] { color:#fff !important; background:#24292e !important; }
@@ -284,237 +177,60 @@ body .page {
 /* =========================
    Media Queries
    ========================= */
+
+/* ---------- Mobile: 调整侧边栏右移（防止头像贴左或被遮） ---------- */
 @media (max-width: 768px) {
-  body .page { 
+  /* 保持单列布局 */
+  html body .page,
+  body .page {
     display: block !important;
-    padding: 0 !important;
+    gap: 0 !important;
+    padding: 0 1rem !important;
   }
+
+  /* 侧边栏改为满宽但内部左右留边，头像/文字不会贴左（即视觉上“右移”） */
   .sidebar {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 16px !important;
+    padding-left: 24px !important;   /* <-- 关键：增加左侧内边距，让内容右移 */
+    padding-right: 24px !important;  /* 给右边也留点呼吸 */
     margin: 0 auto 14px auto !important;
+    box-sizing: border-box !important;
   }
+
+  /* 头像放大一点（可选） */
+  .author__avatar img { width: 160px !important; height: 160px !important; }
+
   .page__content {
     max-width: 100%;
-    padding: 0 1rem;
+    padding: 0 1rem !important;
     font-size: 1rem;
   }
-  .author__avatar img { width: 160px !important; height: 160px !important; }
+
   .author__content h3.author__name { font-size: 2rem !important; }
-  .author__content .author__bio { 
-    font-size: 1.05rem !important; 
-    max-width: 100% !important;
-    text-align: left !important;
-  }
+  .author__content .author__bio { font-size: 1.05rem !important; text-align: left !important; max-width: 100% !important; }
   .author__urls:not(.social-icons) { margin: .65rem 0 0.25rem 0 !important; }
   .author__urls.social-icons { margin: .65rem 0 1.25rem 0 !important; }
-  .sticky .author__urls-wrapper { position: static !important; }
   .sidebar { margin-bottom: 24px !important; }
 }
 
+/* ---------- Larger screens: 更紧凑（可自定义） ---------- */
 @media (min-width: 769px) {
-  body .page { display: flex !important; }
-  .author__urls:not(.social-icons) li { justify-content: flex-start; }
-  .author__urls:not(.social-icons) li .employer { font-size: 0.9rem; }
-  .author__urls.social-icons { justify-content: center; }
+  html body .page,
+  body .page { display: flex !important; gap: 12px !important; }
+  .author__urls:not(.social-icons) li { justify-content:flex-start; }
+  .author__urls.social-icons { justify-content:center; }
 }
 
+/* 更大屏时可以微调 gap */
 @media (min-width: 992px) {
-  .page { gap: 40px; }
-}
-@media (min-width: 1280px) {
-  /* no-op */
-}
-/* === 修正图标显示大小与可见性 === */
-/* Ensure icon elements are visible & sized reliably */
-/* 强制 icon 显示 */
-.author__urls.social-icons li a i,
-.author__urls.social-icons li a svg {
-  display: inline-block !important;
-  font-size: 18px !important;
-  line-height: 1 !important;
-  color: inherit !important;
-}
-/* --- Social icons: more robust & debug-friendly --- */
-.author__urls.social-icons li a {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  padding: 0;
-  background: #f6f7fb;
-  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
-  text-decoration: none;
-  color: inherit;
-  /* 不再强制 font-size:0 —— 遇到文本 fallback 时更友好 */
-  font-size: 0; /* 保留但下面强制子元素显示 */
-  line-height: 0;
-  overflow: visible; /* 防止 svg 被裁切 */
-  white-space: nowrap;
+  html body .page,
+  body .page {
+    gap: 12px !important;
+  }
 }
 
-/* ensure icon elements are visible & sized reliably */
-.author__urls.social-icons li a i,
-.author__urls.social-icons li a svg {
-  display: inline-block !important;
-  font-size: 18px !important;
-  line-height: 1 !important;
-  width: auto;
-  height: auto;
-  vertical-align: middle;
-  color: inherit !important;
-  fill: currentColor !important;
-  pointer-events: auto; /* 允许交互，便于调试与无障碍 */
-}
+/* Debug 辅助（开发时打开以定位问题） */
+/* .body-debug .sidebar { outline: 2px dashed rgba(0,128,0,0.2); } */
+/* .body-debug .page__content { outline: 2px dashed rgba(0,0,255,0.08); } */
 
-/* Font Awesome: protective rules (helps when FA uses webfont) */
-.author__urls.social-icons li a i.fas,
-.author__urls.social-icons li a i.far,
-.author__urls.social-icons li a i.fab,
-.author__urls.social-icons li a i.fal,
-.author__urls.social-icons li a i.fad {
-  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", sans-serif !important;
-  font-weight: 900 !important; /* solid icons */
-  speak: none;
-}
-
-/* Academicons protective rule */
-.author__urls.social-icons li a i.ai {
-  font-family: "academicons" !important;
-  font-style: normal;
-  font-weight: normal !important;
-}
-
-/* focus & hover */
-.author__urls.social-icons li a:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.14);
-  transform: translateY(-1px);
-}
-.author__urls.social-icons li a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,.12);
-}
-
-/* keep brand backgrounds */
-.author__urls.social-icons a[href^="mailto:"] { color:#fff !important; background:#d6336c !important; }
-.author__urls.social-icons a[href*="scholar.google"] { color:#fff !important; background:#1a73e8 !important; }
-.author__urls.social-icons a[href*="github.com"] { color:#fff !important; background:#24292e !important; }
-.author__urls.social-icons a[href*="linkedin.com"] { color:#fff !important; background:#0a66c2 !important; }
-
-/* debug helper: temporarily show a visible label (remove in production) */
-.author__urls.social-icons.debug li a::after {
-  content: attr(title);
-  display: block;
-  font-size: 11px;
-  margin-top: 6px;
-  color: #666;
-}
-/* ---------- Author contact (icons under name) ---------- */
-.author__contact {
-  width: 100%;
-  display: flex;
-  justify-content: center; /* center under the name */
-  margin: 0.35rem 0 0.35rem 0; /* slight spacing under name */
-  padding: 0;
-}
-
-/* Social icons (inline SVG friendly) */
-.author__urls.social-icons {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-/* each icon wrapper */
-.author__urls.social-icons li {
-  margin: 0;
-  list-style: none;
-}
-
-/* circular button */
-.author__urls.social-icons li a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  text-decoration: none;
-  background: #f6f7fb;
-  color: var(--ink);
-  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
-  box-shadow: none;
-  overflow: visible;
-}
-
-/* svg inside button inherits color */
-.author__urls.social-icons li a svg {
-  width: 18px;
-  height: 18px;
-  display: block;
-  fill: currentColor;
-}
-
-/* hover & focus */
-.author__urls.social-icons li a:hover,
-.author__urls.social-icons li a:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(2,6,23,0.06);
-  outline: none;
-}
-
-/* brand backgrounds (keeps your previous logic but via classes too) */
-.author__urls.social-icons a.icon-mail { color:#fff; background:#d6336c; }
-.author__urls.social-icons a.icon-scholar { color:#fff; background:#1a73e8; }
-.author__urls.social-icons a.icon-github { color:#fff; background:#24292e; }
-.author__urls.social-icons a.icon-linkedin { color:#fff; background:#0a66c2; }
-
-/* responsive: slightly larger tap targets on small screens */
-@media (max-width: 480px) {
-  .author__urls.social-icons li a { width:48px; height:48px; }
-  .author__urls.social-icons li a svg { width:20px; height:20px; }
-}
-/* --- contact icons under name --- */
-.author__contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 0.25rem;
-  margin-bottom: 0.4rem;
-}
-
-.author__contact-icons a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #f6f7fb;
-  color: var(--ink);
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.author__contact-icons a svg {
-  width: 18px;
-  height: 18px;
-  fill: currentColor;
-}
-
-/* hover brand colors */
-.author__contact-icons a[href*="scholar.google"] { background:#1a73e8; color:#fff; }
-.author__contact-icons a[href*="github.com"] { background:#24292e; color:#fff; }
-.author__contact-icons a[href^="mailto:"] { background:#d6336c; color:#fff; }
-
-.author__contact-icons a:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-}
