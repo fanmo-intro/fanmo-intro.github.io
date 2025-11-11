@@ -59,9 +59,8 @@ redirect_from:
 
   <p>Beyond research, I serve as <strong>Chair of the China Chapter of the Marie Curie Alumni Association</strong>, organizing international forums and academic events.  
   I am passionate about <strong>bridging academia and industry</strong>, fostering <strong>open collaboration</strong>, and advancing <strong>AI for real-world impact</strong>.  
-  You can find me on <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener" style="color:#d6336c; font-weight:600;">Google Scholar</a>, <a href="mailto:you@example.com" style="color:#d6336c; font-weight:600;">Email</a>, and <a href="https://github.com/yourname" target="_blank" rel="noopener" style="color:#d6336c; font-weight:600;">GitHub.
-</a>.
-.</p>
+  You can find me on <a href="https://scholar.google.com/citations?user=oXhA0KkAAAAJ&hl=en" target="_blank" rel="noopener" style="color:#d6336c; font-weight:600;">Google Scholar</a>, <a href="kell6420@ox.ac.uk" style="color:#d6336c; font-weight:600;">Email</a>, and <a href="https://github.com/mf093087" target="_blank" rel="noopener" style="color:#d6336c; font-weight:600;">GitHub</a>.
+</p>
 </div>
 
 
