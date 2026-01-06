@@ -1,31 +1,40 @@
----
-layout: compress
----
+<!DOCTYPE html>
+<html>
 
-{% include base_path %}
-
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
   <head>
     {% include head.html %}
-    {% include head/custom.html %}
+    {% include scripts/mathjax.html %}
   </head>
 
-  <body>
+  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <!-- Header -->
 
-    {{ content }}
+    {% include header.html %}
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+    <!-- Content -->
+
+    <div class="container mt-5">
+      {{ content }}
     </div>
 
-    {% include scripts.html %}
+    <!-- Footer -->
+
+    {% include footer.html %}
+
+       <!-- Maps container -->
+    <div class="maps-container" style="width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f9fa;
+    margin-top: 30px;">
+      <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=4KTobpu4jBnPk2Z-7uDzNM_RvlQXLdsWNxg6iQLhLx4&cl=ffffff&w=300"></script>
+    </div>
 
   </body>
+
+  {% include scripts/bootstrap.html %}
+  {% include scripts/mansory.html %}
+  {% include scripts/misc.html %}
+
 </html>
