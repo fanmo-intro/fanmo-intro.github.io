@@ -14,6 +14,9 @@ news: true
 selected_papers: true
 social: true
 ---
+xxxxxxxxxxxxxxx
+
+
 I am currently pursuing a **Ph.D. in Computer Science** at the [University of Warwick](https://warwick.ac.uk/). In addition to my doctoral studies, I am a **Visiting Researcher** at the [Department of Computer Science and Technology, University of Cambridge](https://www.cst.cam.ac.uk/), working closely with [Professor Pietro Liò(MAE, FAAIA)](https://www.cl.cam.ac.uk/~pl219/). I am also a **Turing Enrichment Student** at the [Alan Turing Institute](https://www.turing.ac.uk/people/doctoral-students/kaiwen-zuo), where I collaborate with [Professor Anthony (Tony) Cohn(FREng, FLSW, CEng, CITP, FAAAI, FEurAI, FAISB, FAAIA, FAIIA, FIET, FBCS)](https://eps.leeds.ac.uk/computing/staff/76/professor-anthony-tony-g-cohn-freng-flsw-ceng-citp). Prior to my Ph.D., I completed an **MSc in Computer Science with Distinction** at [Newcastle University](https://www.ncl.ac.uk/), and earned a **BSc** from [Beijing Jiaotong University](http://en.njtu.edu.cn/).
 
 In addition to my doctoral research, I am the Chief Operating Officer(COO) of **Glacier Wisdom(Tsinghua‑affiliated startup)**, and an active member of **CBAIA**, **UK-CSAE**, and **CLSS-UK**. These affiliations allow me to collaborate with leading researchers across disciplines and foster strong academic networks.
