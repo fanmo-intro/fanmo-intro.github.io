@@ -8,7 +8,7 @@ profile:
   image: Picture_Fan.jpg
 
   email: >
-    <p>Warwick Email: Kaiwen.Zuo<code>[at]</code>warwick<code>[dot]</code>ac<code>[dot]</code>uk</p>
+    <p>Cambridge Email: fm651<code>[at]</code>cam<code>[dot]</code>ac<code>[dot]</code>uk</p>
     
 news: true
 selected_papers: true
