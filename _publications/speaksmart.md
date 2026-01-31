@@ -3,7 +3,7 @@ layout: pub
 type: journal
 title: >
     SPEAKSMART: Evaluation of Empathetic and Persuasive Responses of Large Language Models
-author: Chen, Yuyan and Jia, Jiyuan and Chang, Jingwen and Zuo, Kaiwen and Xiao, Yanghua
+author: 333333 Chen, Yuyan and Jia, Jiyuan and Chang, Jingwen and Zuo, Kaiwen and Xiao, Yanghua
 # equalauthor:  # No co-first authors specified
 year: 2025
 selected: true
