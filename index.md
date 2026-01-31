@@ -147,16 +147,6 @@ Pietro Liò 教授（MAE, FAAIA）
 
 </div>
 
-## News
-
-{% if page.news %}
-  {% include news.html %}
-{% endif %}
-
-<div id="publications" class="section_break"></div>
-
-
----
 
 
 # Research Interests
@@ -169,6 +159,16 @@ Pietro Liò 教授（MAE, FAAIA）
 - **Computational Sustainability & Biology**: AI for life cycle assessment, traceability, and systems biology  
 
 ---
+
+## News
+{% if page.news %}
+  {% include news.html %}
+{% endif %}
+
+<div id="publications" class="section_break"></div>
+
+---
+
 
 
 # Services
