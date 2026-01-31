@@ -58,39 +58,34 @@ social: true
 <div id="content-en" class="lang-pane active">
 
 <p>
-I am currently a <strong>Full Professor</strong> at the University of Electronics and Science Technology,
-and a Researcher at the University of Oxford, working with
+I am currently a <strong>full professor</strong> at the University of Electronics and Science Technology of China,  
+a Researcher at the University of Oxford, working with
 <a href="https://www.rdm.ox.ac.uk/people/monika-gullerova" target="_blank">
 Professor Monika Gullerova
 </a>
 and
 <a href="https://eng.ox.ac.uk/people/molly-stevens" target="_blank">
-Professor Molly Stevens
-</a>.
-I lead the <strong>AI and Graph Learning Group</strong> and serve as a Visiting Fellow at the
+Professor Molly Stevens (FRS FREng FRPharm FRSB FRSC FIMMM FCGI FInstP)
+</a>,
+where I lead the AI and Graph Learning Group,
+and a Visiting Fellow at the
 <a href="https://www.cst.cam.ac.uk/" target="_blank">
 Department of Computer Science and Technology, University of Cambridge
 </a>,
 working closely with
 <a href="https://www.cl.cam.ac.uk/~pl219/" target="_blank">
-Professor Pietro Liò
+Professor Pietro Liò (MAE, FAAIA)
 </a>.
-</p>
-
-<p>
 My research spans knowledge graphs, graph neural networks, robotics, and machine learning,
 with applications in intelligent manufacturing, computational biology, and sustainable systems.
 </p>
 
 <p>
-Previously, I was a <strong>Marie Skłodowska-Curie Fellow</strong> at the
+Previously, I was a Marie Skłodowska-Curie Fellow at the
 Centre for Human-Inspired Artificial Intelligence, University of Cambridge.
 I hold a joint Ph.D. from the University of Nottingham,
 the University of Oxford, and KTH Royal Institute of Technology,
 supported by the EU Horizon 2020 programme.
-</p>
-
-<p>
 Over the past few years, I have led and contributed to multi-million-pound research projects,
 developed AI-driven systems with partners such as Siemens and ABB,
 and published more than 40 papers in top-tier journals and conferences.
@@ -98,19 +93,20 @@ and published more than 40 papers in top-tier journals and conferences.
 
 <p>
 Beyond research, I serve as Chair of the China Chapter of the
-Marie Curie Alumni Association, organizing international academic forums and events.
-I am committed to bridging academia and industry, fostering open collaboration,
+Marie Curie Alumni Association, organizing international forums and academic events.
+I am passionate about bridging academia and industry, fostering open collaboration,
 and advancing AI for real-world impact.
 </p>
 
 <p>
-I am always open to collaboration with motivated students and researchers.
-If our interests align, please feel free to contact me at
+I am always open to collaboration with motivated <strong>students</strong> and
+<strong>researchers</strong>.
+Feel free to reach out if our interests align.
+Please write to
 <a href="mailto:fm651@cam.ac.uk">fm651@cam.ac.uk</a>.
 </p>
 
 </div>
-
 
 <!-- ================= CHINESE ================= -->
 <div id="content-zh" class="lang-pane">
