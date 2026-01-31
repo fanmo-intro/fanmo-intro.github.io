@@ -155,6 +155,46 @@ Pietro Liò 教授（MAE, FAAIA）
 
 <div id="publications" class="section_break"></div>
 
+
+---
+
+
+# Research Interests
+
+- **Knowledge Graphs & Graph Neural Networks**: semantic modeling, embedding, reasoning for manufacturing and biomedical applications  
+- **Machine Learning & AI Systems**: reinforcement learning (DQN, DDQN, DDPG), multimodal fusion, interpretable AI  
+- **Computer Vision**: object detection, human–robot interaction, defect inspection, 3D reconstruction  
+- **Natural Language Processing**: large language models, information extraction, semantic alignment with knowledge graphs  
+- **Robotics & Digital Twins**: motion planning, multi-agent control, AI-driven digital twins for adaptive manufacturing  
+- **Computational Sustainability & Biology**: AI for life cycle assessment, traceability, and systems biology  
+
+---
+
+
+# Services
+
+### Editorial Roles
+- Editorial Board Member, *International Journal of Manufacturing Research*
+- Guest Editor, *Applied Science*, Topic: Trends and Prospects in Advanced Automated Manufacturing Systems
+- Associate Editor, *Journal of Automation and Intelligence*
+- Young Editorial Board Member, *Journal of Complex Engineering Systems*  
+
+### Conference Service
+- Session Chair, *FAIM* (2022–2024)  
+- Session Chair, *22nd IFAC World Congress* (2023)  
+- Session Chair, *ACM MUM* (2024)  
+- Lead Organizer & Chair, *MCAA China Chapter Annual Conferences & Forums* (2023–2024)  
+- Organizer, *MCAA Asia Connect Forum on AI and Computer Science* (2024)  
+
+### Reviewer
+- *IEEE Transactions on Industrial Informatics*  
+- *Journal of Intelligent Manufacturing*  
+- *Engineering Applications of Artificial Intelligence*  
+- *Expert Systems with Applications*  
+- *Journal of Manufacturing Systems*  
+- Reviewer for *NeurIPS* and other AI/manufacturing conferences  
+
+
 ## Selected Publications
 
 {% if page.selected_papers %}
