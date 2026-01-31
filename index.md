@@ -45,8 +45,13 @@ social: true
 </div>
 
 <div id="content-en" class="lang-pane active">
+<p>
 
-I am currently a full professor at the University of Electronics and Science Technology, a Researcher at the University of Oxford, where I lead the AI and Graph Learning Group, and a Visiting Fellow at the [Department of Computer Science and Technology, University of Cambridge](https://www.cst.cam.ac.uk/), working closely with [Professor Pietro Liò(MAE, FAAIA)](https://www.cl.cam.ac.uk/~pl219/). My research spans knowledge graphs, graph neural networks, robotics, and machine learning, with applications in intelligent manufacturing, computational biology, and sustainable systems.
+I am currently a full professor at the University of Electronics and Science Technology, a Researcher at the University of Oxford, where I lead the AI and Graph Learning Group, and a Visiting Fellow at the <a href="https://www.cst.cam.ac.uk/" target="_blank"> Department of Computer Science and Technology, University of Cambridge
+</a>,
+working closely with
+<a href="https://www.cl.cam.ac.uk/~pl219/" target="_blank">
+Professor Pietro Liò (MAE, FAAIA). My research spans knowledge graphs, graph neural networks, robotics, and machine learning, with applications in intelligent manufacturing, computational biology, and sustainable systems.
 
 Previously, I was a Marie Skłodowska-Curie Fellow at the Centre for Human-Inspired Artificial Intelligence, University of Cambridge. I hold a joint Ph.D. from the University of Nottingham, the University of Oxford, and KTH Royal Institute of Technology, supported by the EU Horizon 2020 programme. Over the past few years, I have led and contributed to multi-million-pound research projects, developed AI-driven systems with partners such as Siemens and ABB, and published more than 40 papers in top-tier journals and conferences.
 
