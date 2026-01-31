@@ -1,9 +1,28 @@
 ---
-title: "A Framework for Manufacturing System Reconfiguration and Optimisation Utilising Digital Twins and Modular Artificial Intelligence"
-collection: publications
-permalink: /publication/2023-08-01-digital-twin-framework
-date: 2023-08-01
-venue: "Robotics and Computer-Integrated Manufacturing"
-paperurl: "https://doi.org/10.1016/j.rcim.2023.102524"
-citation: "F. Mo*, H.U. Rehman, F.M. Monetti, J.C. Chaplin, D. Sanderson, A. Popov, A. Maffei, S. Ratchev. Robotics and Computer-Integrated Manufacturing, 82:102524, August 2023."
+layout: pub
+type: journal
+title: >
+    A Framework for Manufacturing System Reconfiguration and Optimisation Utilising Digital Twins and Modular Artificial Intelligence
+author: Mo, Fan and Rehman, H. U. and Monetti, F. M. and Chaplin, J. C. and Sanderson, D. and Popov, A. and Maffei, A. and Ratchev, S.
+journal: Robotics and Computer-Integrated Manufacturing
+abbr: Robotics and Computer-Integrated Manufacturing
+correspondence: Mo, Fan
+year: 2023
+volume: 82
+pages: 102524
+doi: 10.1016/j.rcim.2023.102524
+pdf: https://doi.org/10.1016/j.rcim.2023.102524
+selected: true
+abstract: >
+    This paper proposes a comprehensive framework for manufacturing system reconfiguration and optimisation that integrates digital twin technologies with modular artificial intelligence. The framework combines virtual system representations with intelligent decision-making modules to enable adaptive reconfiguration, performance optimisation, and what-if analysis in complex manufacturing environments. By leveraging digital twins for real-time system monitoring and modular AI components for reasoning and optimisation, the proposed approach enhances flexibility, scalability, and responsiveness in manufacturing systems. Case studies demonstrate the effectiveness of the framework in supporting intelligent reconfiguration and optimisation across diverse production scenarios.
+bibtex: >
+    @article{Mo2023DigitalTwinFramework,
+        author  = {Mo, Fan and Rehman, H. U. and Monetti, F. M. and Chaplin, J. C. and Sanderson, D. and Popov, A. and Maffei, A. and Ratchev, S.},
+        title   = {A Framework for Manufacturing System Reconfiguration and Optimisation Utilising Digital Twins and Modular Artificial Intelligence},
+        journal = {Robotics and Computer-Integrated Manufacturing},
+        volume  = {82},
+        pages   = {102524},
+        year    = {2023},
+        doi     = {10.1016/j.rcim.2023.102524}
+    }
 ---

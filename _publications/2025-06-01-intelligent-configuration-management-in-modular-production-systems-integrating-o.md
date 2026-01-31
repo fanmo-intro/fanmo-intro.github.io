@@ -4,6 +4,7 @@ type: journal
 title: >
     Intelligent Configuration Management in Modular Production Systems: Integrating Operational Semantics with Knowledge Graphs
 author: Rehman, H. U. and Mo, Fan and Chaplin, J. C. and Zarzycki, L. and Jones, M. and Maffei, A. and Ratchev, S.
+equalauthor: Rehman, H. U. and Mo, Fan
 journal: Journal of Manufacturing Systems
 abbr: Journal of Manufacturing Systems
 correspondence: Mo, Fan
