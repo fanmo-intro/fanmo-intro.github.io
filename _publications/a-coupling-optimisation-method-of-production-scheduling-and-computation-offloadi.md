@@ -3,10 +3,11 @@ layout: pub
 type: journal
 title: >
     A Coupling Optimisation Method of Production Scheduling and Computation Offloading for Intelligent Workshops with Cloud-Edge-Terminal Architecture
-author: Yang, Bo* and Pang, Zhen* and Wang, Shuo and Mo, Fan and Gao, Yi
+author: Yang, Bo†* and Pang, Zhen† and Wang, Shuo and Mo, Fan and Gao, Yi
+note: "† Co-first authors."
 journal: Journal of Manufacturing Systems
-abbr: Journal of Manufacturing Systems 
-correspondence: Yang, Bo  # 官方未标注通讯作者，可按需补充
+abbr: Journal of Manufacturing Systems
+correspondence: Yang, Bo
 year: 2022
 volume: 65
 pages: 421--438
