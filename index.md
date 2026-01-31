@@ -21,21 +21,6 @@ Previously, I was a Marie Skłodowska-Curie Fellow at the Centre for Human-Inspi
 
 Beyond research, I serve as Chair of the China Chapter of the Marie Curie Alumni Association, organizing international forums and academic events. I am passionate about bridging academia and industry, fostering open collaboration, and advancing AI for real-world impact.
 
-I am currently pursuing a **Ph.D. in Computer Science** at the [University of Warwick](https://warwick.ac.uk/). In addition to my doctoral studies, I am a **Visiting Researcher** at the [Department of Computer Science and Technology, University of Cambridge](https://www.cst.cam.ac.uk/), working closely with [Professor Pietro Liò(MAE, FAAIA)](https://www.cl.cam.ac.uk/~pl219/). I am also a **Turing Enrichment Student** at the [Alan Turing Institute](https://www.turing.ac.uk/people/doctoral-students/kaiwen-zuo), where I collaborate with [Professor Anthony (Tony) Cohn(FREng, FLSW, CEng, CITP, FAAAI, FEurAI, FAISB, FAAIA, FAIIA, FIET, FBCS)](https://eps.leeds.ac.uk/computing/staff/76/professor-anthony-tony-g-cohn-freng-flsw-ceng-citp). Prior to my Ph.D., I completed an **MSc in Computer Science with Distinction** at [Newcastle University](https://www.ncl.ac.uk/), and earned a **BSc** from [Beijing Jiaotong University](http://en.njtu.edu.cn/).
-
-In addition to my doctoral research, I am the Chief Operating Officer(COO) of **Glacier Wisdom(Tsinghua‑affiliated startup)**, and an active member of **CBAIA**, **UK-CSAE**, and **CLSS-UK**. These affiliations allow me to collaborate with leading researchers across disciplines and foster strong academic networks.
-
-My research interests lie at the intersection of:
-
-- **AI for Healthcare**: Investigating the performance of generalist medical models, and leveraging AGI to empower healthcare.  
-- **Safety-oriented AI**: Exploring the safety, trustworthiness, and reliability of general medical models, with a focus on ensuring their robustness and clinical readiness.  
-- **Large Language Models (LLMs)**: Examining the diagnostic and prognostic capabilities of large language models in clinical and biomedical contexts.  
-- **Agentic Systems**: Advocating for system-level intelligence in next-generation medical AI — to address the complexity of real-world healthcare tasks and support integrated, scalable clinical workflows.  
-
-
-
-I am particularly interested in responsible AI systems that align with human values, and in the development of interpretable models for scientific discovery and healthcare reasoning.
-
 I am always open to collaboration with motivated **students** and **researchers**. Feel free to reach out if our interests align!
 
 <div id="news" class="section_break"></div>
