@@ -49,7 +49,15 @@ social: true
 
 <p>
 I am currently a full professor at the University of Electronics and Science Technology,
-a Researcher at the University of Oxford, where I lead the AI and Graph Learning Group,
+a Researcher at the University of Oxford, working with
+<a href="https://www.rdm.ox.ac.uk/people/monika-gullerova" target="_blank">
+Professor Monika Gullerova
+</a>
+and
+<a href="https://eng.ox.ac.uk/people/molly-stevens" target="_blank">
+Molly Stevens (FRS FREng FRPharm FRSB FRSC FIMMM FCGI FInstP)
+</a>,
+where I lead the AI and Graph Learning Group,
 and a Visiting Fellow at the
 <a href="https://www.cst.cam.ac.uk/" target="_blank">
 Department of Computer Science and Technology, University of Cambridge
