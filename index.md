@@ -157,22 +157,24 @@ Pietro Liò 教授（MAE, FAAIA）
 - <b>Journal reviewer</b> for IEEE Transactions on Computational Social Systems(IEEE TCSS), KSII Transactions on Internet and Information Systems(KSII TIIS)
 
 <script>
-const btnEn = document.getElementById("btn-en");
-const btnZh = document.getElementById("btn-zh");
-const en = document.getElementById("content-en");
-const zh = document.getElementById("content-zh");
+document.addEventListener("DOMContentLoaded", function () {
+  const btnEn = document.getElementById("btn-en");
+  const btnZh = document.getElementById("btn-zh");
+  const en = document.getElementById("content-en");
+  const zh = document.getElementById("content-zh");
 
-btnEn.onclick = () => {
-  btnEn.classList.add("active");
-  btnZh.classList.remove("active");
-  en.classList.add("active");
-  zh.classList.remove("active");
-};
+  btnEn.onclick = () => {
+    btnEn.classList.add("active");
+    btnZh.classList.remove("active");
+    en.classList.add("active");
+    zh.classList.remove("active");
+  };
 
-btnZh.onclick = () => {
-  btnZh.classList.add("active");
-  btnEn.classList.remove("active");
-  zh.classList.add("active");
-  en.classList.remove("active");
-};
+  btnZh.onclick = () => {
+    btnZh.classList.add("active");
+    btnEn.classList.remove("active");
+    zh.classList.add("active");
+    en.classList.remove("active");
+  };
+});
 </script>
