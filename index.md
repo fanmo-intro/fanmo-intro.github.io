@@ -198,10 +198,8 @@ Pietro Liò 教授（MAE, FAAIA）
 - *Engineering Applications of Artificial Intelligence*  
 - *Expert Systems with Applications*  
 - *Journal of Manufacturing Systems*  
-- Reviewer for *NeurIPS* and other AI/manufacturing conferences  
-- <b>Conference reviewer</b> for AAAI 2024/25, ACL 2024/25, ICLR 2024/25
-- <b>Journal reviewer</b> for IEEE Transactions on Computational Social Systems (IEEE TCSS),
-  KSII Transactions on Internet and Information Systems (KSII TIIS)
+- *Reviewer for NeurIPS and other AI/manufacturing conferences*
+- *AAAI 2024/25, ACL 2024/25, ICLR 2024/25*
 
 
 ## Selected Publications
