@@ -55,7 +55,7 @@ Professor Monika Gullerova
 </a>
 and
 <a href="https://eng.ox.ac.uk/people/molly-stevens" target="_blank">
-Molly Stevens (FRS FREng FRPharm FRSB FRSC FIMMM FCGI FInstP)
+Professor Molly Stevens (FRS FREng FRPharm FRSB FRSC FIMMM FCGI FInstP)
 </a>,
 where I lead the AI and Graph Learning Group,
 and a Visiting Fellow at the
