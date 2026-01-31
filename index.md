@@ -58,73 +58,55 @@ social: true
 <div id="content-en" class="lang-pane active">
 
 <p>
-I am currently a <strong>Full Professor</strong> at the
-<strong>University of Electronics and Science Technology</strong>,
-and a <strong>Researcher</strong> at the
-<strong>University of Oxford</strong>, working with
+I am currently a <strong>Full Professor</strong> at the University of Electronics and Science Technology,
+and a Researcher at the University of Oxford, working with
 <a href="https://www.rdm.ox.ac.uk/people/monika-gullerova" target="_blank">
-<strong>Professor Monika Gullerova</strong>
+Professor Monika Gullerova
 </a>
 and
 <a href="https://eng.ox.ac.uk/people/molly-stevens" target="_blank">
-<strong>Professor Molly Stevens</strong>
-</a>
-(<strong>FRS, FREng, FRPharm, FRSB, FRSC, FIMMM, FCGI, FInstP</strong>).
-I lead the <strong>AI and Graph Learning Group</strong> and serve as a
-<strong>Visiting Fellow</strong> at the
+Professor Molly Stevens
+</a>.
+I lead the <strong>AI and Graph Learning Group</strong> and serve as a Visiting Fellow at the
 <a href="https://www.cst.cam.ac.uk/" target="_blank">
-<strong>Department of Computer Science and Technology, University of Cambridge</strong>
+Department of Computer Science and Technology, University of Cambridge
 </a>,
 working closely with
 <a href="https://www.cl.cam.ac.uk/~pl219/" target="_blank">
-<strong>Professor Pietro Liò</strong>
-</a>
-(<strong>MAE, FAAIA</strong>).
+Professor Pietro Liò
+</a>.
 </p>
 
 <p>
-My research focuses on <strong>knowledge graphs</strong>,
-<strong>graph neural networks</strong>,
-<strong>robotics</strong>, and
-<strong>machine learning</strong>,
-with applications in
-<strong>intelligent manufacturing</strong>,
-<strong>computational biology</strong>, and
-<strong>sustainable systems</strong>.
+My research spans knowledge graphs, graph neural networks, robotics, and machine learning,
+with applications in intelligent manufacturing, computational biology, and sustainable systems.
 </p>
 
 <p>
 Previously, I was a <strong>Marie Skłodowska-Curie Fellow</strong> at the
-<strong>Centre for Human-Inspired Artificial Intelligence</strong>,
-<strong>University of Cambridge</strong>.
-I hold a <strong>joint Ph.D.</strong> from the
-<strong>University of Nottingham</strong>,
-<strong>University of Oxford</strong>, and
-<strong>KTH Royal Institute of Technology</strong>,
-supported by the <strong>EU Horizon 2020 programme</strong>.
+Centre for Human-Inspired Artificial Intelligence, University of Cambridge.
+I hold a joint Ph.D. from the University of Nottingham,
+the University of Oxford, and KTH Royal Institute of Technology,
+supported by the EU Horizon 2020 programme.
 </p>
 
 <p>
-Over the past few years, I have <strong>led and contributed to multi-million-pound research projects</strong>,
-developed <strong>AI-driven systems</strong> with industrial partners such as
-<strong>Siemens</strong> and <strong>ABB</strong>,
-and published <strong>over 40 papers</strong> in
-<strong>top-tier journals and international conferences</strong>.
+Over the past few years, I have led and contributed to multi-million-pound research projects,
+developed AI-driven systems with partners such as Siemens and ABB,
+and published more than 40 papers in top-tier journals and conferences.
 </p>
 
 <p>
-Beyond research, I serve as <strong>Chair of the China Chapter of the Marie Curie Alumni Association</strong>,
-where I organize <strong>international academic forums and research events</strong>.
-I am deeply committed to <strong>bridging academia and industry</strong>,
-fostering <strong>open and interdisciplinary collaboration</strong>,
-and advancing <strong>AI for real-world impact</strong>.
+Beyond research, I serve as Chair of the China Chapter of the
+Marie Curie Alumni Association, organizing international academic forums and events.
+I am committed to bridging academia and industry, fostering open collaboration,
+and advancing AI for real-world impact.
 </p>
 
 <p>
-I am always open to collaboration with <strong>highly motivated students</strong> and
-<strong>researchers</strong>.
+I am always open to collaboration with motivated students and researchers.
 If our interests align, please feel free to contact me at
-<a href="mailto:fm651@cam.ac.uk"><strong>fm651@cam.ac.uk</strong></a>.
+<a href="mailto:fm651@cam.ac.uk">fm651@cam.ac.uk</a>.
 </p>
 
 </div>
