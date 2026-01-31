@@ -88,52 +88,25 @@ Please write to
 </p>
 
 <div id="content-zh" class="lang-pane">
+  <p>
+    我目前是<strong>电子科技大学教授</strong>，同时担任<strong>牛津大学研究员</strong>，
+    并作为<strong>访问学者</strong>在
+    <a href="https://www.cst.cam.ac.uk/" target="_blank">
+      剑桥大学计算机科学与技术系
+    </a>
+    开展研究工作，与
+    <a href="https://www.cl.cam.ac.uk/~pl219/" target="_blank">
+      Pietro Liò 教授（MAE, FAAIA）
+    </a>密切合作。
+  </p>
 
-<p>
-我目前是<strong>电子科技大学教授</strong>，同时担任<strong>牛津大学研究员</strong>，
-领导 <strong>AI and Graph Learning Group</strong>，
-并作为<strong>访问学者</strong>在
-<a href="https://www.cst.cam.ac.uk/" target="_blank">
-剑桥大学计算机科学与技术系
-</a>
-开展研究工作，与
-<a href="https://www.cl.cam.ac.uk/~pl219/" target="_blank">
-Pietro Liò 教授（MAE, FAAIA）
-</a>密切合作。
-</p>
-
-<p>
-我的研究方向涵盖<strong>知识图谱、图神经网络、机器人技术与机器学习</strong>，
-重点关注其在<strong>智能制造、计算生物学与可持续系统</strong>中的应用。
-</p>
-
-<p>
-此前，我曾担任<strong>剑桥大学人类启发式人工智能中心</strong>的
-<strong>玛丽·居里学者（Marie Skłodowska-Curie Fellow）</strong>。
-我拥有由<strong>诺丁汉大学、牛津大学和瑞典皇家理工学院（KTH）</strong>
-联合授予的博士学位，研究工作获得<strong>欧盟 Horizon 2020</strong>项目资助。
-</p>
-
-<p>
-近年来，我主持并参与多项<strong>数百万英镑规模</strong>的国际科研项目，
-与<strong>西门子（Siemens）、ABB</strong>等企业合作开发 AI 系统，
-在国际顶级期刊和会议上发表论文<strong>40 余篇</strong>。
-</p>
-
-<p>
-除科研工作外，我还担任<strong>玛丽·居里学者协会中国分会主席</strong>，
-组织多项国际学术论坛与交流活动。
-我致力于推动<strong>产学研深度融合</strong>，
-促进<strong>人工智能技术的实际落地与社会价值创造</strong>。
-</p>
-
-<p>
-欢迎<strong>学生</strong>和<strong>研究人员</strong>与我联系与合作，  
-邮箱：
-<a href="mailto:fm651@cam.ac.uk">fm651@cam.ac.uk</a>。
-</p>
-
+  <p>
+    欢迎<strong>学生</strong>和<strong>研究人员</strong>与我联系，  
+    邮箱：
+    <a href="mailto:fm651@cam.ac.uk">fm651@cam.ac.uk</a>
+  </p>
 </div>
+
 
 ## News
 
