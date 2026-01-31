@@ -21,7 +21,7 @@ Previously, I was a Marie Skłodowska-Curie Fellow at the Centre for Human-Inspi
 
 Beyond research, I serve as Chair of the China Chapter of the Marie Curie Alumni Association, organizing international forums and academic events. I am passionate about bridging academia and industry, fostering open collaboration, and advancing AI for real-world impact.
 
-I am always open to collaboration with motivated **students** and **researchers**. Feel free to reach out if our interests align!
+I am always open to collaboration with motivated **students** and **researchers**. Feel free to reach out if our interests align! Please write email to fm651@cam.ac.uk.
 
 <div id="news" class="section_break"></div>
 
