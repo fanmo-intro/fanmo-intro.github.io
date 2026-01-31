@@ -60,7 +60,7 @@ social: true
 <p>
 I am currently a <strong>full professor</strong> at the University of Electronics and Science Technology of China,  
 a Researcher at the University of Oxford, working with
-<a href="https://www.rdm.ox.ac.uk/people/monika-gullerova" target="_blank">
+<a href="https://www.wadham.ox.ac.uk/people/monika-gullerova" target="_blank">
 Professor Monika Gullerova
 </a>
 and
