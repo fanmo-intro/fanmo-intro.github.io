@@ -16,6 +16,16 @@ social: true
 ---
 
 <style>
+.post-content {
+  overflow: visible !important;
+}
+
+.post-content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .lang-tabs {
   display: flex;
   gap: 10px;
