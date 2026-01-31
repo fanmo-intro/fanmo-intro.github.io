@@ -167,10 +167,6 @@ Pietro Liò 教授（MAE, FAAIA）
 
 <div id="publications" class="section_break"></div>
 
----
-
-
-
 # Services
 
 ### Editorial Roles
