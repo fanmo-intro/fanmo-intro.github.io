@@ -7,7 +7,7 @@ author: Kazantsev, N. and Niewiadomski, K. and Martínez-Arellano, G. and Elshaf
 booktitle: Low-Cost Digital Solutions for Industrial Automation (LoDiSA 2023)
 abbr: LoDiSA
 year: 2023
-selected: true
+selected: false
 abstract: >
     This paper investigates the use of multi-level ontology models to support manufacturing systems under demand fluctuation scenarios. The proposed approach structures manufacturing knowledge across multiple semantic layers, enabling flexible reasoning about resources, processes, and operational constraints. By leveraging ontology-driven representations, the framework enhances system adaptability and decision support during periods of volatile demand. The results demonstrate that multi-level semantic modelling can effectively improve responsiveness and robustness in manufacturing operations facing dynamic demand changes.
 bibtex: >
