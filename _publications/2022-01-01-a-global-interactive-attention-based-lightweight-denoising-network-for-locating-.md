@@ -4,7 +4,6 @@ type: journal
 title: >
     A Global Interactive Attention-based Lightweight Denoising Network for Locating Internal Defects of CFRP Laminates
 author: Yang, Bo and Zhang, Yi and Wang, Shuo and Xu, Wei and Xiao, Ming and He, Yu and Mo, Fan
-equalauthor: Yang, Bo and Zhang, Yi
 journal: Engineering Applications of Artificial Intelligence
 abbr: Engineering Applications of Artificial Intelligence
 correspondence: Yang, Bo
