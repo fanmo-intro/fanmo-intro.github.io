@@ -1,0 +1,27 @@
+---
+layout: pub
+type: journal
+title: >
+    An Efficient Bidirectional Search Hybrid A* Method for Parking Path Planning in Adjacent Vehicle Deviation Scenarios to Enhance Passenger Comfort
+author: Jin, Wenrui and Lv, Xiaoxiao and Qiu, Xiangping and Mo, Fan and Fang, Min and Li, Jiaxue
+journal: Journal of Intelligent and Connected Vehicles
+abbr: J. Intell. Connected Vehicles
+year: 2025
+volume: 8
+number: 4
+pages: 9210072-1--9210072-16
+publisher: TUP
+abstract: >
+    The coexistence of manual and autonomous driving leads to nonstandard final parking states (FPS) of adjacent vehicles, which can hinder passenger door access if a standard FPS is enforced for the target vehicle. To enhance passenger comfort during boarding and alighting, this paper proposes an efficient bidirectional search hybrid A* (BHA*) method for parking path planning under adjacent vehicle deviation scenarios. A characterization variable for passenger comfort is constructed based on allowable and required door opening angles under adjacent vehicle constraints. An optimization model for the FPS is established with a comprehensive objective that balances passenger comfort for both target and adjacent vehicles while ensuring safe distances. A genetic algorithm is employed to determine the optimal FPS, and Voronoi potential fields combined with a bidirectional search strategy are used to generate feasible and comfortable parking paths. Experimental results demonstrate that the proposed BHA* method effectively improves parking feasibility and passenger comfort in complex parking environments.
+bibtex: >
+    @article{Jin2025BHAStarParking,
+        author  = {Jin, Wenrui and Lv, Xiaoxiao and Qiu, Xiangping and Mo, Fan and Fang, Min and Li, Jiaxue},
+        title   = {An Efficient Bidirectional Search Hybrid A* Method for Parking Path Planning in Adjacent Vehicle Deviation Scenarios to Enhance Passenger Comfort},
+        journal = {Journal of Intelligent and Connected Vehicles},
+        volume  = {8},
+        number  = {4},
+        pages   = {9210072-1--9210072-16},
+        year    = {2025},
+        publisher = {TUP}
+    }
+---
