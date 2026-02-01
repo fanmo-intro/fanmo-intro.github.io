@@ -7,6 +7,7 @@ author: Xie, X. and Lv, X. and Jin, W. and Qiu, X. and Mo, Fan and Fang, M. and 
 journal: IEEE Transactions on Intelligent Transportation Systems
 abbr: IEEE T-ITS
 year: 2025
+selected: true
 abstract: >
     In automatic parking scenarios, obstacles on both sides of a target parking space can significantly degrade the feasibility and comfort of passenger boarding and alighting (CPBA) when a standard final parking state is maintained. Moreover, the presence of dynamic obstacle vehicles in parking lots poses substantial challenges to the adaptability of path-planning algorithms. To address these issues, this paper proposes a method for final parking state optimization and two-stage path planning in dynamic parking environments while explicitly considering CPBA. A CPBA characterization variable is first constructed based on the allowable opening angle of the vehicle door constrained by adjacent obstacles. To improve path quality, the basic motion curve of the vehicle is formulated to support queuing, parking, and transition maneuvers. A two-stage path planning framework is then developed to integrate parking lot system-level planning with vehicle-level trajectory generation, enabling safe, adaptive, and comfort-oriented automatic parking in dynamic scenarios. Experimental results demonstrate the effectiveness of the proposed approach in enhancing parking feasibility, adaptability, and passenger comfort.
 bibtex: >
