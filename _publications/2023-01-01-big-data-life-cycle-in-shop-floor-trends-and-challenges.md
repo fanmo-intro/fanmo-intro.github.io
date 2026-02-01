@@ -9,7 +9,7 @@ abbr: IEEE Access
 correspondence: Mo, Fan
 year: 2023
 volume: 11
-selected: true
+selected: false
 abstract: >
     This paper reviews the big data life cycle in shop-floor environments, highlighting current trends, enabling technologies, and open challenges. The study analyzes data acquisition, storage, processing, analytics, and visualization stages within modern manufacturing systems, with particular emphasis on scalability, interoperability, and real-time decision support. By synthesizing recent advances in industrial big data management, the paper provides insights into practical implementation issues and future research directions for data-driven shop-floor intelligence.
 bibtex: >

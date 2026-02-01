@@ -10,7 +10,7 @@ year: 2023
 volume: 12
 number: 3
 pages: 2835--2849
-selected: true
+selected: false
 abstract: >
     This paper presents a robust adaptive levitation control strategy for medium- and low-speed maglev systems considering magnetic saturation and eddy current effects. The proposed control method explicitly accounts for nonlinear magnetic characteristics and unmodeled disturbances induced by eddy currents, enabling stable levitation and improved dynamic performance under varying operating conditions. By integrating adaptive control mechanisms with robustness guarantees, the approach enhances tracking accuracy and disturbance rejection capability. Experimental and simulation results demonstrate the effectiveness of the proposed controller for practical maglev applications.
 bibtex: >

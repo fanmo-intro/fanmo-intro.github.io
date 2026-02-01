@@ -10,7 +10,7 @@ year: 2022
 volume: 55
 number: 10
 pages: 1852--1857
-selected: true
+selected: false
 abstract: >
     This paper proposes a service-based approach to the Asset Administration Shell (AAS) for controlling testing processes in manufacturing environments. The approach encapsulates testing functionalities as interoperable services within the AAS framework, enabling flexible orchestration, improved interoperability, and scalable integration with manufacturing systems. By leveraging service-oriented principles and standardized asset representations, the proposed solution enhances automation, transparency, and efficiency in manufacturing testing workflows. Results presented at MIM 2022 demonstrate the feasibility and effectiveness of the approach in industrial testing scenarios.
 bibtex: >
