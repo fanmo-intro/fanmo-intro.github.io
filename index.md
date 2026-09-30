@@ -81,7 +81,7 @@ with applications in intelligent manufacturing, computational biology, and susta
 </p>
 
 <p>
-Previously, I was a Marie Skłodowska-Curie Fellow at the
+Previously, I was a researcher at the
 Centre for Human-Inspired Artificial Intelligence, University of Cambridge.
 I hold a joint Ph.D. from the University of Nottingham,
 the University of Oxford, and KTH Royal Institute of Technology,
